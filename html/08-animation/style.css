@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  background-image: url(./img/galaxy.png);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.long-time-ago {
+  position: absolute;
+  color: #4bd5ee;
+  font-size: 32px;
+  animation: long-time both 3s 1s;
+}
+
+@keyframes long-time {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.logo {
+  animation: logo 4s 4s both;
+}
+
+@keyframes logo {
+  0% {
+    opacity: 0;
+    transform: scale(3);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.crawl {
+  position: absolute;
+  color: #ffff66;
+  width: 800px;
+  height: 3200px;
+  font-size: 64px;
+  text-align: justify;
+  bottom: 0;
+  transform: perspective(300px) rotateX(25deg);
+  transform-origin: bottom center;
+}
+
+.crawl p {
+  margin-bottom: 100px;
+}
+
+.crawl .slide {
+  position: absolute;
+  animation: text 43s 8s both;
+}
+
+@keyframes text {
+  0% {
+    top: 100%;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: -50%;
+    opacity: 0;
+  }
+}
+
+.gradient {
+  background: linear-gradient(180deg, black 0%, black 70%, transparent 100%);
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  animation: gradient 43s 8s both;
+}
+@keyframes gradient {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+}
+audio {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
