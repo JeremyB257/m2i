@@ -1,0 +1,31 @@
+.container + p {
+  color: yellow;
+}
+
+.container p + p:nth-child(1n + 2) {
+  color: red;
+}
+
+ul li:nth-last-child(1) {
+  font-weight: bold;
+}
+
+span ~ ul li:first-child {
+  color: blue;
+}
+
+[name] {
+  border: 1px solid black;
+}
+
+ul li:last-child {
+  text-decoration: underline;
+}
+
+span:not(.yellow-hover):hover {
+  color: green;
+}
+
+p:nth-child(even) {
+  text-decoration: line-through;
+}
