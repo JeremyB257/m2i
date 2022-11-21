@@ -2,7 +2,7 @@
   color: yellow;
 }
 
-.container p + p:nth-child(1n + 2) {
+.container p + p {
   color: red;
 }
 
