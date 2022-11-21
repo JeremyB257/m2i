@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background-color: yellow;
+    display: flex;
+    padding: 5px;
+}
+
+header p:first-child {
+    flex: 70%;
+}
+
+header p {
+    flex: 30%;
+    padding: 0 5px
+}
+
+main {
+    display: flex;
+
+}
+
+.container {
+    flex: 70%;
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+.card {
+    background-color: pink;
+    margin: 5px;
+    flex: 30%;
+    height: calc(100px + 8vw);
+}
+
+aside {
+    background-color: red;
+    flex: 30%;
+    padding: 0 5px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playball&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Mon logo</div>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Accueil</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="line"></div>
+
+
+    <main>
+        <div class="banner">
+            <div class="layer"></div>
+            <img src="./img/new-york.jpg" alt="banniere new york">
+        </div>
+
+
+        <div class="card">
+            <h2 id="card__title"></h2>
+            <p id="card__mess"></p>
+            <a href="./index.html">Retour à l'accueil</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="last-tweet">
+            <h2>Mon Dernier tweet</h2>
+            <p>Hello World !</p>
+            <p>Le 15 septembre à 15h16</p>
+        </div>
+        <div class="picture">
+            <h2>Mes Photos</h2>
+            <img src="./img/photo1.jpg" alt="photo 1">
+            <img src="./img/photo2.jpg" alt="photo 2">
+            <img src="./img/photo3.jpg" alt="photo 3">
+            <img src="./img/photo4.jpg" alt="photo 4">
+        </div>
+        <div class="friend">
+            <h2>Mes amis</h2>
+            <div class="friend-list">
+
+                <ul>
+                    <li>Pupi le lapin</li>
+                    <li>Mr Baobab</li>
+                    <li>Kaiwaii</li>
+                    <li>Perceval.eu</li>
+                </ul>
+                <ul>
+                    <li>Belette</li>
+                    <li>Le comconbre masqué</li>
+                    <li>Ptit prince</li>
+                    <li>Mr Fan</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let params = new URLSearchParams(window.location.search);
+        let mess = params.get('message')
+        let name = params.get('name')
+        let email = params.get('email')
+        document.getElementById('card__title').innerHTML = `Merci ${name} !`
+        document.getElementById('card__mess').innerHTML = `Ton commentaire : "${mess}" à bien été pris en compte`
+    </script>
+</body>
+
+</html>

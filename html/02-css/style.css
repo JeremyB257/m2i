@@ -1,0 +1,40 @@
+h1 {
+    color: blue;
+}
+.bg-orange {
+    background-color: orange;
+}
+.majuscule {
+    text-transform: uppercase;
+}
+.big-blue {
+    font-weight: bold;
+    color: blue;
+}
+
+.text-red {
+    color: red;
+}
+.big {
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+}
+
+.brown {
+    color: brown ;
+}
+
+.blue {
+    color: blue
+}
+
+.green {
+    color: green;
+}
+
+.underline {
+    text-decoration: underline;
+}

@@ -1,0 +1,121 @@
+body {
+    height: 98vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.container div {
+    background-image: url(./chaton.jpg);
+    width: 100px;
+    height: 100px;
+}
+
+.part1 {
+    background-position-x: 0;
+}
+
+.part2 {
+    background-position-x: -100px;
+}
+
+.part3 {
+    background-position-x: -200px;
+}
+
+.part4 {
+    background-position-x: -300px;
+}
+
+.part5 {
+    background-position-x: -400px;
+}
+
+.part6 {
+    background-position-y: -100px;
+}
+
+.part7 {
+    background-position: -100px -100px;
+}
+
+.part8 {
+    background-position: -200px -100px;
+}
+
+.part9 {
+    background-position: -300px -100px;
+}
+
+.part10 {
+    background-position: -400px -100px;
+}
+
+.part11 {
+    background-position-y: -200px;
+}
+
+.part12 {
+    background-position: -100px -200px;
+}
+
+.part13 {
+    background-position: -200px -200px;
+}
+
+.part14 {
+    background-position: -300px -200px;
+}
+
+.part15 {
+    background-position: -400px -200px;
+}
+
+.part16 {
+    background-position-y: -300px;
+}
+
+.part17 {
+    background-position: -100px -300px;
+}
+
+.part18 {
+    background-position: -200px -300px;
+}
+
+.part19 {
+    background-position: -300px -300px;
+}
+
+.part20 {
+    background-position: -400px -300px;
+}
+
+.part21 {
+    background-position-y: -400px;
+}
+
+.part22 {
+    background-position: -100px -400px;
+}
+
+.part23 {
+    background-position: -200px -400px;
+}
+
+.part24 {
+    background-position: -300px -400px;
+}
+
+.part25 {
+    background-position: -400px -400px;
+
+}

@@ -1,0 +1,13 @@
+body {
+    height: 100vh;
+    background-image: url(/04-position/exercice2/sea.png);
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+    position: relative;
+}
+
+.boat {
+    position: absolute;
+    bottom: 50px;
+    left: 250px;
+}

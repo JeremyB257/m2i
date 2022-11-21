@@ -1,0 +1,67 @@
+body {
+    width: 800px;
+    margin: auto;
+}
+
+.header {
+    background-color: #e8eff7;
+    /*border-top: 10px solid blue;
+    border-bottom: 10px solid blue;*/
+    border: 10px solid #688cd8;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 50px;
+}
+
+.infos, .photo {
+    float: left;
+}
+
+.infos {
+    width: 700px;
+}
+
+.address {
+    /* Permet d'arrêter le float */
+    clear: both;
+}
+
+.center {
+    text-align: center;
+}
+
+.section {
+    border-top: 10px solid #688cd8;
+    border-bottom: 10px solid #688cd8;
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    background-color: #e8eff7;
+    text-transform: uppercase;
+    color: #688cd8;
+    margin: 0;
+    padding: 15px 10px;
+    font-size: 18px;
+}
+
+.capital {
+    font-size: 28px;
+}
+
+.section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/*
+Un élément block prend 100% de la page
+Un inline fait la taille de son contenu
+Un inline-block fait la taille de son contenu
+mais on peut modifier sa taille
+*/
+.year {
+    width: 100px;
+    display: inline-block;
+    font-weight: bold;
+}

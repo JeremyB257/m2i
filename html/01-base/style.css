@@ -1,0 +1,23 @@
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info {
+    background-color: lightblue;
+    border-top: 5px blue solid;
+    border-bottom: 5px blue solid;
+    text-align: center;
+    position: relative;
+}
+
+.info img {
+    position: absolute;
+    width: 10%;
+    right: 5px;
+    top: 5px;
+}
+
+.left-align {
+    text-align: left;
+}

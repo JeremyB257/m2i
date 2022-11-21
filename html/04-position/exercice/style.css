@@ -1,0 +1,27 @@
+body {
+    background-image: url(/04-position/exercice/un-chaton.jpeg);
+    background-repeat: no-repeat;
+    height: 98vh;
+    background-size: cover
+}
+
+p {
+    position: absolute;
+    color: white;
+    font-size: 32px;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 1px 1px 2px white;
+}
+
+
+.layer {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 80%);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
