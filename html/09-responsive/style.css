@@ -1,0 +1,43 @@
+.flex {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flex div {
+  width: 30%;
+  background-color: lightcoral;
+  color: white;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+  .flex {
+    justify-content: space-between;
+  }
+  .flex div {
+    width: 48%;
+  }
+}
+@media (max-width: 768px) {
+  .flex div {
+    width: 100%;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
+
+h1 {
+  font-size: calc(16px + 4vw);
+}
