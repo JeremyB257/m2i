@@ -2,6 +2,10 @@ body {
   background-color: #faa503;
   overflow: hidden;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 
 body i {
   position: absolute;
@@ -44,6 +48,7 @@ nav ul {
 nav ul li {
   margin: 10px;
 }
+
 nav i {
   color: black;
 }
