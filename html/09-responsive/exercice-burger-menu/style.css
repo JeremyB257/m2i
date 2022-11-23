@@ -1,0 +1,49 @@
+body {
+  background-color: #faa503;
+  overflow: hidden;
+}
+
+body i {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  color: white;
+  font-size: 48px;
+}
+body input {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 48px;
+  height: 48px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+nav {
+  position: absolute;
+  background-color: white;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  transform: translateX(100%);
+  transition: 0.3s;
+}
+body input[type='checkbox']:checked ~ nav {
+  transform: translateX(0%);
+}
+
+nav ul {
+  list-style-type: none;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+nav ul li {
+  margin: 10px;
+}
+nav i {
+  color: black;
+}
