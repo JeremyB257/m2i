@@ -1,6 +1,5 @@
 body {
   background-color: #faa503;
-  overflow: hidden;
 }
 a {
   text-decoration: none;
@@ -48,7 +47,7 @@ body input {
 }
 
 nav {
-  position: absolute;
+  position: fixed;
   background-color: white;
   top: 0;
   right: 0;
