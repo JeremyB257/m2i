@@ -1,13 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet" />
+    <title>Pizza</title>
   </head>
   <body>
-    #f12c0e
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Nos pizzas</a></li>
+        </ul>
+      </nav>
+      <div class="logo"><img src="./img/logo.png" alt="logo pizza" /></div>
+      <nav>
+        <ul>
+          <li><a href="#">Commander</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="banner">
+        <div class="menu-card">
+          <h1>Notre Menu</h1>
+          <p>
+            Pizzas au feu de bois uniques ou laissez-vous tenter par nos pâtes, antipasti, focaccias, salades et plats
+            de bruschetta. Détendez-vous dans l'ambiance conviviale en appréciant les arômes des fours à bois ou
+            asseyez-vous en plein air et profitez du soleil de Mildura.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./img/original.jpeg" alt="pizza original" />
+        <div class="info">
+          <h2 class="info__title">Original</h2>
+          <p class="info__desc">Sauce tomate, mozzarella et oignon</p>
+          <p class="info__price">18,00€</p>
+          <span class="info__prevPrice">23,00€</span>
+          <a class="info__callToAction" href="#">Ajouter au panier</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./img/salami.jpeg" alt="pizza Salami" />
+        <div class="info">
+          <h2 class="info__title">Salami</h2>
+          <p class="info__desc">Sauce tomate, mozzarella et salami doux</p>
+          <p class="info__price">15,00€</p>
+          <span class="info__prevPrice">20,00€</span>
+          <a class="info__callToAction" href="#">Ajouter au panier</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./img/poulet.jpeg" alt="pizza poulet" />
+        <div class="info">
+          <h2 class="info__title">Poulet</h2>
+          <p class="info__desc">Sauce tomate, mozzarella, poulet, ananas * et sauce barbecue</p>
+          <p class="info__price">25,00€</p>
+          <span class="info__prevPrice">30,00€</span>
+          <a class="info__callToAction" href="#">Ajouter au panier</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./img/hawaien.jpeg" alt="pizza original" />
+        <div class="info">
+          <h2 class="info__title">Original</h2>
+          <p class="info__desc">Sauce tomate, mozzarella, jambon et ananas</p>
+          <p class="info__price">16,00€</p>
+          <span class="info__prevPrice">21,00€</span>
+          <a class="info__callToAction" href="#">Ajouter au panier</a>
+        </div>
+      </div>
+    </main>
+    <footer><p>© Copyright 2021. Pizza</p></footer>
   </body>
 </html>
