@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    @include mobile {
+      display: flex;
+    }
+    span {
+      height: 4px;
+      width: 25px;
+      background-color: black;
+      margin-bottom: 4px;
+    }
+  }
+  nav {
+    ul {
+      display: flex;
+      li {
+        padding: 10px;
+        &:hover {
+          color: $color-primary;
+        }
+      }
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+}
