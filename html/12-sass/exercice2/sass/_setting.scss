@@ -1,0 +1,159 @@
+//Variable
+
+$color-primary: #00cc66;
+$color-secondary: #fb4b4e;
+$color-third: #944bfb;
+$color-black: #222121;
+$color-yellow: yellow;
+$font: 'Kumbh Sans', sans-serif;
+
+// mixin
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// ------------------------------reset / general
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: $color-black;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  background-color: $color-primary;
+}
+.btn-secondary {
+  background-color: $color-secondary;
+}
+.btn-third {
+  background-color: $color-third;
+}
+.btn-black {
+  background-color: $color-black;
+}
+.btn-yellow {
+  background-color: $color-yellow;
+}
+
+.job {
+  background-color: grey;
+  &-title {
+    color: lighten(black, 10%);
+  }
+  &-description {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  &-btn {
+    display: inline-block;
+    color: white;
+    background-color: $color-primary;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+    &:hover {
+      transform: rotate(20deg);
+      background-color: darken($color: $color-primary, $amount: 10%);
+    }
+  }
+}
+
+@mixin square($width: 100, $color: black) {
+  width: $width + px;
+  height: $width + px;
+  background-color: $color;
+  @if $width >= 150 {
+    transform: rotate(20deg);
+  }
+}
+
+@mixin circle($width: 100, $color: black) {
+  width: $width + px;
+  height: $width + px;
+  border-radius: 100%;
+  background-color: $color;
+}
+
+.square {
+  @include square(100, blue);
+}
+
+.btn {
+  padding: 10px;
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 5px;
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+}
+
+$colors: (
+  brown: brown,
+  pink: pink,
+);
+
+@each $color, $value in $colors {
+  .btn-#{$color} {
+    color: rgb(132, 132, 120);
+    background-color: $value;
+    &:hover {
+      color: white;
+      background-color: darken($value, 10%);
+    }
+  }
+}
+
+$sociaux: (
+  facebook: #3b5998,
+  flickr: #0063db,
+  linkedin: #007bb6,
+  twitter: #00aced,
+  vimeo: #aad450,
+  youtube: #bb0000,
+);
+
+@each $social, $color in $sociaux {
+  .social-#{$social} {
+    background-color: $color;
+    color: lighten($color, 10%);
+  }
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through 2 {
+  .col-#{$i}\/2 {
+    width: calc($i / 2 * 100%);
+  }
+}
+
+@for $i from 1 through 3 {
+  .col-#{$i}\/3 {
+    width: calc($i / 3 * 100%);
+  }
+}
+
+@for $i from 1 through 4 {
+  .col-#{$i}\/4 {
+    width: calc($i / 4 * 100%);
+  }
+}
