@@ -1,0 +1,36 @@
+.btn {
+  background-color: $color-primary;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: $color-white;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  overflow: hidden;
+  header & {
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+  main & {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      background-color: $color-secondary;
+      transition: 0.4s ease-in-out;
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+      // box-shadow: inset 6em 0 0 0 $color-secondary;
+    }
+  }
+  span {
+    color: white;
+    position: relative;
+  }
+}
