@@ -1,3 +1,123 @@
+// Importer un fichier
+@import 'variables';
+
+// Composants
+@import 'components/button';
+
+// Conditions
+@debug lightness($background);
+// > Supérieur à
+// >= Supérieur ou égal à
+// == Egal à
+@if (lightness($background) > 50%) {
+    $text: #000000;
+} @else {
+    $text: #fff;
+}
+
+// Mixins
+// Le $color est un paramètre
+@mixin shadow($color: #000000) {
+    box-shadow: 2px 2px 20px 0 $color;
+    border: 1px solid #eeeeee;
+}
+
+@mixin mobile {
+    @media (max-width: 768px) {
+        // On va pouvoir ajouter du CSS
+        // dans la mixin (en l'utilisant)
+        @content;
+    }
+}
+
+// Fonctions
+@function em($size, $base: 16) {
+    @return calc(1em * $size / $base);
+}
+
 body {
-  background-color: lightblue;
+    font-size: em(32);
+    background-color: $color-primary;
+    margin: 0;
+}
+
+/* Un commentaire en CSS */
+// Imbrication
+.card {
+    background-color: $background;
+    padding: $spacing + 5;
+    margin: 30px;
+    @include shadow(#000);
+
+    h1 {
+        color: $text;
+    }
+
+    .button {
+        background-color: $color-primary;
+        padding: 12px 8px;
+        color: blue;
+
+        // Le & est une colle avec l'élément parent
+        &:hover {
+            background-color: darken($color-primary, 10%);
+            color: lighten(blue, 40%);
+
+            span {
+                color: green;
+            }
+        }
+
+        // Sélectionne un button dans une card dans un .dark
+        .dark & {
+            background-color: #000;
+        }
+    }
+
+    $mobile: '(max-width: 768px)';
+    // Interpolation de variable
+    @media #{$mobile} {
+        border-radius: 50px;
+    }
+
+    @include mobile {
+        background-color: #eee;
+        border: 2px solid blue;
+    }
+}
+
+// Pour la forme, le extend avec l'héritage
+%shadow {
+    box-shadow: 2px 2px 20px 0px #000000;
+}
+
+.a {
+    @extend %shadow;
+}
+
+.b {
+    @extend %shadow;
+}
+
+// Listes
+$sizes: 16px 32px 48px;
+
+// Maps (Dictionnaires)
+$colors: (
+    primary: blue,
+    secondary: red,
+    fiorella: yellow,
+);
+
+h1 {
+    font-size: nth($sizes, 2);
+    color: map-get($colors, secondary) !important;
+}
+
+// Boucles (pour automatiser)
+@each $color, $value in $colors {
+    // @debug $color;
+    .bg-#{$color} {
+        background-color: $value;
+    }
 }

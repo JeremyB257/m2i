@@ -1,5 +1,70 @@
+.btn {
+  color: #2ad3ff;
+}
+
 body {
-  background-color: lightblue;
+  font-size: 2em;
+  background-color: #2ad3ff;
+  margin: 0;
+}
+
+/* Un commentaire en CSS */
+.card {
+  background-color: #000;
+  padding: 15px;
+  margin: 30px;
+  box-shadow: 2px 2px 20px 0 #000;
+  border: 1px solid #eeeeee;
+}
+.card h1 {
+  color: #fff;
+}
+.card .button {
+  background-color: #2ad3ff;
+  padding: 12px 8px;
+  color: blue;
+}
+.card .button:hover {
+  background-color: #00c3f6;
+  color: #ccccff;
+}
+.card .button:hover span {
+  color: green;
+}
+.dark .card .button {
+  background-color: #000;
+}
+@media (max-width: 768px) {
+  .card {
+    border-radius: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .card {
+    background-color: #eee;
+    border: 2px solid blue;
+  }
+}
+
+.b, .a {
+  box-shadow: 2px 2px 20px 0px #000000;
+}
+
+h1 {
+  font-size: 32px;
+  color: red !important;
+}
+
+.bg-primary {
+  background-color: blue;
+}
+
+.bg-secondary {
+  background-color: red;
+}
+
+.bg-fiorella {
+  background-color: yellow;
 }
 
 /*# sourceMappingURL=style.css.map */
