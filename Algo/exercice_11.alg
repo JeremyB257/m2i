@@ -11,18 +11,21 @@
         <item code="1#NOMBRE#Nbr" algoitem="Nbr EST_DU_TYPE NOMBRE"/>
         <item code="1#NOMBRE#i" algoitem="i EST_DU_TYPE NOMBRE"/>
         <item code="1#NOMBRE#NbrBig" algoitem="NbrBig EST_DU_TYPE NOMBRE"/>
+        <item code="1#NOMBRE#position" algoitem="position EST_DU_TYPE NOMBRE"/>
     </item>
     <item code="101#debutalgo" algoitem="DEBUT_ALGORITHME">
-        <item code="12#i#0#5" algoitem="POUR i ALLANT_DE 0 A 5">
+        <item code="12#i#1#5" algoitem="POUR i ALLANT_DE 1 A 5">
             <item code="13#debutpour" algoitem="DEBUT_POUR"/>
             <item code="2#Nbr#pasliste" algoitem="LIRE Nbr"/>
             <item code="6#Nbr > NbrBig" algoitem="SI (Nbr > NbrBig) ALORS">
                 <item code="7#debutsi" algoitem="DEBUT_SI"/>
+                <item code="5#position#i#pasliste" algoitem="position PREND_LA_VALEUR i"/>
                 <item code="5#NbrBig#Nbr#pasliste" algoitem="NbrBig PREND_LA_VALEUR Nbr"/>
                 <item code="8#finsi" algoitem="FIN_SI"/>
             </item>
             <item code="14#finpour" algoitem="FIN_POUR"/>
         </item>
+        <item code="3#position#1#pasliste" algoitem="AFFICHER position"/>
         <item code="3#NbrBig#0#pasliste" algoitem="AFFICHER NbrBig"/>
     </item>
     <item code="102#finalgo" algoitem="FIN_ALGORITHME"/>
