@@ -22,3 +22,10 @@ console.log('Sortez');
   console.log('Attention, on dit "petit pain"')
 }
  */
+/* 
+let age = prompt('Quelle age avez vous ?');
+
+if (age < 13) console.log('Interdit');
+else if (age <= 17) console.log('Bientot');
+else console.log('Autorisé');
+ */
