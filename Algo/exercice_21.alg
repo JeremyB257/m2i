@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description texte="" courant="FIN_TANT_QUE"/>
+    <description texte="" courant="AFFICHER a"/>
     <extension extnom="inactif"/>
     <fonction fctetat="inactif" fctcode=""/>
     <F2 F2etat="inactif" F2defaut="" F2lignes="" F2para=""/>
@@ -22,6 +22,7 @@
             <item algoitem="a PREND_LA_VALEUR t" code="5#a#t#pasliste"/>
             <item algoitem="FIN_TANT_QUE" code="17#fintantque"/>
         </item>
+        <item algoitem="AFFICHER a" code="3#a#0#pasliste"/>
     </item>
     <item algoitem="FIN_ALGORITHME" code="102#finalgo"/>
 </Algo>
