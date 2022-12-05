@@ -17,14 +17,17 @@
     <item algoitem="DEBUT_ALGORITHME" code="101#debutalgo">
         <item algoitem="LIRE Nbr" code="2#Nbr#pasliste"/>
         <item algoitem="NbrPrev PREND_LA_VALEUR 1" code="5#NbrPrev#1#pasliste"/>
-        <item algoitem="AFFICHER NbrPrevPrev" code="3#NbrPrevPrev#1#pasliste"/>
-        <item algoitem="AFFICHER NbrPrev" code="3#NbrPrev#1#pasliste"/>
-        <item algoitem="POUR i ALLANT_DE 3 A Nbr" code="12#i#3#Nbr">
+        <item algoitem="AFFICHER NbrPrevPrev" code="3#NbrPrevPrev#0#pasliste"/>
+        <item algoitem="AFFICHER &quot; &quot;" code="4# #0"/>
+        <item algoitem="AFFICHER NbrPrev" code="3#NbrPrev#0#pasliste"/>
+        <item algoitem="AFFICHER &quot; &quot;" code="4# #0"/>
+        <item algoitem="POUR i ALLANT_DE 0 A Nbr -2" code="12#i#0#Nbr -2">
             <item algoitem="DEBUT_POUR" code="13#debutpour"/>
             <item algoitem="NbrCurr PREND_LA_VALEUR NbrPrev + NbrPrevPrev" code="5#NbrCurr#NbrPrev + NbrPrevPrev#pasliste"/>
             <item algoitem="NbrPrevPrev PREND_LA_VALEUR NbrPrev" code="5#NbrPrevPrev#NbrPrev#pasliste"/>
             <item algoitem="NbrPrev PREND_LA_VALEUR NbrCurr" code="5#NbrPrev#NbrCurr#pasliste"/>
-            <item algoitem="AFFICHER NbrCurr" code="3#NbrCurr#1#pasliste"/>
+            <item algoitem="AFFICHER NbrCurr" code="3#NbrCurr#0#pasliste"/>
+            <item algoitem="AFFICHER &quot; &quot;" code="4# #0"/>
             <item algoitem="FIN_POUR" code="14#finpour"/>
         </item>
     </item>
