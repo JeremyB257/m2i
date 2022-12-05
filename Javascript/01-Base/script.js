@@ -15,3 +15,15 @@ console.log('Salut ' + firstname);
 let bag = [15, 4, 12, 'Hello world !'];
 
 console.log(bag);
+
+// Creer des objets
+
+let person = {
+  name: 'Mota',
+  firstname: 'Fiorella',
+  birthday: [31, 12, 2019],
+};
+
+console.log(person.name);
+
+console.log(bag.length);
