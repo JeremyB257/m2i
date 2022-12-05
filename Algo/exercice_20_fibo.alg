@@ -21,7 +21,7 @@
         <item algoitem="AFFICHER &quot; &quot;" code="4# #0"/>
         <item algoitem="AFFICHER NbrPrev" code="3#NbrPrev#0#pasliste"/>
         <item algoitem="AFFICHER &quot; &quot;" code="4# #0"/>
-        <item algoitem="POUR i ALLANT_DE 0 A Nbr -2" code="12#i#0#Nbr -2">
+        <item algoitem="POUR i ALLANT_DE 2 A Nbr" code="12#i#2#Nbr">
             <item algoitem="DEBUT_POUR" code="13#debutpour"/>
             <item algoitem="NbrCurr PREND_LA_VALEUR NbrPrev + NbrPrevPrev" code="5#NbrCurr#NbrPrev + NbrPrevPrev#pasliste"/>
             <item algoitem="NbrPrevPrev PREND_LA_VALEUR NbrPrev" code="5#NbrPrevPrev#NbrPrev#pasliste"/>
