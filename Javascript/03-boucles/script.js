@@ -86,7 +86,7 @@ function boisson(choice) {
     if (distrib.dTea > 0) {
       distrib.dTea--;
       sum += distrib.priceTea;
-      message += ' Votre thé ';
+      message += 'Voici votre thé ';
     } else {
       message += 'Thé indisponible ';
     }
@@ -94,7 +94,7 @@ function boisson(choice) {
     if (distrib.dCoffe > 0) {
       distrib.dCoffe--;
       sum += distrib.priceCoffe;
-      message += ' Votre café ';
+      message += ' Voici votre café ';
     } else {
       message += 'Café indisponible ';
     }
@@ -102,7 +102,7 @@ function boisson(choice) {
     if (distrib.dChocolate > 0) {
       distrib.dChocolate--;
       sum += distrib.priceChocolate;
-      message += ' Votre chocolat ';
+      message += 'Voici votre chocolat ';
     } else {
       message += 'Chocolat indisponible ';
     }
@@ -121,7 +121,6 @@ function boisson(choice) {
       message += ' tres sucré ';
     }
   } else {
-    message += ' sans sucre ';
   }
 
   if (milk) {
@@ -132,7 +131,7 @@ function boisson(choice) {
     }
   }
 
-  response.innerHTML = `Vous devez payer ${sum} centimes.${message} est pret `;
+  response.innerHTML = `Vous devez payer ${sum} centimes.${message}`;
   distrib.money += sum;
   money.innerHTML = `Tirelire : ${distrib.money / 100} €`;
   sum = 0;
