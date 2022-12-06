@@ -28,4 +28,23 @@ let age = prompt('Quelle age avez vous ?');
 if (age < 13) console.log('Interdit');
 else if (age <= 17) console.log('Bientot');
 else console.log('Autorisé');
- */
+
+*/
+let frigo = {
+  tomates: 3,
+  oeuf: 4,
+  pain: 1,
+  jambon: 2,
+  poulet: 1,
+  fromage: 1,
+};
+
+if (frigo.pain >= 1 && frigo.jambon >= 1 && (frigo.tomates || frigo.fromage >= 1)) {
+  console.log('1 sandwich');
+} else if (frigo.poulet >= 1) {
+  console.log('1 poulet');
+} else if (frigo.oeuf >= 3) {
+  console.log('1 omellette');
+} else {
+  console.log('chips');
+}
