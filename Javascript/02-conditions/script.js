@@ -38,15 +38,21 @@ let frigo = {
   poulet: 1,
   fromage: 1,
 };
-
-if (frigo.pain >= 1 && frigo.jambon >= 1 && (frigo.tomates || frigo.fromage >= 1)) {
-  console.log('1 sandwich');
-} else if (frigo.poulet >= 1) {
-  console.log('1 poulet');
-} else if (frigo.oeuf >= 3) {
-  console.log('1 omellette');
-} else {
-  console.log('chips');
+function verifyFrigo() {
+  if (frigo.pain >= 1 && frigo.jambon >= 1 && (frigo.tomates || frigo.fromage >= 1)) {
+    console.log('1 sandwich');
+    frigo.pain--;
+    frigo.jambon--;
+    frigo.tomates >= 1 ? frigo.tomates-- : frigo.fromage--;
+  } else if (frigo.poulet >= 1) {
+    console.log('1 poulet');
+    frigo.poulet--;
+  } else if (frigo.oeuf >= 3) {
+    console.log('1 omellette');
+    frigo.oeuf -= 3;
+  } else {
+    console.log('chips');
+  }
 }
 
 /* //PGCD
