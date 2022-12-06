@@ -61,34 +61,80 @@ while (answer != 'oui' && answer != 'non' && answer != 'o' && answer != 'n') {
 
 //exo distributeur
 const response = document.querySelector('.response');
+const money = document.querySelector('.money');
+
 let distrib = {
-  café: 40,
-  thé: 40,
-  chocolat: 60,
+  money: 0,
+  priceCoffe: 40,
+  priceTea: 40,
+  priceChocolate: 60,
+  dCoffe: 10,
+  dTea: 10,
+  dChocolate: 10,
+  dSugar: 10,
+  dMilk: 10,
 };
 let sum = 0;
 let message = '';
+money.innerHTML = `Tirelire : ${distrib.money / 100} €`;
 
 function boisson(choice) {
   let sugar = document.getElementById('sugar').value;
   let milk = document.getElementById('milk').checked;
 
-  sum += distrib[choice];
+  if (choice == 'tea') {
+    if (distrib.dTea > 0) {
+      distrib.dTea--;
+      sum += distrib.priceTea;
+      message += ' Votre thé ';
+    } else {
+      message += 'Thé indisponible ';
+    }
+  } else if (choice == 'coffe') {
+    if (distrib.dCoffe > 0) {
+      distrib.dCoffe--;
+      sum += distrib.priceCoffe;
+      message += ' Votre café ';
+    } else {
+      message += 'Café indisponible ';
+    }
+  } else {
+    if (distrib.dChocolate > 0) {
+      distrib.dChocolate--;
+      sum += distrib.priceChocolate;
+      message += ' Votre chocolat ';
+    } else {
+      message += 'Chocolat indisponible ';
+    }
+  }
+
   if (sugar == 1) {
-    sum += 5;
-    message += 'sucré ';
+    if (distrib.dSugar > 0) {
+      distrib.dSugar--;
+      sum += 5;
+      message += 'sucré ';
+    }
   } else if (sugar == 2) {
-    sum += 10;
-    message += ' tres sucré ';
+    if (distrib.dSugar > 1) {
+      distrib.dSugar -= 2;
+      sum += 10;
+      message += ' tres sucré ';
+    }
   } else {
     message += ' sans sucre ';
   }
+
   if (milk) {
-    sum += 15;
-    message += 'avec du lait';
+    if (distrib.dMilk > 1) {
+      distrib.dMilk--;
+      sum += 15;
+      message += 'avec du lait';
+    }
   }
 
-  response.innerHTML = `Vous devez payer ${sum} centimes. Votre ${choice} ${message} est pret `;
+  response.innerHTML = `Vous devez payer ${sum} centimes.${message} est pret `;
+  distrib.money += sum;
+  money.innerHTML = `Tirelire : ${distrib.money / 100} €`;
   sum = 0;
   message = '';
 }
