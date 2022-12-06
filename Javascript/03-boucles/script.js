@@ -58,3 +58,37 @@ while (i < 11) {
 while (answer != 'oui' && answer != 'non' && answer != 'o' && answer != 'n') {
   answer = prompt('Veux tu continuer sur le site ? (oui, non , o ou n)');
 } */
+
+//exo distributeur
+const response = document.querySelector('.response');
+let distrib = {
+  café: 40,
+  thé: 40,
+  chocolat: 60,
+};
+let sum = 0;
+let message = '';
+
+function boisson(choice) {
+  let sugar = document.getElementById('sugar').value;
+  let milk = document.getElementById('milk').checked;
+
+  sum += distrib[choice];
+  if (sugar == 1) {
+    sum += 5;
+    message += 'sucré ';
+  } else if (sugar == 2) {
+    sum += 10;
+    message += ' tres sucré ';
+  } else {
+    message += ' sans sucre ';
+  }
+  if (milk) {
+    sum += 15;
+    message += 'avec du lait';
+  }
+
+  response.innerHTML = `Vous devez payer ${sum} centimes. Votre ${choice} ${message} est pret `;
+  sum = 0;
+  message = '';
+}
