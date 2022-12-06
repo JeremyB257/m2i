@@ -32,3 +32,29 @@ do {
   }
 } while (night);
  */
+
+// exo 1
+/* let i = 1;
+while (i < 11) {
+  console.log(i);
+  i++;
+} */
+//exo 2
+/* for (let i = 10; i >= 2; i--) {
+  console.log(i);
+  i--;
+} */
+//exo 3
+/* for (let i = 0; i <= 100; i++) {
+  if (i % 2 == 0) {
+    console.log(i);
+  }
+}
+ */
+
+//exo 4
+/* let answer = prompt('Veux tu continuer sur le site ? (oui, non , o ou n)');
+
+while (answer != 'oui' && answer != 'non' && answer != 'o' && answer != 'n') {
+  answer = prompt('Veux tu continuer sur le site ? (oui, non , o ou n)');
+} */
