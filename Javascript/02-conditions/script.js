@@ -48,3 +48,16 @@ if (frigo.pain >= 1 && frigo.jambon >= 1 && (frigo.tomates || frigo.fromage >= 1
 } else {
   console.log('chips');
 }
+
+/* //PGCD
+
+let a = prompt('chiffre 1 ?');
+let b = prompt('chiffre 2 ?');
+
+while (b != 0) {
+  let t = b;
+  b = a % b;
+  a = t;
+}
+console.log(a);
+ */
