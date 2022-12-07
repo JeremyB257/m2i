@@ -74,6 +74,7 @@ const refill = document.querySelector('.refill');
 btnTea.addEventListener('click', boisson);
 btnCoffe.addEventListener('click', boisson);
 btnChocolate.addEventListener('click', boisson);
+refill.addEventListener('submit', refillDistrib);
 btnMoney.addEventListener('click', () => {
   money.classList.toggle('hidden');
 });
@@ -164,4 +165,22 @@ function boisson(e) {
   money.innerHTML = `Tirelire : ${distrib.money / 100} €`;
   sum = 0;
   message = '';
+}
+
+function refillDistrib(e) {
+  e.preventDefault();
+
+  distrib.dCoffe += parseInt(e.target[0].value);
+  distrib.dTea += parseInt(e.target[1].value);
+  distrib.dChocolate += parseInt(e.target[2].value);
+  distrib.dSugar += parseInt(e.target[3].value);
+  distrib.dMilk += parseInt(e.target[4].value);
+
+  e.target[0].value = 0;
+  e.target[1].value = 0;
+  e.target[2].value = 0;
+  e.target[3].value = 0;
+  e.target[4].value = 0;
+
+  refill.classList.add('hidden');
 }
