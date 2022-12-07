@@ -18,3 +18,13 @@ for (let index in firstnames) {
 for (let [index, firstname] of firstnames.entries()) {
   console.log(`${index}: ${firstname}`);
 }
+
+// On peut modifier le contenu d'un tableau
+
+function add() {
+  if (!firstnames.includes('Bianca')) {
+    // firstnames.push('Bianca');
+    //avec le splice
+    firstnames.splice(firstnames.length, 0, 'Bianca');
+  }
+}
