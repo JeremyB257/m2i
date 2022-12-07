@@ -50,3 +50,16 @@ function addition(N1 = 0, N2 = 0) {
 }
 
 console.log(addition(2, 3));
+
+//declaration d'une fonction pour dire bonjour
+
+function hello(name, lang = 'fr') {
+  if (lang == 'fr') {
+    return `Bonjour ${name}`;
+  }
+  return `Hello ${name}`;
+}
+
+// On apelle la fonction
+console.log(hello('toto'));
+console.log(hello('toto', 'en'));
