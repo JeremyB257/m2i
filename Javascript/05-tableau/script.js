@@ -28,3 +28,17 @@ function add() {
     firstnames.splice(firstnames.length, 0, 'Bianca');
   }
 }
+
+// Quelque methodes de tableaux
+
+let numbers = [1, 2, 3];
+
+numbers = numbers.map((number) => {
+  return number * 2; //Une fonction retourne toujours quelque chose
+}); // [2, 4, 6]
+console.log(numbers);
+
+numbers = numbers.filter((number) => {
+  return number > 2; // Garde les valeurs superieur a 2
+}); // [4, 6]
+console.log(numbers);
