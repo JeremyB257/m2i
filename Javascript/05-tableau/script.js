@@ -42,3 +42,11 @@ numbers = numbers.filter((number) => {
   return number > 2; // Garde les valeurs superieur a 2
 }); // [4, 6]
 console.log(numbers);
+
+// Les fonctions
+function addition(N1 = 0, N2 = 0) {
+  // le =  affecte une valeur par defaut
+  return N1 + N2;
+}
+
+console.log(addition(2, 3));
