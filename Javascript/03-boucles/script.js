@@ -66,15 +66,19 @@ const money = document.querySelector('.money');
 const btnTea = document.getElementById('btn-tea');
 const btnCoffe = document.getElementById('btn-coffe');
 const btnChocolate = document.getElementById('btn-chocolate');
+const btnMoney = document.getElementById('btnMoney');
 // EventListener
 
 btnTea.addEventListener('click', boisson);
 btnCoffe.addEventListener('click', boisson);
 btnChocolate.addEventListener('click', boisson);
-
+btnMoney.addEventListener('click', () => {
+  money.classList.toggle('hidden');
+});
 // fucntion
 let distrib = {
   money: 0,
+  use: 0,
   priceCoffe: 40,
   priceTea: 40,
   priceChocolate: 60,
