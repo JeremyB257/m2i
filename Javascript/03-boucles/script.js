@@ -81,8 +81,8 @@ let distrib = {
   dCoffe: 10,
   dTea: 10,
   dChocolate: 10,
-  dSugar: 10,
-  dMilk: 10,
+  dSugar: 1,
+  dMilk: 1,
 };
 let sum = 0;
 let message = '';
@@ -91,8 +91,8 @@ money.innerHTML = `Tirelire : ${distrib.money / 100} €`;
 function boisson(e) {
   let sugar = document.getElementById('sugar').value;
   let milk = document.getElementById('milk').checked;
-  console.log(e);
-  if (e.target.value == 'tea') {
+
+  if (e.target.value == 'Tea') {
     if (distrib.dTea > 0) {
       distrib.dTea--;
       sum += distrib.priceTea;
@@ -101,7 +101,7 @@ function boisson(e) {
       message += 'Thé indisponible ';
       btnTea.setAttribute('disabled', '');
     }
-  } else if (e.target.value == 'coffe') {
+  } else if (e.target.value == 'Coffe') {
     if (distrib.dCoffe > 0) {
       distrib.dCoffe--;
       sum += distrib.priceCoffe;
@@ -126,21 +126,27 @@ function boisson(e) {
       distrib.dSugar--;
       sum += 5;
       message += 'sucré ';
+    } else {
+      message += '/ Sucre indisponible ';
     }
   } else if (sugar == 2) {
     if (distrib.dSugar > 1) {
       distrib.dSugar -= 2;
       sum += 10;
       message += ' tres sucré ';
+    } else {
+      message += '/ Sucre restant 1 ';
     }
   } else {
   }
 
   if (milk) {
-    if (distrib.dMilk > 1) {
+    if (distrib.dMilk > 0) {
       distrib.dMilk--;
       sum += 15;
       message += 'avec du lait';
+    } else {
+      message += '/ Lait indisponible';
     }
   }
 
