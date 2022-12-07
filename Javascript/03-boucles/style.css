@@ -10,10 +10,12 @@ button {
   align-items: center;
   border: 1px solid black;
   position: relative;
+  width: 400px;
 }
 
 body {
   display: flex;
+
   justify-content: center;
 }
 form {

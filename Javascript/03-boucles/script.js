@@ -61,6 +61,7 @@ while (answer != 'oui' && answer != 'non' && answer != 'o' && answer != 'n') {
 
 //exo distributeur
 //Selecteur
+const distribDiv = document.querySelector('.distrib');
 const response = document.querySelector('.response');
 const money = document.querySelector('.money');
 const btnTea = document.getElementById('btn-tea');
@@ -85,6 +86,7 @@ btnRefill.addEventListener('click', () => {
 let distrib = {
   money: 0,
   use: 0,
+  break: Math.floor(Math.random() * (20 - 15 + 1) + 15),
   priceCoffe: 40,
   priceTea: 40,
   priceChocolate: 60,
@@ -105,6 +107,7 @@ function boisson(e) {
   if (e.target.value == 'Tea') {
     if (distrib.dTea > 0) {
       distrib.dTea--;
+      distrib.use++;
       sum += distrib.priceTea;
       message += 'Voici votre thé ';
     } else {
@@ -114,6 +117,7 @@ function boisson(e) {
   } else if (e.target.value == 'Coffe') {
     if (distrib.dCoffe > 0) {
       distrib.dCoffe--;
+      distrib.use++;
       sum += distrib.priceCoffe;
       message += ' Voici votre café ';
     } else {
@@ -123,6 +127,7 @@ function boisson(e) {
   } else {
     if (distrib.dChocolate > 0) {
       distrib.dChocolate--;
+      distrib.use++;
       sum += distrib.priceChocolate;
       message += 'Voici votre chocolat ';
     } else {
@@ -165,6 +170,22 @@ function boisson(e) {
   money.innerHTML = `Tirelire : ${distrib.money / 100} €`;
   sum = 0;
   message = '';
+  if (distrib.use == distrib.break) {
+    btnTea.setAttribute('disabled', '');
+    btnCoffe.setAttribute('disabled', '');
+    btnChocolate.setAttribute('disabled', '');
+    response.innerHTML = 'En panne !';
+    const repair = document.createElement('button');
+    repair.innerHTML = 'Reparer';
+    repair.onclick = function () {
+      distrib.use = 0;
+      btnTea.removeAttribute('disabled');
+      btnCoffe.removeAttribute('disabled');
+      btnChocolate.removeAttribute('disabled');
+      repair.parentNode.removeChild(repair);
+    };
+    distribDiv.appendChild(repair);
+  }
 }
 
 function refillDistrib(e) {
