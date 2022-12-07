@@ -67,6 +67,8 @@ const btnTea = document.getElementById('btn-tea');
 const btnCoffe = document.getElementById('btn-coffe');
 const btnChocolate = document.getElementById('btn-chocolate');
 const btnMoney = document.getElementById('btnMoney');
+const btnRefill = document.getElementById('btnRefill');
+const refill = document.querySelector('.refill');
 // EventListener
 
 btnTea.addEventListener('click', boisson);
@@ -74,6 +76,9 @@ btnCoffe.addEventListener('click', boisson);
 btnChocolate.addEventListener('click', boisson);
 btnMoney.addEventListener('click', () => {
   money.classList.toggle('hidden');
+});
+btnRefill.addEventListener('click', () => {
+  refill.classList.toggle('hidden');
 });
 // fucntion
 let distrib = {
