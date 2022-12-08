@@ -39,7 +39,7 @@ function addPion(e) {
     if (e.target.value <= 2) morpion[0][e.target.value] = 'X';
     else if (e.target.value <= 5) morpion[1][e.target.value - 3] = 'X';
     else morpion[2][e.target.value - 6] = 'X';
-    searchWinner();
+    searchWinner('X');
   } else {
     turn++;
     message.innerHTML = "C'est au joueur 1 de jouer";
@@ -47,30 +47,27 @@ function addPion(e) {
     if (e.target.value <= 2) morpion[0][e.target.value] = 'O';
     else if (e.target.value <= 5) morpion[1][e.target.value - 3] = 'O';
     else morpion[2][e.target.value - 6] = 'O';
-    searchWinner();
+    searchWinner('O');
   }
 }
 
-function searchWinner() {
-  if (morpion[0][0] == 'X' && morpion[0][1] == 'X' && morpion[0][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-  if (morpion[1][0] == 'X' && morpion[1][1] == 'X' && morpion[1][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-  if (morpion[2][0] == 'X' && morpion[2][1] == 'X' && morpion[2][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+function searchWinner(figure) {
+  if (morpion[0][0] == figure && morpion[0][1] == figure && morpion[0][2] == figure)
+    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
+  if (morpion[1][0] == figure && morpion[1][1] == figure && morpion[1][2] == figure)
+    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
+  if (morpion[2][0] == figure && morpion[2][1] == figure && morpion[2][2] == figure)
+    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
 
-  if (morpion[0][0] == 'X' && morpion[1][0] == 'X' && morpion[2][0] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-  if (morpion[0][1] == 'X' && morpion[1][1] == 'X' && morpion[2][1] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-  if (morpion[0][2] == 'X' && morpion[1][2] == 'X' && morpion[2][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+  if (morpion[0][0] == figure && morpion[1][0] == figure && morpion[2][0] == figure)
+    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
+  if (morpion[0][1] == figure && morpion[1][1] == figure && morpion[2][1] == figure)
+    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
+  if (morpion[0][2] == figure && morpion[1][2] == figure && morpion[2][2] == figure)
+    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
 
-  if (morpion[0][0] == 'X' && morpion[1][1] == 'X' && morpion[2][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-  if (morpion[2][0] == 'X' && morpion[1][1] == 'X' && morpion[0][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
-
-  if (morpion[0][0] == 'O' && morpion[0][1] == 'O' && morpion[0][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-  if (morpion[1][0] == 'O' && morpion[1][1] == 'O' && morpion[1][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-  if (morpion[2][0] == 'O' && morpion[2][1] == 'O' && morpion[2][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-
-  if (morpion[0][0] == 'O' && morpion[1][0] == 'O' && morpion[2][0] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-  if (morpion[0][1] == 'O' && morpion[1][1] == 'O' && morpion[2][1] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-  if (morpion[0][2] == 'O' && morpion[1][2] == 'O' && morpion[2][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-
-  if (morpion[0][0] == 'O' && morpion[1][1] == 'O' && morpion[2][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
-  if (morpion[2][0] == 'O' && morpion[1][1] == 'O' && morpion[0][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+  if (morpion[0][0] == figure && morpion[1][1] == figure && morpion[2][2] == figure)
+    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
+  if (morpion[2][0] == figure && morpion[1][1] == figure && morpion[0][2] == figure)
+    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
 }
