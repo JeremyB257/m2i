@@ -184,14 +184,18 @@ console.log(arr9);
 //exercice 10
 
 let arr10 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let arr11 = [];
+let arr105 = [];
 for (let i = 0; i < arr10.length; i++) {
   if (arr10[i] % 2 == 0) {
-    arr11.push(arr10[i]);
-    arr11.push(arr10[i] ** 2);
+    arr105.push(arr10[i]);
+    arr105.push(arr10[i] ** 2);
   } else {
-    arr11.push(arr10[i]);
+    arr105.push(arr10[i]);
   }
 }
 
-console.log(arr11);
+console.log(arr105);
+
+//exercice 11
+
+let arr12 = [];
