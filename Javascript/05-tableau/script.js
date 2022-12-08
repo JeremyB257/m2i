@@ -96,16 +96,38 @@ function addFood(e) {
 }
 
 //exercice 3
-let array = [];
+/* let array = [];
 
-for (i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
   array.push(prompt('Saisisez 1 nombres'));
 }
 
-for (i = 0; i < array.length; i++) {
+for (let i = 0; i < array.length; i++) {
   if (array[i] % 2 == 0) {
     console.log(array[i] + ' est paire');
   } else {
     console.log(array[i] + ' est impaire');
   }
+} */
+
+//exercice 4
+const noteForm = document.getElementById('noteForm');
+noteForm.addEventListener('submit', calcNote);
+
+function calcNote(e) {
+  e.preventDefault();
+
+  let notes = e.target[0].value.split(',');
+  let sum = 0;
+  let min = parseInt(notes[0]);
+  let max = 0;
+
+  for (let i = 0; i < notes.length; i++) {
+    sum += parseInt(notes[i]);
+    if (notes[i] > max) max = notes[i];
+    if (notes[i] < min) min = notes[i];
+  }
+  console.log(sum / notes.length);
+  console.log(`Note min : ${min}`);
+  console.log(`Note max : ${max}`);
 }
