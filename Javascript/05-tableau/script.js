@@ -180,3 +180,18 @@ arr9 = arr9.map((objet) => {
   return objet['firstname'] + ' ' + objet['name'];
 });
 console.log(arr9);
+
+//exercice 10
+
+let arr10 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let arr11 = [];
+for (let i = 0; i < arr10.length; i++) {
+  if (arr10[i] % 2 == 0) {
+    arr11.push(arr10[i]);
+    arr11.push(arr10[i] ** 2);
+  } else {
+    arr11.push(arr10[i]);
+  }
+}
+
+console.log(arr11);
