@@ -70,7 +70,7 @@ let week = ['mardi', 'mercredi', 'jeudi', 'samedi', 'dimanche'];
 
 console.log(week);
 
-week.splice(0, 0, 'lundi');
+week.unshift('lundi');
 week.splice(4, 0, 'vendredi');
 
 console.log(week);
@@ -83,14 +83,16 @@ foodForm.addEventListener('submit', addFood);
 let foods = ['poulet', 'frites', 'chocolat'];
 
 function addFood(e) {
+  let choice = e.target[0].value.toLowerCase();
+
   e.preventDefault();
-  if (foods.includes(e.target[0].value.toLowerCase())) {
-    alert(`Voici votre ${e.target[0].value.toLowerCase()}`);
+  if (foods.includes(choice)) {
+    alert(`Voici votre ${choice}`);
     foods = foods.filter((food) => {
-      return food != e.target[0].value.toLowerCase();
+      return food != choice;
     });
   } else {
-    alert("L'aliment n'existe pas");
+    alert("L'aliment n'est pas disponible");
   }
   console.log(foods);
 }
