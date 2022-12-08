@@ -31,15 +31,41 @@ let morpion = [
 let turn = 0;
 message.innerHTML = "C'est au joueur 1 de jouer";
 function addPion(e) {
-  console.log(e.target.innerHTML);
   this.removeEventListener('click', addPion);
   if (turn % 2 == 0) {
     turn++;
     message.innerHTML = "C'est au joueur 2 de jouer";
     e.target.innerHTML = 'X';
+
+    searchWinner();
   } else {
     turn++;
     message.innerHTML = "C'est au joueur 1 de jouer";
     e.target.innerHTML = 'O';
+    searchWinner();
   }
+}
+
+function searchWinner() {
+  if (morpion[0][0] == 'X' && morpion[0][1] == 'X' && morpion[0][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+  if (morpion[1][0] == 'X' && morpion[1][1] == 'X' && morpion[1][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+  if (morpion[2][0] == 'X' && morpion[2][1] == 'X' && morpion[2][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+
+  if (morpion[0][0] == 'X' && morpion[1][0] == 'X' && morpion[2][0] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+  if (morpion[0][1] == 'X' && morpion[1][1] == 'X' && morpion[2][1] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+  if (morpion[0][2] == 'X' && morpion[1][2] == 'X' && morpion[2][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+
+  if (morpion[0][0] == 'X' && morpion[1][1] == 'X' && morpion[2][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+  if (morpion[2][0] == 'X' && morpion[1][1] == 'X' && morpion[0][2] == 'X') message.innerHTML = 'Joueur 1 à gagné';
+
+  if (morpion[0][0] == 'O' && morpion[0][1] == 'O' && morpion[0][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+  if (morpion[1][0] == 'O' && morpion[1][1] == 'O' && morpion[1][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+  if (morpion[2][0] == 'O' && morpion[2][1] == 'O' && morpion[2][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+
+  if (morpion[0][0] == 'O' && morpion[1][0] == 'O' && morpion[2][0] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+  if (morpion[0][1] == 'O' && morpion[1][1] == 'O' && morpion[2][1] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+  if (morpion[0][2] == 'O' && morpion[1][2] == 'O' && morpion[2][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+
+  if (morpion[0][0] == 'O' && morpion[1][1] == 'O' && morpion[2][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
+  if (morpion[2][0] == 'O' && morpion[1][1] == 'O' && morpion[0][2] == 'O') message.innerHTML = 'Joueur 2 à gagné';
 }
