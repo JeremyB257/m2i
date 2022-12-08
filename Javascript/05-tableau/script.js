@@ -77,3 +77,19 @@ console.log(week);
 console.log(week[2]);
 
 //exercice 2
+const foodInput = document.getElementById('foodInput');
+const foodForm = document.getElementById('foodForm');
+foodForm.addEventListener('submit', addFood);
+let foods = ['poulet', 'frites', 'chocolat'];
+
+function addFood(e) {
+  e.preventDefault();
+  if (foods.includes(e.target[0].value.toLowerCase())) {
+    foods = foods.filter((food) => {
+      return food != e.target[0].value.toLowerCase();
+    });
+  } else {
+    alert("L'aliment n'existe pas");
+  }
+  console.log(foods);
+}
