@@ -119,9 +119,16 @@ function calcNote(e) {
   let sum = 0;
   let min = parseInt(notes[0]);
   let max = 0;
-  // pour la moyenne deux solution :
+  // Deux solution :
   // Le reduce pour faire la moyenne
   // notes.reduce((n1, n2) => n1 + n2);
+  // le apply transform le tableau en eleemnt individuel
+  // min = Math.min.apply(null, notes)
+  // max = Math.max.apply(null, notes)
+  // sinon spread operator
+  // min = Math.min.apply(...notes)
+  // max = Math.max.apply(...notes)
+
   // ou la boucle for pour la moyenne + min et max
   for (let i = 0; i < notes.length; i++) {
     sum += parseInt(notes[i]);
