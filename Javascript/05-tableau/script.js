@@ -99,19 +99,22 @@ function addFood(e) {
 }
 
 //exercice 3
-/* let array = [];
+let array = [];
 
 for (let i = 0; i < 5; i++) {
   array.push(prompt('Saisisez 1 nombres'));
 }
+for (number of array) {
+  console.log(number % 2 == 0 ? number + ' est pair' : number + ' est impair');
+}
 
-for (let i = 0; i < array.length; i++) {
+/* for (let i = 0; i < array.length; i++) {
   if (array[i] % 2 == 0) {
     console.log(array[i] + ' est paire');
   } else {
     console.log(array[i] + ' est impaire');
   }
-} */
+}  */
 
 //exercice 4
 const noteForm = document.getElementById('noteForm');
