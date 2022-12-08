@@ -198,4 +198,28 @@ console.log(arr105);
 
 //exercice 11
 
-let arr12 = [];
+let colors = [];
+let redCounter = 0;
+let yellowCounter = 0;
+let blueCounter = 0;
+
+let nbr = prompt('Choisisez un nombre');
+
+for (i = 0; i < nbr; i++) {
+  let rand = Math.floor(Math.random() * 3);
+
+  if (rand == 0) {
+    colors.push('rouge');
+    redCounter++;
+  } else if (rand == 1) {
+    colors.push('jaune');
+    yellowCounter++;
+  } else {
+    colors.push('bleu');
+    blueCounter++;
+  }
+}
+
+if ((redCounter > yellowCounter || redCounter > blueCounter) && redCounter > 1) console.log('Rouge');
+if ((yellowCounter > blueCounter || yellowCounter > redCounter) && yellowCounter > 1) console.log('jaune');
+if ((blueCounter > redCounter || blueCounter > yellowCounter) && blueCounter > 1) console.log('bleu');
