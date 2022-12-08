@@ -63,3 +63,15 @@ function hello(name, lang = 'fr') {
 // On apelle la fonction
 console.log(hello('toto'));
 console.log(hello('toto', 'en'));
+
+//exercice
+
+let week = ['mardi', 'mercredi', 'jeudi', 'samedi', 'dimanche'];
+
+console.log(week);
+
+week.splice(0, 0, 'lundi');
+week.splice(4, 0, 'vendredi');
+
+console.log(week);
+console.log(week[2]);
