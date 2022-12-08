@@ -139,3 +139,44 @@ function calcNote(e) {
   console.log(`Note min : ${min}`);
   console.log(`Note max : ${max}`);
 }
+
+//exercice 5
+
+let arr5 = [5, 10, 15];
+
+console.log(arr5.map((number) => number * number));
+
+//exercice 6
+
+let arr6 = ['aa', 'bb', 'c'];
+
+console.log(arr6.filter((string) => string.length < 2));
+
+//exercice 7
+
+let arr7 = ['mathieu', 'jeremy', 'jordan'];
+
+console.log(arr7.map((name) => name[0].toUpperCase() + name.slice(1, name.length)));
+
+//exercice 8
+
+let arr8 = [];
+
+for (let i = 1; i <= Math.floor(Math.random() * (16 - 10) + 10); i++) {
+  arr8.push(Math.round(Math.random() * 100));
+}
+console.log(arr8);
+
+//exercice 9
+
+let arr9 = [
+  {
+    firstname: 'Fiorella',
+    name: 'Mota',
+  },
+];
+
+arr9 = arr9.map((objet) => {
+  return objet['firstname'] + ' ' + objet['name'];
+});
+console.log(arr9);
