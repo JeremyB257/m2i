@@ -88,9 +88,10 @@ function addFood(e) {
   e.preventDefault();
   if (foods.includes(choice)) {
     alert(`Voici votre ${choice}`);
-    foods = foods.filter((food) => {
+    foods.splice(foods.indexOf(choice), 1);
+    /*  foods = foods.filter((food) => {
       return food != choice;
-    });
+    }); */
   } else {
     alert("L'aliment n'est pas disponible");
   }
