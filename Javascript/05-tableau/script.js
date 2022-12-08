@@ -75,3 +75,5 @@ week.splice(4, 0, 'vendredi');
 
 console.log(week);
 console.log(week[2]);
+
+//exercice 2
