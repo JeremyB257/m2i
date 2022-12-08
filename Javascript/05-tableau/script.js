@@ -121,7 +121,7 @@ function calcNote(e) {
   let max = 0;
   // pour la moyenne deux solution :
   // Le reduce pour faire la moyenne
-  notes.reduce((n1, n2) => n1 + n2);
+  // notes.reduce((n1, n2) => n1 + n2);
   // ou la boucle for pour la moyenne + min et max
   for (let i = 0; i < notes.length; i++) {
     sum += parseInt(notes[i]);
