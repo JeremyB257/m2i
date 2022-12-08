@@ -94,3 +94,18 @@ function addFood(e) {
   }
   console.log(foods);
 }
+
+//exercice 3
+let array = [];
+
+for (i = 0; i < 5; i++) {
+  array.push(prompt('Saisisez 1 nombres'));
+}
+
+for (i = 0; i < array.length; i++) {
+  if (array[i] % 2 == 0) {
+    console.log(array[i] + ' est paire');
+  } else {
+    console.log(array[i] + ' est impaire');
+  }
+}
