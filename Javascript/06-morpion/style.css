@@ -1,0 +1,19 @@
+table {
+  border-collapse: collapse;
+  width: 500px;
+  height: 500px;
+}
+
+td {
+  border: 1px solid black;
+  position: relative;
+}
+td button {
+  cursor: pointer;
+  height: 90%;
+  width: 90%;
+  opacity: 0.2;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
