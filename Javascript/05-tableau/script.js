@@ -85,6 +85,7 @@ let foods = ['poulet', 'frites', 'chocolat'];
 function addFood(e) {
   e.preventDefault();
   if (foods.includes(e.target[0].value.toLowerCase())) {
+    alert(`Voici votre ${e.target[0].value.toLowerCase()}`);
     foods = foods.filter((food) => {
       return food != e.target[0].value.toLowerCase();
     });
