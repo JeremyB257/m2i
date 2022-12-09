@@ -34,11 +34,13 @@ function addPion(e) {
   this.removeEventListener('click', addPion);
   if (turn % 2 == 0) {
     turn++;
+
     message.innerHTML = "C'est au joueur 2 de jouer";
     e.target.innerHTML = 'X';
     if (e.target.value <= 2) morpion[0][e.target.value] = 'X';
     else if (e.target.value <= 5) morpion[1][e.target.value - 3] = 'X';
     else morpion[2][e.target.value - 6] = 'X';
+
     searchWinner('X');
   } else {
     turn++;
@@ -47,6 +49,7 @@ function addPion(e) {
     if (e.target.value <= 2) morpion[0][e.target.value] = 'O';
     else if (e.target.value <= 5) morpion[1][e.target.value - 3] = 'O';
     else morpion[2][e.target.value - 6] = 'O';
+
     searchWinner('O');
   }
 }
