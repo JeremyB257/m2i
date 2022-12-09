@@ -21,7 +21,7 @@ p6.addEventListener('click', addPion);
 p7.addEventListener('click', addPion);
 p8.addEventListener('click', addPion);
 
-// algo
+// init
 let morpion = [
   ['_', '_', '_'],
   ['_', '_', '_'],
@@ -30,6 +30,8 @@ let morpion = [
 
 let turn = 0;
 message.innerHTML = "C'est au joueur 1 de jouer";
+
+// function
 function addPion(e) {
   this.removeEventListener('click', addPion);
   if (turn % 2 == 0) {
@@ -55,22 +57,66 @@ function addPion(e) {
 }
 
 function searchWinner(figure) {
-  if (morpion[0][0] == figure && morpion[0][1] == figure && morpion[0][2] == figure)
-    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
-  if (morpion[1][0] == figure && morpion[1][1] == figure && morpion[1][2] == figure)
-    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
-  if (morpion[2][0] == figure && morpion[2][1] == figure && morpion[2][2] == figure)
-    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
+  let winner = false;
+  if (morpion[0][0] == figure && morpion[0][1] == figure && morpion[0][2] == figure) {
+    winner = true;
+    p0.style.backgroundColor = 'lightgreen';
+    p1.style.backgroundColor = 'lightgreen';
+    p2.style.backgroundColor = 'lightgreen';
+  }
+  if (morpion[1][0] == figure && morpion[1][1] == figure && morpion[1][2] == figure) {
+    winner = true;
+    p3.style.backgroundColor = 'lightgreen';
+    p4.style.backgroundColor = 'lightgreen';
+    p5.style.backgroundColor = 'lightgreen';
+  }
+  if (morpion[2][0] == figure && morpion[2][1] == figure && morpion[2][2] == figure) {
+    winner = true;
+    p6.style.backgroundColor = 'lightgreen';
+    p7.style.backgroundColor = 'lightgreen';
+    p8.style.backgroundColor = 'lightgreen';
+  }
 
-  if (morpion[0][0] == figure && morpion[1][0] == figure && morpion[2][0] == figure)
-    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
-  if (morpion[0][1] == figure && morpion[1][1] == figure && morpion[2][1] == figure)
-    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
-  if (morpion[0][2] == figure && morpion[1][2] == figure && morpion[2][2] == figure)
-    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
+  if (morpion[0][0] == figure && morpion[1][0] == figure && morpion[2][0] == figure) {
+    winner = true;
+    p0.style.backgroundColor = 'lightgreen';
+    p3.style.backgroundColor = 'lightgreen';
+    p6.style.backgroundColor = 'lightgreen';
+  }
 
-  if (morpion[0][0] == figure && morpion[1][1] == figure && morpion[2][2] == figure)
+  if (morpion[0][1] == figure && morpion[1][1] == figure && morpion[2][1] == figure) {
+    winner = true;
+    p1.style.backgroundColor = 'lightgreen';
+    p4.style.backgroundColor = 'lightgreen';
+    p7.style.backgroundColor = 'lightgreen';
+  }
+
+  if (morpion[0][2] == figure && morpion[1][2] == figure && morpion[2][2] == figure) {
+    winner = true;
+    p2.style.backgroundColor = 'lightgreen';
+    p5.style.backgroundColor = 'lightgreen';
+    p8.style.backgroundColor = 'lightgreen';
+  }
+
+  if (morpion[0][0] == figure && morpion[1][1] == figure && morpion[2][2] == figure) {
+    winner = true;
+    p0.style.backgroundColor = 'lightgreen';
+    p4.style.backgroundColor = 'lightgreen';
+    p8.style.backgroundColor = 'lightgreen';
+  }
+
+  if (morpion[2][0] == figure && morpion[1][1] == figure && morpion[0][2] == figure) {
+    winner = true;
+    p6.style.backgroundColor = 'lightgreen';
+    p4.style.backgroundColor = 'lightgreen';
+    p2.style.backgroundColor = 'lightgreen';
+  }
+
+  if (winner) {
+    const buttons = document.getElementsByTagName('button');
+    for (const button of buttons) {
+      button.disabled = true;
+    }
     message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
-  if (morpion[2][0] == figure && morpion[1][1] == figure && morpion[0][2] == figure)
-    message.innerHTML = figure == 'X' ? 'Joueur 1 à gagné' : 'Joueur 2 à gagné';
+  }
 }
