@@ -7,7 +7,7 @@ let para = document.getElementsByTagName('p');
 for (let i = 0; i < para.length; i++) {
   para[i].style.fontSize = '21px';
   //exercice 4
-  para[i].innerHTML = para[i].innerHTML.replace('Lorem', '<span style="color: green">Lorem</span>');
+  para[i].innerHTML = para[i].innerHTML.replace(/Lorem/g, '<span style="color: green">Lorem</span>');
 }
 
 //exercice 3
