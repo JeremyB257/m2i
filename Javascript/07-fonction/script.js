@@ -29,3 +29,13 @@ function pgcd(a, b) {
 console.log(pgcd(221, 782));
 
 //exercice 4
+
+function pair(a) {
+  if (a % 2 == 0) {
+    return a + ' est pair';
+  } else {
+    return a + ' est impair';
+  }
+}
+
+console.log(pair(11));
