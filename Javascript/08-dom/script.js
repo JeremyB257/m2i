@@ -28,3 +28,4 @@ function randColor() {
 }
 
 console.log(randColor());
+document.body.style.backgroundColor = randColor();
