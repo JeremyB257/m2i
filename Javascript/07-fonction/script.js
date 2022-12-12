@@ -15,3 +15,17 @@ function bitcoin(euro) {
 }
 console.log(bitcoin('16'));
 console.log(bitcoin('16€'));
+
+//exercice 3
+function pgcd(a, b) {
+  while (b != 0) {
+    let t = b;
+    b = a % b;
+    a = t;
+  }
+  return a;
+}
+
+console.log(pgcd(221, 782));
+
+//exercice 4
