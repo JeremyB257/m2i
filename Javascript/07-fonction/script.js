@@ -52,3 +52,24 @@ function prime(number) {
   return count == 2 ? `${number} est un chiffre premier` : `${number} n'est pas un chiffre premier`;
 }
 console.log(prime(11));
+
+//exercice 6
+function fibonacci(nbr) {
+  let n1 = 0;
+  let n2 = 1;
+  let somme = 0;
+  let arr = [];
+
+  for (let i = 2; i <= nbr; i++) {
+    somme = n1 + n2;
+
+    n1 = n2;
+
+    n2 = somme;
+    arr.push(n2);
+  }
+
+  return arr;
+}
+
+console.log(fibonacci(10));
