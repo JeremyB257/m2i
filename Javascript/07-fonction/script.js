@@ -58,7 +58,7 @@ function fibonacci(nbr) {
   let n1 = 0;
   let n2 = 1;
   let somme = 0;
-  let arr = [];
+  let arr = [n2];
 
   for (let i = 2; i <= nbr; i++) {
     somme = n1 + n2;
