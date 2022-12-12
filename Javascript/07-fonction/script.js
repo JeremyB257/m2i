@@ -44,7 +44,7 @@ console.log(pair(11));
 
 function prime(number) {
   let count = 0;
-  for (let i = 0; i <= number; i++) {
+  for (let i = 1; i <= number; i++) {
     if (number % i == 0) {
       count++;
     }
