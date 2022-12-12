@@ -39,3 +39,16 @@ function pair(a) {
 }
 
 console.log(pair(11));
+
+//exercice 5
+
+function prime(number) {
+  let count = 0;
+  for (let i = 0; i <= number; i++) {
+    if (number % i == 0) {
+      count++;
+    }
+  }
+  return count == 2 ? `${number} est un chiffre premier` : `${number} n'est pas un chiffre premier`;
+}
+console.log(prime(11));
