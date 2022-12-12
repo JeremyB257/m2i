@@ -15,6 +15,7 @@ for (let i = 0; i < para.length; i++) {
 let link = document.createElement('a');
 link.innerHTML = 'Le lien en question';
 link.href = 'https://developer.mozilla.org/';
+link.target = '_blank';
 link.style.color = '#ffff';
 link.style.textDecoration = 'none';
 document.body.appendChild(link);
