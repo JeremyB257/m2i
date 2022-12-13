@@ -75,8 +75,19 @@ formInput.addEventListener('input', (e) => {
 
 //exercice 10
 const mouseDiv = document.querySelector('.mouse');
+let bool = false;
 
-document.body.addEventListener('mousemove', (e) => {
-  mouseDiv.style.top = `${e.pageY}px`;
-  mouseDiv.style.left = `${e.pageX}px`;
+mouseDiv.addEventListener('click', (e) => {
+  bool = true;
+});
+
+mouseDiv.addEventListener('dblclick', (e) => {
+  bool = false;
+});
+
+mouseDiv.addEventListener('mousemove', (e) => {
+  if (bool) {
+    mouseDiv.style.top = `${e.pageY}px`;
+    mouseDiv.style.left = `${e.pageX}px`;
+  }
 });
