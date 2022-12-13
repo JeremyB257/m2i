@@ -56,3 +56,11 @@ const btnColor = document.querySelector('.btnColor');
 btnColor.addEventListener('click', () => {
   document.body.style.backgroundColor = randColor();
 });
+
+//exercice 8
+const form = document.querySelector('.form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  alert(e.target[0].value);
+});
