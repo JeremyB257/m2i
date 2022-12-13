@@ -70,6 +70,5 @@ form.addEventListener('submit', (e) => {
 const formInput = document.querySelector('.formInput');
 
 formInput.addEventListener('input', (e) => {
-  console.log(e.target.value);
   title.innerHTML = e.target.value;
 });
