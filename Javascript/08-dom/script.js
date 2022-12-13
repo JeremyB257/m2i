@@ -29,3 +29,12 @@ function randColor() {
 
 console.log(randColor());
 document.body.style.backgroundColor = randColor();
+
+const img = document.querySelector('.imgExo5');
+
+img.addEventListener('mouseenter', () => {
+  img.src = './img/new-york.jpg';
+});
+img.addEventListener('mouseleave', () => {
+  img.src = './img/avatar.png';
+});
