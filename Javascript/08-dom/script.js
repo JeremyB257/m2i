@@ -79,13 +79,15 @@ let bool = false;
 
 mouseDiv.addEventListener('click', (e) => {
   bool = true;
+  mouseDiv.style.borderRadius = '50px';
 });
 
 mouseDiv.addEventListener('dblclick', (e) => {
   bool = false;
+  mouseDiv.style.borderRadius = '0px';
 });
 
-mouseDiv.addEventListener('mousemove', (e) => {
+document.body.addEventListener('mousemove', (e) => {
   if (bool) {
     mouseDiv.style.top = `${e.pageY}px`;
     mouseDiv.style.left = `${e.pageX}px`;
