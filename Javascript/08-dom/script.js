@@ -20,15 +20,15 @@ link.style.color = '#ffff';
 link.style.textDecoration = 'none';
 document.body.appendChild(link);
 
-function randColor() {
+function randColor(a = 1) {
   let green = Math.floor(Math.random() * 255);
   let blue = Math.floor(Math.random() * 255);
   let red = Math.floor(Math.random() * 255);
-  return `rgb(${red}, ${green}, ${blue})`;
+  return `rgba(${red}, ${green}, ${blue}, ${a})`;
 }
 
 console.log(randColor());
-document.body.style.backgroundColor = randColor();
+document.body.style.backgroundColor = randColor(0.4);
 
 //exercice 5
 const img = document.querySelector('.imgExo5');
@@ -54,7 +54,7 @@ title.addEventListener('click', () => {
 const btnColor = document.querySelector('.btnColor');
 
 btnColor.addEventListener('click', () => {
-  document.body.style.backgroundColor = randColor();
+  document.body.style.backgroundColor = randColor(0.4);
 });
 
 //exercice 8
