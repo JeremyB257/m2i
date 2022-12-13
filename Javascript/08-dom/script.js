@@ -50,3 +50,9 @@ title.addEventListener('click', () => {
 });
 
 //exercice 7
+
+const btnColor = document.querySelector('.btnColor');
+
+btnColor.addEventListener('click', () => {
+  document.body.style.backgroundColor = randColor();
+});
