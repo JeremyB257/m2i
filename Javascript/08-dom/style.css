@@ -7,3 +7,12 @@ img {
 h1 {
   user-select: none;
 }
+
+.mouse {
+  position: absolute;
+  background-color: antiquewhite;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+}

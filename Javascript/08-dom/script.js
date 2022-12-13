@@ -72,3 +72,5 @@ const formInput = document.querySelector('.formInput');
 formInput.addEventListener('input', (e) => {
   title.innerHTML = e.target.value;
 });
+
+//exercice 10
