@@ -74,3 +74,9 @@ formInput.addEventListener('input', (e) => {
 });
 
 //exercice 10
+const mouseDiv = document.querySelector('.mouse');
+
+document.body.addEventListener('mousemove', (e) => {
+  mouseDiv.style.top = `${e.pageY}px`;
+  mouseDiv.style.left = `${e.pageX}px`;
+});
