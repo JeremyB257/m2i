@@ -30,6 +30,7 @@ function randColor() {
 console.log(randColor());
 document.body.style.backgroundColor = randColor();
 
+//exercice 5
 const img = document.querySelector('.imgExo5');
 
 img.addEventListener('mouseenter', () => {
@@ -38,3 +39,14 @@ img.addEventListener('mouseenter', () => {
 img.addEventListener('mouseleave', () => {
   img.src = './img/avatar.png';
 });
+
+//exercice 6
+
+const title = document.querySelector('.title');
+
+title.addEventListener('click', () => {
+  title.style.color = randColor();
+  title.style.cursor = 'pointer';
+});
+
+//exercice 7

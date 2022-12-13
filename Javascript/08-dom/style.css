@@ -3,3 +3,7 @@ img {
   object-fit: cover;
   height: 300px;
 }
+
+h1 {
+  user-select: none;
+}
