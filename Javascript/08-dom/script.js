@@ -64,3 +64,12 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   alert(e.target[0].value);
 });
+
+//exercice 9
+
+const formInput = document.querySelector('.formInput');
+
+formInput.addEventListener('input', (e) => {
+  console.log(e.target.value);
+  title.innerHTML = e.target.value;
+});
