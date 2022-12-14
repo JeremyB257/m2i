@@ -41,3 +41,36 @@ function select() {
     this.classList.remove('selected');
   }
 }
+
+//exo 1
+
+const title = document.querySelector('.title');
+const arr = ['Developpeur', 'Administrateur'];
+let index = 0;
+setInterval(() => {
+  title.innerHTML = arr[index];
+  index++;
+  if (index == arr.length) {
+    index = 0;
+  }
+}, 5000);
+
+//exo 2
+
+function randColor(a = 1) {
+  let green = Math.floor(Math.random() * 255);
+  let blue = Math.floor(Math.random() * 255);
+  let red = Math.floor(Math.random() * 255);
+  return `rgba(${red}, ${green}, ${blue}, ${a})`;
+}
+setInterval(() => {
+  document.body.style.backgroundColor = randColor(0.4);
+}, 3000);
+
+//exo 3
+
+const dateDiv = document.querySelector('.dateDiv');
+
+setInterval(() => {
+  dateDiv.innerHTML = new Date().toTimeString().split(' ')[0];
+}, 1000);

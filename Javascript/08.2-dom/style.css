@@ -29,3 +29,7 @@
   background-color: lightgray;
   box-shadow: 0 0 5px 0 #7d7d7d;
 }
+
+body {
+  transition: all 3s;
+}
