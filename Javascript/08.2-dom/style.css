@@ -21,6 +21,7 @@
   width: 32%;
   background-color: lightsalmon;
   border: 2px solid grey;
+  border-radius: 5px;
 }
 
 .selected {

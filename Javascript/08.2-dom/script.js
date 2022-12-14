@@ -24,3 +24,20 @@ for (let button of buttons) {
 }
 
 // Exercice
+
+const cards = document.querySelectorAll('.card');
+
+for (const card of cards) {
+  card.addEventListener('click', select);
+}
+
+function select() {
+  if (!this.classList.contains('selected')) {
+    for (const card of cards) {
+      card.classList.remove('selected');
+    }
+    this.classList.add('selected');
+  } else {
+    this.classList.remove('selected');
+  }
+}
