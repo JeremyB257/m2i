@@ -9,3 +9,22 @@
 .border {
   border: 1px solid black;
 }
+
+/* exercice */
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.card {
+  height: 200px;
+  width: 32%;
+  background-color: lightsalmon;
+  border: 2px solid grey;
+}
+
+.selected {
+  border: 2px solid black;
+  background-color: lightgray;
+  box-shadow: 0 0 5px 0 #7d7d7d;
+}

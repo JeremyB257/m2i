@@ -22,3 +22,5 @@ function handleClasses(e) {
 for (let button of buttons) {
   button.addEventListener('click', handleClasses);
 }
+
+// Exercice
