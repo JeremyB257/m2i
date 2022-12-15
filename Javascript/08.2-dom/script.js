@@ -63,9 +63,11 @@ function randColor(a = 1) {
   let red = Math.floor(Math.random() * 255);
   return `rgba(${red}, ${green}, ${blue}, ${a})`;
 }
+
 setInterval(() => {
   document.body.style.backgroundColor = randColor(0.4);
 }, 3000);
+document.body.style.transition = '3s';
 
 //exo 3
 
