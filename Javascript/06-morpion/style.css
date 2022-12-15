@@ -9,7 +9,9 @@ table {
   width: 500px;
   height: 500px;
 }
-
+tbody {
+  border: 2px solid white;
+}
 td {
   border: 1px solid black;
   position: relative;
