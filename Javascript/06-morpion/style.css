@@ -22,8 +22,10 @@ td button {
   top: 5%;
   left: 5%;
   font-weight: bold;
-  font-size: 50px;
-  border-width: 1px;
+  font-size: 64px;
+  border: none;
+  background-color: transparent;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .message {
