@@ -4,8 +4,8 @@ const message = document.querySelector('.message');
 const resetBtn = document.querySelector('.reset');
 
 //event
-for (btn of buttons) {
-  btn.addEventListener('click', addPion);
+for (const button of buttons) {
+  button.addEventListener('click', addPion);
 }
 resetBtn.addEventListener('click', reset);
 
@@ -132,15 +132,8 @@ function reset() {
     button.disabled = false;
     button.innerHTML = '';
     button.style.backgroundColor = 'transparent';
+    button.addEventListener('click', addPion);
   }
-  p0.addEventListener('click', addPion);
-  p1.addEventListener('click', addPion);
-  p2.addEventListener('click', addPion);
-  p3.addEventListener('click', addPion);
-  p4.addEventListener('click', addPion);
-  p5.addEventListener('click', addPion);
-  p6.addEventListener('click', addPion);
-  p7.addEventListener('click', addPion);
-  p8.addEventListener('click', addPion);
+
   resetBtn.style.display = 'none';
 }
