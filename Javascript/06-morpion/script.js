@@ -21,7 +21,7 @@ let winner = false;
 message.innerHTML = "C'est au joueur 1 de jouer";
 
 // function
-function addPion(e) {
+function addPion() {
   resetBtn.style.display = 'block';
   this.removeEventListener('click', addPion);
   if (turn % 2 == 0) {
