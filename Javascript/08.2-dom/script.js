@@ -69,7 +69,7 @@ setInterval(() => {
 }, 3000);
 document.body.style.transition = '3s';
 
-//exo 3
+//exo 3 + 4
 
 const dateDiv = document.querySelector('.dateDiv');
 
