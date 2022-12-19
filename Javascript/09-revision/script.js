@@ -36,3 +36,17 @@ let yearInterval = setInterval(() => {
     clearInterval(yearInterval);
   }
 }, 3000);
+
+//exo 5
+
+let inputName = document.querySelector('#input-name');
+let inputColor = document.querySelector('#input-color');
+let btnChange = document.querySelector('#button-change');
+let cowColor = document.querySelectorAll('.cow-color');
+
+btnChange.addEventListener('click', () => {
+  for (let cow of cowColor) {
+    cow.innerHTML = inputName.value;
+    cow.style.backgroundColor = inputColor.value;
+  }
+});
