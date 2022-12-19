@@ -15,3 +15,17 @@
 .round {
   border-radius: 10px;
 }
+
+.numberDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+}

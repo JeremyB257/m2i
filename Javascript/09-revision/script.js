@@ -80,9 +80,11 @@ addBox.addEventListener('click', () => {
 //exo 7
 
 let numberDiv = document.createElement('div');
+numberDiv.className = 'numberDiv';
 document.body.appendChild(numberDiv);
 for (let i = 1; i <= 100; i++) {
   let number = document.createElement('div');
+  number.className = 'number';
   number.innerHTML = i;
   numberDiv.appendChild(number);
   if (isPrime(i)) {
