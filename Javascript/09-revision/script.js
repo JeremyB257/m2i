@@ -113,3 +113,25 @@ tva.addEventListener('change', calcTTC);
 function calcTTC() {
   ttc.innerHTML = parseInt(ht.value * tva.value) / 100 + parseInt(ht.value);
 }
+
+//exo 9 - les pays
+
+let countries = ['france', 'italie', 'angleterre', 'espagne', 'portugal', 'belgique'].sort();
+let listUl = document.createElement('ul');
+document.body.appendChild(listUl);
+
+for (let countrie of countries) {
+  let list = document.createElement('li');
+  list.innerHTML = countrie[0].toUpperCase() + countrie.slice(1);
+  listUl.appendChild(list);
+  if (countrie == 'angleterre') {
+    list.style.listStyleImage = `url('https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/england.png')`;
+  } else if (countrie == 'portugal') {
+    list.style.listStyleImage = `url('https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/pt.png')`;
+  } else {
+    list.style.listStyleImage = `url('https://raw.githubusercontent.com/stevenrskelton/flag-icon/master/png/75/country-4x3/${
+      countrie[0] + countrie[1]
+    }.png')`;
+  }
+  list.style.listStylePosition = 'inside';
+}
