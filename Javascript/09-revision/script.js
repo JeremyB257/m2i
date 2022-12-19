@@ -76,3 +76,25 @@ addBox.addEventListener('click', () => {
   let box = boxes.appendChild(boxs[0].cloneNode(true));
   box.id = `box${boxs.length + 1}`;
 });
+
+//exo 7
+
+let numberDiv = document.createElement('div');
+document.body.appendChild(numberDiv);
+for (let i = 1; i <= 100; i++) {
+  let number = document.createElement('div');
+  number.innerHTML = i;
+  numberDiv.appendChild(number);
+  if (isPrime(i)) {
+    number.style.background = 'lightCoral';
+  } else if (i % 2 == 0) {
+    number.style.background = 'lightGreen';
+  } else {
+    number.style.background = 'khaki';
+  }
+}
+
+function isPrime(num) {
+  for (let i = 2, s = Math.sqrt(num); i <= s; i++) if (num % i === 0) return false;
+  return num > 1;
+}
