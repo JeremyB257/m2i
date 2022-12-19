@@ -50,3 +50,29 @@ btnChange.addEventListener('click', () => {
     cow.style.backgroundColor = inputColor.value;
   }
 });
+
+//exo 6
+let boxes = document.getElementById('boxes');
+let toggleColors = document.querySelector('#toggle-colors');
+let toggleRoundedges = document.querySelector('#toggle-roundedges');
+let addBox = document.querySelector('#add-box');
+
+toggleColors.addEventListener('click', () => {
+  let boxs = document.querySelectorAll('.box');
+  for (let box of boxs) {
+    box.classList.toggle('color');
+  }
+});
+
+toggleRoundedges.addEventListener('click', () => {
+  let boxs = document.querySelectorAll('.box');
+  for (let box of boxs) {
+    box.classList.toggle('round');
+  }
+});
+
+addBox.addEventListener('click', () => {
+  let boxs = document.querySelectorAll('.box');
+  let box = boxes.appendChild(boxs[0].cloneNode(true));
+  box.id = `box${boxs.length + 1}`;
+});
