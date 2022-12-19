@@ -37,7 +37,7 @@ let yearInterval = setInterval(() => {
   }
 }, 3000);
 
-//exo 5
+//exo 5 - change text & color
 
 let inputName = document.querySelector('#input-name');
 let inputColor = document.querySelector('#input-color');
@@ -51,7 +51,8 @@ btnChange.addEventListener('click', () => {
   }
 });
 
-//exo 6
+//exo 6 - btn bg color / rounded div
+
 let boxes = document.getElementById('boxes');
 let toggleColors = document.querySelector('#toggle-colors');
 let toggleRoundedges = document.querySelector('#toggle-roundedges');
@@ -77,7 +78,7 @@ addBox.addEventListener('click', () => {
   box.id = `box${boxs.length + 1}`;
 });
 
-//exo 7
+//exo 7 - DIV Number * 100
 
 let numberDiv = document.createElement('div');
 numberDiv.className = 'numberDiv';
@@ -99,4 +100,16 @@ for (let i = 1; i <= 100; i++) {
 function isPrime(num) {
   for (let i = 2, s = Math.sqrt(num); i <= s; i++) if (num % i === 0) return false;
   return num > 1;
+}
+
+//exo 8 - formulaire HT -> TTC
+let ht = document.querySelector('.ht');
+let tva = document.querySelector('.tva');
+let ttc = document.querySelector('.ttc');
+
+ht.addEventListener('change', calcTTC);
+tva.addEventListener('change', calcTTC);
+
+function calcTTC() {
+  ttc.innerHTML = parseInt(ht.value * tva.value) / 100 + parseInt(ht.value);
 }
