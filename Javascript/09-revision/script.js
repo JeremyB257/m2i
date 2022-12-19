@@ -24,3 +24,15 @@ document.querySelector('h2').addEventListener('click', () => {
     }
   }
 });
+
+//exo 4
+
+let year = document.querySelector('.year');
+let countYear = 0;
+let yearInterval = setInterval(() => {
+  year.innerHTML = parseInt(year.innerHTML) + 1;
+  countYear++;
+  if (countYear >= 4) {
+    clearInterval(yearInterval);
+  }
+}, 3000);
