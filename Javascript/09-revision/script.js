@@ -135,3 +135,10 @@ for (let countrie of countries) {
   }
   list.style.listStylePosition = 'inside';
 }
+
+//exo 10
+
+let students = [
+  ['Fiorella', [10, 12, 13]],
+  ['Marina', [15, 11, 9]],
+];
