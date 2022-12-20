@@ -155,3 +155,17 @@ for (let student of students) {
   list.innerHTML = student;
   listUlNote.appendChild(list);
 }
+
+let btnMoy = document.createElement('button');
+btnMoy.innerHTML = 'Moyenne';
+document.body.appendChild(btnMoy);
+
+btnMoy.addEventListener('click', () => {
+  let title = document.createElement('h1');
+  let sum = 0;
+  for (let i = 0; i < students[0][1].length; i++) {
+    sum += students[0][1][i];
+  }
+  title.innerHTML = sum / students[0][1].length;
+  document.body.appendChild(title);
+});
