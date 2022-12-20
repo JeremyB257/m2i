@@ -28,3 +28,15 @@ calcAgeBtn.addEventListener('click', () => {
 function calcAge(age = 0) {
   return 365 * age;
 }
+
+//exo 3
+
+function bissextile(year) {
+  if (year % 100 == 0 && year % 400 !== 0) {
+    return `${year} n'est pas une année bissextile`;
+  } else if (year % 4 == 0) {
+    return `${year} est une année bissextile`;
+  } else {
+    return `${year} n'est pas une année bissextile`;
+  }
+}
