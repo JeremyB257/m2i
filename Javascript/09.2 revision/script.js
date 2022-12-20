@@ -60,3 +60,25 @@ function anagram(word1, word2) {
     return `Ce ne sont pas des annagrames`;
   }
 }
+
+//exo 6 - dé
+
+const exo6 = document.querySelector('.exo6');
+const dice = document.querySelector('.dice');
+const btnDice = document.querySelector('.btnDe');
+
+let count = 0;
+btnDice.addEventListener('click', () => {
+  let diceInterval = setInterval(() => {
+    dice.innerHTML = `&#x268${randNum()}`;
+    count++;
+    if (count >= 10) {
+      clearInterval(diceInterval);
+      count = 0;
+    }
+  }, 100);
+});
+
+function randNum() {
+  return Math.floor(Math.random() * (5 - 0 + 1));
+}
