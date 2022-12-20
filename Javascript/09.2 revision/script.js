@@ -55,9 +55,9 @@ function palindrom(word) {
 
 function anagram(word1, word2) {
   if (word1.toLowerCase().split('').sort().join('') == word2.toLowerCase().split('').sort().join('')) {
-    return `Ce sont des annagrames`;
+    return `Ce sont des anagrammes`;
   } else {
-    return `Ce ne sont pas des annagrames`;
+    return `Ce ne sont pas des anagrammes`;
   }
 }
 
