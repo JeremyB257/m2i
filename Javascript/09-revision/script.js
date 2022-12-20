@@ -142,3 +142,16 @@ let students = [
   ['Fiorella', [10, 12, 13]],
   ['Marina', [15, 11, 9]],
 ];
+
+let para = document.createElement('p');
+para.innerHTML = students[0][0] + ' a eu ' + students[0][1];
+document.body.appendChild(para);
+
+let listUlNote = document.createElement('ul');
+document.body.appendChild(listUlNote);
+
+for (let student of students) {
+  let list = document.createElement('li');
+  list.innerHTML = student;
+  listUlNote.appendChild(list);
+}
