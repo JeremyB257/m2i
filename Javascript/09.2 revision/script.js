@@ -29,7 +29,7 @@ function calcAge(age = 0) {
   return 365 * age;
 }
 
-//exo 3
+//exo 3 - bissextile
 
 function bissextile(year) {
   if (year % 100 == 0 && year % 400 !== 0) {
@@ -38,5 +38,15 @@ function bissextile(year) {
     return `${year} est une année bissextile`;
   } else {
     return `${year} n'est pas une année bissextile`;
+  }
+}
+
+//exo 4 - palindrome
+
+function palindrom(word) {
+  if (word.split('').reverse().join('') == word) {
+    return `${word} est un palindrome`;
+  } else {
+    return `${word} n'est pas un palindrome`;
   }
 }
