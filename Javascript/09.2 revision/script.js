@@ -92,7 +92,7 @@ romanInput.addEventListener('input', () => {
   arabicInput.value = roman_to_Int(romanInput.value);
 });
 arabicInput.addEventListener('input', () => {
-  romanInput.value = arabic_to_Int(arabicInput.value);
+  romanInput.value = int_to_roman(arabicInput.value);
 });
 
 function roman_to_Int(str1) {
@@ -134,7 +134,7 @@ function char_to_int(c) {
   }
 }
 
-function arabic_to_Int(num) {
+function int_to_roman(num) {
   var lookup = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 },
     roman = '',
     i;
