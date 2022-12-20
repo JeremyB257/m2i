@@ -145,3 +145,18 @@ function intToRoman(num) {
   }
   return roman;
 }
+
+//exo 8 - Liste de course
+
+const courseInput = document.querySelector('.courseInput');
+const courseBtn = document.querySelector('.courseBtn');
+const courseList = document.querySelector('.courseList');
+
+courseBtn.addEventListener('click', () => {
+  if (courseInput.value) {
+    let list = document.createElement('li');
+    list.innerHTML = courseInput.value;
+    courseList.appendChild(list);
+    courseInput.value = '';
+  }
+});
