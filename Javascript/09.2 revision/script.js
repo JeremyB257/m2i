@@ -97,7 +97,8 @@ arabicInput.addEventListener('input', () => {
 
 function romanToInt(str1) {
   let num = char_to_int(str1.charAt(0));
-  let pre, curr;
+  let pre = null;
+  let curr = null;
 
   for (let i = 1; i < str1.length; i++) {
     curr = char_to_int(str1.charAt(i));
@@ -134,16 +135,16 @@ function char_to_int(c) {
 }
 
 function intToRoman(num) {
-  let lookup = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 },
-    roman = '',
-    i;
-  for (i in lookup) {
-    while (num >= lookup[i]) {
-      roman += i;
-      num -= lookup[i];
+  let roman = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
+  let result = '';
+
+  for (let i in roman) {
+    while (num >= roman[i]) {
+      result += i;
+      num -= roman[i];
     }
   }
-  return roman;
+  return result;
 }
 
 //exo 8 - Liste de course
