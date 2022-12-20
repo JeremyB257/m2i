@@ -50,3 +50,13 @@ function palindrom(word) {
     return `${word} n'est pas un palindrome`;
   }
 }
+
+//exo 5 - anagramme
+
+function anagram(word1, word2) {
+  if (word1.toLowerCase().split('').sort().join('') == word2.toLowerCase().split('').sort().join('')) {
+    return `Ce sont des annagrames`;
+  } else {
+    return `Ce ne sont pas des annagrames`;
+  }
+}
