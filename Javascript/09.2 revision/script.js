@@ -82,3 +82,67 @@ btnDice.addEventListener('click', () => {
 function randNum() {
   return Math.floor(Math.random() * (5 - 0 + 1));
 }
+
+//exo 7 - chiffre romain
+
+const arabicInput = document.querySelector('.arabicInput');
+const romanInput = document.querySelector('.romanInput');
+
+romanInput.addEventListener('input', () => {
+  arabicInput.value = roman_to_Int(romanInput.value);
+});
+arabicInput.addEventListener('input', () => {
+  romanInput.value = arabic_to_Int(arabicInput.value);
+});
+
+function roman_to_Int(str1) {
+  if (str1 == null) return -1;
+  var num = char_to_int(str1.charAt(0));
+  var pre, curr;
+
+  for (var i = 1; i < str1.length; i++) {
+    curr = char_to_int(str1.charAt(i));
+    pre = char_to_int(str1.charAt(i - 1));
+    if (curr <= pre) {
+      num += curr;
+    } else {
+      num = num - pre * 2 + curr;
+    }
+  }
+
+  return num;
+}
+
+function char_to_int(c) {
+  switch (c) {
+    case 'I':
+      return 1;
+    case 'V':
+      return 5;
+    case 'X':
+      return 10;
+    case 'L':
+      return 50;
+    case 'C':
+      return 100;
+    case 'D':
+      return 500;
+    case 'M':
+      return 1000;
+    default:
+      return -1;
+  }
+}
+
+function arabic_to_Int(num) {
+  var lookup = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 },
+    roman = '',
+    i;
+  for (i in lookup) {
+    while (num >= lookup[i]) {
+      roman += i;
+      num -= lookup[i];
+    }
+  }
+  return roman;
+}
