@@ -15,7 +15,7 @@ function multiply(num1 = 0, num2 = 0) {
   return num1 * num2;
 }
 
-//exo 2
+//exo 2 - age
 
 const age = document.querySelector('.age');
 const calcAgeBtn = document.querySelector('.calcAge');
@@ -30,6 +30,11 @@ function calcAge(age = 0) {
 }
 
 //exo 3 - bissextile
+let exo3 = document.querySelector('.exo3');
+
+exo3.children[2].addEventListener('click', () => {
+  exo3.children[3].innerHTML = bissextile(parseInt(exo3.children[1].value));
+});
 
 function bissextile(year) {
   if (year % 100 == 0 && year % 400 !== 0) {
@@ -42,6 +47,11 @@ function bissextile(year) {
 }
 
 //exo 4 - palindrome
+let exo4 = document.querySelector('.exo4');
+
+exo4.children[2].addEventListener('click', () => {
+  exo4.children[3].innerHTML = palindrom(exo4.children[1].value);
+});
 
 function palindrom(word) {
   if (word.split('').reverse().join('') == word) {
@@ -52,6 +62,11 @@ function palindrom(word) {
 }
 
 //exo 5 - anagramme
+let exo5 = document.querySelector('.exo5');
+
+exo5.children[3].addEventListener('click', () => {
+  exo5.children[4].innerHTML = anagram(exo5.children[1].value, exo5.children[2].value);
+});
 
 function anagram(word1, word2) {
   if (word1.toLowerCase().split('').sort().join('') == word2.toLowerCase().split('').sort().join('')) {
