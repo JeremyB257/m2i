@@ -161,3 +161,56 @@ courseBtn.addEventListener('click', () => {
     courseInput.value = '';
   }
 });
+
+//exo 9
+
+let movies = [
+  {
+    title: 'Star Wars: Un nouvel espoir',
+    releasedAt: 1977,
+    duration: 125,
+    actors: ['Mark Hamill', 'Carrie Fisher', 'Harrison Ford'],
+    format: 'VOD',
+    genre: 'Science-fiction',
+  },
+  {
+    title: "Harry Potter à l'école des sorciers",
+    releasedAt: 2001,
+    duration: 152,
+    actors: ['Daniel Radcliffe', 'Rupert Grint', 'Emma Watson', 'Mark Hamill'],
+    format: 'DVD',
+    genre: 'Science-fiction',
+  },
+  {
+    title: 'Le monde de Nemo',
+    releasedAt: 2003,
+    duration: 101,
+    actors: ['Albert Brooks', 'Nemo', 'Dorie'],
+    format: 'Blu-ray',
+    genre: 'Animation',
+  },
+];
+
+const listmovie = document.querySelector('.listmovie');
+const movie2000 = document.querySelector('.movie2000');
+const movie2h = document.querySelector('.movie2h');
+const movieBluray = document.querySelector('.movieBluray');
+const movieSci = document.querySelector('.movieSci');
+
+//movie List
+for (let movie of movies) {
+  let list = document.createElement('p');
+  list.innerHTML = `${movie.title} (${movie.releasedAt})`;
+  listmovie.appendChild(list);
+}
+
+//movie before 2000
+movies
+  .filter((movie) => movie.releasedAt < 2000)
+  .forEach((movie) => {
+    let list = document.createElement('p');
+    list.innerHTML = `${movie.title} (${movie.releasedAt})`;
+    movie2000.appendChild(list);
+  });
+
+//movie more 2h
