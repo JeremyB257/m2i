@@ -229,3 +229,12 @@ movies[1].actors.forEach((actor) => {
   list.innerHTML = `${actor}`;
   movieHP.appendChild(list);
 });
+
+//bluray movie
+movies
+  .filter((movie) => movie.format == 'Blu-ray')
+  .forEach((movie) => {
+    let list = document.createElement('p');
+    list.innerHTML = `${movie.title} (${movie.releasedAt})`;
+    movieBluray.appendChild(list);
+  });
