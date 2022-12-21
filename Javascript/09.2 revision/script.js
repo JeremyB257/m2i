@@ -238,3 +238,17 @@ movies
     list.innerHTML = `${movie.title} (${movie.releasedAt})`;
     movieBluray.appendChild(list);
   });
+
+//sci actor
+movies
+  .filter((movie) => movie.genre == 'Science-fiction')
+  .forEach((movie) => {
+    let title = document.createElement('h4');
+    title.innerHTML = `${movie.title} : `;
+    movieSci.appendChild(title);
+    for (let actor of movie.actors) {
+      let list = document.createElement('p');
+      list.innerHTML = `${actor}`;
+      movieSci.appendChild(list);
+    }
+  });
