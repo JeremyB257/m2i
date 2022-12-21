@@ -222,3 +222,10 @@ movies
     list.innerHTML = `${movie.title} (${movie.releasedAt})`;
     movie2h.appendChild(list);
   });
+
+//Harry Potter actor
+movies[1].actors.forEach((actor) => {
+  let list = document.createElement('p');
+  list.innerHTML = `${actor}`;
+  movieHP.appendChild(list);
+});
