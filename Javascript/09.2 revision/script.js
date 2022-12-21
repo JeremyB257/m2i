@@ -194,6 +194,7 @@ let movies = [
 const listmovie = document.querySelector('.listmovie');
 const movie2000 = document.querySelector('.movie2000');
 const movie2h = document.querySelector('.movie2h');
+const movieHP = document.querySelector('.movieHP');
 const movieBluray = document.querySelector('.movieBluray');
 const movieSci = document.querySelector('.movieSci');
 
@@ -214,3 +215,10 @@ movies
   });
 
 //movie more 2h
+movies
+  .filter((movie) => movie.duration > 120)
+  .forEach((movie) => {
+    let list = document.createElement('p');
+    list.innerHTML = `${movie.title} (${movie.releasedAt})`;
+    movie2h.appendChild(list);
+  });
