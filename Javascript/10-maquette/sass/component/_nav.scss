@@ -4,12 +4,13 @@ header {
   left: 0;
   right: 0;
   background-color: white;
+  height: 80px;
   .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1000px;
-    margin: 20px auto;
+    margin: 28px auto;
     font-weight: bold;
     .logo {
       display: flex;

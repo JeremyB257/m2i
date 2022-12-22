@@ -36,13 +36,14 @@ header {
   left: 0;
   right: 0;
   background-color: white;
+  height: 80px;
 }
 header .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1000px;
-  margin: 20px auto;
+  margin: 28px auto;
   font-weight: bold;
 }
 header .header-container .logo {
@@ -57,6 +58,39 @@ header .header-container nav ul {
 }
 header .header-container nav ul li {
   margin: 0 25px;
+}
+
+.banner {
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 130px auto;
+}
+.banner img {
+  width: 50%;
+}
+.banner .right-side {
+  width: 48%;
+  margin-right: 100px;
+}
+.banner .right-side h1 {
+  font-size: 38px;
+}
+.banner .right-side p {
+  margin: 15px 0 25px 0;
+}
+.banner .right-side a {
+  display: inline-block;
+  background-color: #dc3845;
+  color: white;
+  font-weight: bold;
+  padding: 15px 25px;
+  border-radius: 50px;
+}
+
+.giving .cards .card img {
+  width: 20%;
 }
 
 /*# sourceMappingURL=style.css.map */
