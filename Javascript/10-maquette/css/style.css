@@ -5,6 +5,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  margin: 20px;
+}
+
 h1,
 h2,
 h3,
@@ -385,7 +389,8 @@ footer {
 }
 footer > img {
   position: absolute;
-  width: 10%;
+  width: 140px;
+  z-index: -1;
 }
 footer .ball1 {
   bottom: 0;
@@ -395,14 +400,31 @@ footer .ball2 {
   bottom: 10%;
   right: 5%;
 }
+@media (max-width: 768px) {
+  footer .ball1 {
+    bottom: 50%;
+    left: 60%;
+  }
+  footer .ball2 {
+    bottom: 20%;
+    right: 0%;
+  }
+}
 
 .footer-top {
   max-width: 1000px;
   width: 100%;
   display: flex;
+  gap: 20px;
   align-items: center;
   justify-content: space-between;
   margin: 130px auto 120px;
+}
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .footer-top .footer-logo {
   width: 20%;
@@ -415,6 +437,9 @@ footer .ball2 {
 }
 .footer-top li {
   color: #5d5656;
+}
+.footer-top li img {
+  width: 130px;
 }
 
 /*# sourceMappingURL=style.css.map */

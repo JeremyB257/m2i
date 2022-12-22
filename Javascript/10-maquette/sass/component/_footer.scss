@@ -6,7 +6,8 @@ footer {
   margin-bottom: 20px;
   > img {
     position: absolute;
-    width: 10%;
+    width: 140px;
+    z-index: -1;
   }
   .ball1 {
     bottom: 0;
@@ -16,16 +17,30 @@ footer {
     bottom: 10%;
     right: 5%;
   }
+  @media (max-width: 768px) {
+    .ball1 {
+      bottom: 50%;
+      left: 60%;
+    }
+    .ball2 {
+      bottom: 20%;
+      right: 0%;
+    }
+  }
 }
 
 .footer-top {
   max-width: 1000px;
   width: 100%;
   display: flex;
+  gap: 20px;
   align-items: center;
   justify-content: space-between;
   margin: 130px auto 120px;
-
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
   .footer-logo {
     width: 20%;
     img {
@@ -37,5 +52,8 @@ footer {
   }
   li {
     color: $color-para;
+    img {
+      width: 130px;
+    }
   }
 }
