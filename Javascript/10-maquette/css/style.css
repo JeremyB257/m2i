@@ -295,6 +295,11 @@ header .header-container nav > i {
 .swiper .swiper-slide .card:hover {
   transform: translateY(-5px);
 }
+@media (max-width: 768px) {
+  .swiper .swiper-slide .card {
+    margin: 0;
+  }
+}
 .swiper .swiper-slide .card .top-part {
   background-color: #dc3845;
   border-radius: 0 0 100% 100%;

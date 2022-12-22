@@ -37,6 +37,9 @@
       &:hover {
         transform: translateY(-5px);
       }
+      @media (max-width: 768px) {
+        margin: 0;
+      }
       .top-part {
         background-color: $color-primary;
         border-radius: 0 0 100% 100%;
