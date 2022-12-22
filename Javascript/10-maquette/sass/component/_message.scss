@@ -6,16 +6,27 @@
   margin: 130px auto 0;
   background-color: $color-primary;
   border-radius: 20px;
-  height: 380px;
+  min-height: 380px;
   img {
     width: 32%;
     transform: rotate(20deg);
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    img {
+      margin: 40px;
+    }
   }
   .left-side {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 35%;
+    @media (max-width: 768px) {
+      align-items: stretch;
+      width: 90%;
+      text-align: center;
+    }
     h1 {
       color: white;
     }

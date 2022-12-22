@@ -333,17 +333,32 @@ header .header-container nav > i {
   margin: 130px auto 0;
   background-color: #dc3845;
   border-radius: 20px;
-  height: 380px;
+  min-height: 380px;
 }
 .message img {
   width: 32%;
   transform: rotate(20deg);
+}
+@media (max-width: 768px) {
+  .message {
+    flex-direction: column;
+  }
+  .message img {
+    margin: 40px;
+  }
 }
 .message .left-side {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 35%;
+}
+@media (max-width: 768px) {
+  .message .left-side {
+    align-items: stretch;
+    width: 90%;
+    text-align: center;
+  }
 }
 .message .left-side h1 {
   color: white;
