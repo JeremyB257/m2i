@@ -278,4 +278,12 @@ header .header-container nav ul li {
   border-radius: 50px;
 }
 
+footer {
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 130px auto 0;
+}
+
 /*# sourceMappingURL=style.css.map */
