@@ -1,7 +1,41 @@
 footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+  > img {
+    position: absolute;
+    width: 10%;
+  }
+  .ball1 {
+    bottom: 0;
+    left: 10%;
+  }
+  .ball2 {
+    bottom: 10%;
+    right: 5%;
+  }
+}
+
+.footer-top {
   max-width: 1000px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 130px auto 0;
+  margin: 130px auto 120px;
+
+  .footer-logo {
+    width: 20%;
+    img {
+      width: 25px;
+    }
+    h3 {
+      display: inline;
+    }
+  }
+  li {
+    color: $color-para;
+  }
 }
