@@ -2,6 +2,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+li {
+  list-style-type: none;
 }
 
 a,
@@ -15,7 +20,31 @@ a:visited {
 }
 
 header {
-  max-width: 1200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 20px auto;
+  font-weight: bold;
+}
+header .header-container .logo {
+  display: flex;
+  align-items: center;
+}
+header .header-container .logo img {
+  width: 25px;
+}
+header .header-container nav ul {
+  display: flex;
+}
+header .header-container nav ul li {
+  margin: 0 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

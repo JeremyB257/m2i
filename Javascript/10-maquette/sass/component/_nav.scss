@@ -1,3 +1,30 @@
 header {
-  max-width: 1200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 20px auto;
+    font-weight: bold;
+    .logo {
+      display: flex;
+      align-items: center;
+      img {
+        width: 25px;
+      }
+    }
+    nav {
+      ul {
+        display: flex;
+        li {
+          margin: 0 25px;
+        }
+      }
+    }
+  }
 }
