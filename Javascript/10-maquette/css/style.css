@@ -118,12 +118,23 @@ header .header-container nav > i {
   justify-content: space-between;
   margin: 130px auto 0;
 }
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+  }
+}
 .banner img {
   width: 50%;
 }
 .banner .right-side {
   width: 48%;
   margin-right: 100px;
+}
+@media (max-width: 768px) {
+  .banner .right-side {
+    text-align: center;
+    margin-right: 0;
+  }
 }
 .banner .right-side h1 {
   font-size: 38px;

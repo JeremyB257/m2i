@@ -4,12 +4,19 @@
   align-items: center;
   justify-content: space-between;
   margin: 130px auto 0;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
   img {
     width: 50%;
   }
   .right-side {
     width: 48%;
     margin-right: 100px;
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-right: 0;
+    }
     h1 {
       font-size: 38px;
     }
