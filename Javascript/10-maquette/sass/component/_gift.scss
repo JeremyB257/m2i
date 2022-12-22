@@ -1,0 +1,35 @@
+.gift {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 100px auto;
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 29%;
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      margin: 15px;
+      padding: 20px;
+      height: 265px;
+      i {
+        position: absolute;
+        top: 5%;
+        right: 7%;
+        color: $color-primary;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 75%;
+      }
+    }
+  }
+}

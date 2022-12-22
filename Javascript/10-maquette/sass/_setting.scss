@@ -30,3 +30,22 @@ a:visited {
 .hidden {
   display: none;
 }
+
+.dark {
+  background-color: black;
+  color: white;
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: white;
+  }
+  header {
+    background-color: black;
+    color: white;
+    a {
+      color: white;
+    }
+  }
+}

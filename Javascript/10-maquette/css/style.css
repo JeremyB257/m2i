@@ -30,6 +30,25 @@ a:visited {
   display: none;
 }
 
+.dark {
+  background-color: black;
+  color: white;
+}
+.dark p,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4 {
+  color: white;
+}
+.dark header {
+  background-color: black;
+  color: white;
+}
+.dark header a {
+  color: white;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -120,6 +139,42 @@ header .header-container nav ul li {
 .giving .cards .card p {
   width: 170px;
   text-align: center;
+}
+
+.gift {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 100px auto;
+}
+.gift .cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.gift .cards .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 29%;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: 15px;
+  padding: 20px;
+  height: 265px;
+}
+.gift .cards .card i {
+  position: absolute;
+  top: 5%;
+  right: 7%;
+  color: #dc3845;
+}
+.gift .cards .card img {
+  display: block;
+  margin: 0 auto;
+  max-width: 75%;
 }
 
 /*# sourceMappingURL=style.css.map */
