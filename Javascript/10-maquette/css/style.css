@@ -35,7 +35,7 @@ a:visited {
 }
 
 .dark {
-  background-color: black;
+  background-color: #282525;
   color: white;
 }
 .dark p,
@@ -46,7 +46,7 @@ a:visited {
   color: white;
 }
 .dark header {
-  background-color: black;
+  background-color: #282525;
   color: white;
 }
 .dark header a {
