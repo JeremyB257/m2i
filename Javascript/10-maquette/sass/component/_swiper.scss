@@ -1,7 +1,11 @@
+.newGift {
+  h1 {
+    text-align: center;
+  }
+}
 .swiper {
   width: 1000px;
   height: 400px;
-
   .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -29,6 +33,10 @@
       border-radius: 15px;
       box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
       overflow: hidden;
+      transition: 0.3s;
+      &:hover {
+        transform: translateY(-5px);
+      }
       .top-part {
         background-color: $color-primary;
         border-radius: 0 0 100% 100%;

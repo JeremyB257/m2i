@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 100px auto;
+
   .cards {
     display: flex;
     flex-wrap: wrap;
@@ -19,6 +20,10 @@
       margin: 15px;
       padding: 20px;
       height: 265px;
+      transition: 0.3s;
+      &:hover {
+        transform: translateY(-5px);
+      }
       i {
         position: absolute;
         top: 5%;

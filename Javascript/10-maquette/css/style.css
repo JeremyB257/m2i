@@ -49,6 +49,16 @@ a:visited {
   color: white;
 }
 
+body > i {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  color: #dc3845;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -132,6 +142,7 @@ header .header-container nav ul li {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 0.3s;
 }
 .giving .cards .card img {
   width: 35%;
@@ -139,6 +150,9 @@ header .header-container nav ul li {
 .giving .cards .card p {
   width: 170px;
   text-align: center;
+}
+.giving .cards .card:hover {
+  transform: translateY(-5px);
 }
 
 .gift {
@@ -164,6 +178,10 @@ header .header-container nav ul li {
   margin: 15px;
   padding: 20px;
   height: 265px;
+  transition: 0.3s;
+}
+.gift .cards .card:hover {
+  transform: translateY(-5px);
 }
 .gift .cards .card i {
   position: absolute;
@@ -175,6 +193,10 @@ header .header-container nav ul li {
   display: block;
   margin: 0 auto;
   max-width: 75%;
+}
+
+.newGift h1 {
+  text-align: center;
 }
 
 .swiper {
@@ -207,6 +229,10 @@ header .header-container nav ul li {
   border-radius: 15px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
+  transition: 0.3s;
+}
+.swiper .swiper-slide .card:hover {
+  transform: translateY(-5px);
 }
 .swiper .swiper-slide .card .top-part {
   background-color: #dc3845;
