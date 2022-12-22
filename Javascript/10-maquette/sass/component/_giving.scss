@@ -19,8 +19,10 @@
       width: 33%;
       min-width: 250px;
       align-items: center;
-      transition: 0.3s;
-
+      transition: transform 0.3s;
+      @media (max-width: 768px) {
+        width: 50%;
+      }
       img {
         width: 35%;
       }

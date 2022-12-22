@@ -132,6 +132,7 @@ header .header-container nav > i {
 }
 @media (max-width: 768px) {
   .banner .right-side {
+    width: 85%;
     text-align: center;
     margin-right: 0;
   }
@@ -143,6 +144,11 @@ header .header-container nav > i {
   margin: 15px 0 35px 0;
   max-width: 355px;
 }
+@media (max-width: 768px) {
+  .banner .right-side p {
+    max-width: 100%;
+  }
+}
 .banner .right-side a {
   display: inline-block;
   background-color: #dc3845;
@@ -153,6 +159,11 @@ header .header-container nav > i {
 }
 .celebrate .banner {
   flex-direction: row-reverse;
+}
+@media (max-width: 768px) {
+  .celebrate .banner {
+    flex-direction: column-reverse;
+  }
 }
 
 .giving {
@@ -178,7 +189,12 @@ header .header-container nav > i {
   width: 33%;
   min-width: 250px;
   align-items: center;
-  transition: 0.3s;
+  transition: transform 0.3s;
+}
+@media (max-width: 768px) {
+  .giving .cards .card {
+    width: 50%;
+  }
 }
 .giving .cards .card img {
   width: 35%;
@@ -214,7 +230,12 @@ header .header-container nav > i {
   margin: 15px;
   padding: 20px;
   height: 265px;
-  transition: 0.3s;
+  transition: transform 0.3s;
+}
+@media (max-width: 768px) {
+  .gift .cards .card {
+    width: 43%;
+  }
 }
 .gift .cards .card:hover {
   transform: translateY(-5px);

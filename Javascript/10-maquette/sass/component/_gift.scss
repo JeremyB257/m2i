@@ -9,6 +9,7 @@
   .cards {
     display: flex;
     flex-wrap: wrap;
+
     .card {
       position: relative;
       display: flex;
@@ -20,7 +21,10 @@
       margin: 15px;
       padding: 20px;
       height: 265px;
-      transition: 0.3s;
+      transition: transform 0.3s;
+      @media (max-width: 768px) {
+        width: 43%;
+      }
       &:hover {
         transform: translateY(-5px);
       }
