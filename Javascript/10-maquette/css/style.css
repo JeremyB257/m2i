@@ -170,10 +170,13 @@ header .header-container nav > i {
 }
 .giving .cards {
   display: flex;
+  flex-wrap: wrap;
 }
 .giving .cards .card {
   display: flex;
   flex-direction: column;
+  width: 33%;
+  min-width: 250px;
   align-items: center;
   transition: 0.3s;
 }

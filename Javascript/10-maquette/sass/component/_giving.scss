@@ -12,11 +12,15 @@
   }
   .cards {
     display: flex;
+    flex-wrap: wrap;
     .card {
       display: flex;
       flex-direction: column;
+      width: 33%;
+      min-width: 250px;
       align-items: center;
       transition: 0.3s;
+
       img {
         width: 35%;
       }
