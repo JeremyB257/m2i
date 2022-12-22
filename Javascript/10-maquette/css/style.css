@@ -242,4 +242,40 @@ header .header-container nav ul li {
   color: #dc3845;
 }
 
+.message {
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 130px auto 0;
+  background-color: #dc3845;
+  border-radius: 20px;
+  height: 380px;
+}
+.message img {
+  width: 32%;
+  transform: rotate(20deg);
+}
+.message .left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 35%;
+}
+.message .left-side h1 {
+  color: white;
+}
+.message .left-side input {
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  margin: 40px 0 20px 0;
+}
+.message .left-side a {
+  color: white;
+  background-color: #282525;
+  padding: 15px 25px;
+  border-radius: 50px;
+}
+
 /*# sourceMappingURL=style.css.map */
