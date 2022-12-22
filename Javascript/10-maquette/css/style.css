@@ -78,7 +78,8 @@ header .header-container nav ul li {
   font-size: 38px;
 }
 .banner .right-side p {
-  margin: 15px 0 25px 0;
+  margin: 15px 0 35px 0;
+  max-width: 355px;
 }
 .banner .right-side a {
   display: inline-block;
@@ -87,6 +88,9 @@ header .header-container nav ul li {
   font-weight: bold;
   padding: 15px 25px;
   border-radius: 50px;
+}
+.celebrate .banner {
+  flex-direction: row-reverse;
 }
 
 .giving {

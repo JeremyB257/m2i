@@ -14,7 +14,8 @@
       font-size: 38px;
     }
     p {
-      margin: 15px 0 25px 0;
+      margin: 15px 0 35px 0;
+      max-width: 355px;
     }
     a {
       display: inline-block;
@@ -24,5 +25,8 @@
       padding: 15px 25px;
       border-radius: 50px;
     }
+  }
+  .celebrate & {
+    flex-direction: row-reverse;
   }
 }
