@@ -5,6 +5,7 @@ header {
   right: 0;
   background-color: white;
   height: 80px;
+  z-index: 2;
   .header-container {
     display: flex;
     justify-content: space-between;
@@ -22,9 +23,35 @@ header {
     nav {
       ul {
         display: flex;
+        align-items: center;
         li {
           margin: 0 25px;
+          cursor: pointer;
         }
+        i {
+          cursor: pointer;
+        }
+      }
+      > i {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    .header-container {
+      nav {
+        display: flex;
+        > i {
+          display: block;
+          margin: 0 15px;
+          cursor: pointer;
+        }
+      }
+      ul li {
+        display: none;
       }
     }
   }
