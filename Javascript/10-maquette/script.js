@@ -1,3 +1,21 @@
+//Selecteur
+const darkMode = document.querySelector('.darkMode');
+
+//EventListener
+darkMode.addEventListener('click', dark);
+window.addEventListener('scroll', scroll);
+
+//Function
+function dark() {
+  document.body.classList.toggle('dark');
+  darkMode.children[0].classList.toggle('hidden');
+  darkMode.children[1].classList.toggle('hidden');
+}
+
+function scroll() {
+  console.log(window.scrollY);
+}
+
 var swiper = new Swiper('.mySwiper', {
   slidesPerView: 3,
   spaceBetween: 30,
@@ -13,13 +31,3 @@ var swiper = new Swiper('.mySwiper', {
     prevEl: '.swiper-button-prev',
   },
 });
-
-const darkMode = document.querySelector('.darkMode');
-
-darkMode.addEventListener('click', dark);
-
-function dark() {
-  document.body.classList.toggle('dark');
-  darkMode.children[0].classList.toggle('hidden');
-  darkMode.children[1].classList.toggle('hidden');
-}
