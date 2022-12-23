@@ -5,6 +5,11 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 200px;
+}
+
 body {
   margin: 20px;
 }
