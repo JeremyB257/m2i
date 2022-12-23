@@ -105,6 +105,9 @@ header .header-container nav ul li {
   margin: 0 25px;
   cursor: pointer;
 }
+header .header-container nav ul li .active {
+  color: #dc3845;
+}
 header .header-container nav ul i {
   cursor: pointer;
 }

@@ -12,6 +12,7 @@ const darkMode = document.querySelector('.darkMode');
 const header = document.querySelector('header');
 const hearts = document.querySelectorAll('.heartDiv');
 const gifts = document.querySelector('#gift');
+const navs = header.querySelectorAll('a');
 
 //EventListener
 darkMode.addEventListener('click', dark);
@@ -21,6 +22,7 @@ for (let heart of hearts) {
 }
 
 //Function
+
 function dark() {
   document.body.classList.toggle('dark');
   darkMode.children[0].classList.toggle('hidden');
@@ -30,6 +32,28 @@ function dark() {
 function scrollFunction() {
   if (window.scrollY == 0) header.style.boxShadow = 'none';
   if (window.scrollY > 50) header.style.boxShadow = ' 0 0 15px 0 rgba(0,0,0,0.2)';
+
+  if (window.scrollY <= 500) {
+    navs[0].style.color = '#dc3845';
+    navs[1].style.color = 'black';
+    navs[2].style.color = 'black';
+    navs[3].style.color = 'black';
+  } else if (window.scrollY >= 966 && window.scrollY <= 1566) {
+    navs[0].style.color = 'black';
+    navs[1].style.color = '#dc3845';
+    navs[2].style.color = 'black';
+    navs[3].style.color = 'black';
+  } else if (window.scrollY >= 1566 && window.scrollY <= 2291) {
+    navs[0].style.color = 'black';
+    navs[1].style.color = 'black';
+    navs[2].style.color = '#dc3845';
+    navs[3].style.color = 'black';
+  } else if (window.scrollY >= 2291) {
+    navs[0].style.color = 'black';
+    navs[1].style.color = 'black';
+    navs[2].style.color = 'black';
+    navs[3].style.color = '#dc3845';
+  }
 }
 
 function fillHeart() {

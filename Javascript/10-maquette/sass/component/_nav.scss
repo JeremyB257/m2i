@@ -29,6 +29,9 @@ header {
         li {
           margin: 0 25px;
           cursor: pointer;
+          .active {
+            color: $color-primary;
+          }
         }
         i {
           cursor: pointer;
