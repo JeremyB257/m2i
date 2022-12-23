@@ -52,6 +52,9 @@ a:visited {
 .dark header a {
   color: white;
 }
+.dark .swiper .swiper-slide {
+  background-color: #282525;
+}
 
 body > i {
   position: fixed;
