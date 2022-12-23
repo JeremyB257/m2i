@@ -1,10 +1,11 @@
 //Selecteur
 const darkMode = document.querySelector('.darkMode');
 const header = document.querySelector('header');
-
 const gifts = document.querySelector('#gift');
 const navs = header.querySelectorAll('a');
-
+const messageInput = document.querySelector('.messageInput');
+const messageBtn = document.querySelector('.messageBtn');
+let errMessage = document.createElement('p');
 //DATA
 const dataGifts = [
   { name: "Pain d'épice", price: '15 €', img: 'img/gift1.png' },
@@ -25,13 +26,14 @@ dataGifts.map((gift) => {
           </div>`;
 });
 const hearts = document.querySelectorAll('.heartDiv');
+
 //EventListener
 darkMode.addEventListener('click', dark);
 window.addEventListener('scroll', scrollFunction);
 for (let heart of hearts) {
   heart.addEventListener('click', fillHeart);
 }
-
+messageBtn.addEventListener('click', sendMessage);
 //Function
 
 function dark() {
@@ -74,6 +76,17 @@ function scrollFunction() {
 function fillHeart() {
   this.children[0].classList.toggle('hidden');
   this.children[1].classList.toggle('hidden');
+}
+
+function sendMessage() {
+  if (messageInput.value) {
+    messageInput.value;
+    console.log('ici');
+  } else {
+    errMessage.style.color = 'white';
+    errMessage.innerHTML = 'Le message est vide ...';
+    messageInput.after(errMessage);
+  }
 }
 
 var swiper = new Swiper('.mySwiper', {
