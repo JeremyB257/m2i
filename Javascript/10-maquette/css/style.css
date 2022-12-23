@@ -250,6 +250,7 @@ header .header-container nav > i {
   transform: translateY(-5px);
 }
 .gift .cards .card i {
+  cursor: pointer;
   position: absolute;
   top: 5%;
   right: 7%;
@@ -328,6 +329,7 @@ header .header-container nav > i {
   color: white;
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .swiper-pagination span {

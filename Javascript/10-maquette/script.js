@@ -1,7 +1,7 @@
 //Selecteur
 const darkMode = document.querySelector('.darkMode');
 const header = document.querySelector('header');
-const hearts = document.querySelectorAll('.fa-heart');
+const hearts = document.querySelectorAll('.heartDiv');
 
 //EventListener
 darkMode.addEventListener('click', dark);
@@ -23,8 +23,8 @@ function scrollFunction() {
 }
 
 function fillHeart() {
-  this.classList.toggle('hidden');
-  this.nextElementSibling.classList.toggle('hidden');
+  this.children[0].classList.toggle('hidden');
+  this.children[1].classList.toggle('hidden');
 }
 
 var swiper = new Swiper('.mySwiper', {
