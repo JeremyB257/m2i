@@ -1,9 +1,10 @@
 //Selecteur
 const darkMode = document.querySelector('.darkMode');
+const header = document.querySelector('header');
 
 //EventListener
 darkMode.addEventListener('click', dark);
-window.addEventListener('scroll', scroll);
+window.addEventListener('scroll', scrollFunction);
 
 //Function
 function dark() {
@@ -12,8 +13,9 @@ function dark() {
   darkMode.children[1].classList.toggle('hidden');
 }
 
-function scroll() {
-  console.log(window.scrollY);
+function scrollFunction() {
+  if (window.scrollY == 0) header.style.boxShadow = 'none';
+  if (window.scrollY > 50) header.style.boxShadow = ' 0 0 15px 0 rgba(0,0,0,0.2)';
 }
 
 var swiper = new Swiper('.mySwiper', {

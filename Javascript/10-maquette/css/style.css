@@ -75,6 +75,7 @@ header {
   backdrop-filter: blur(10px);
   height: 80px;
   z-index: 2;
+  transition: box-shadow 0.3s;
 }
 header .header-container {
   display: flex;
