@@ -1,10 +1,14 @@
 //Selecteur
 const darkMode = document.querySelector('.darkMode');
 const header = document.querySelector('header');
+const hearts = document.querySelectorAll('.fa-heart');
 
 //EventListener
 darkMode.addEventListener('click', dark);
 window.addEventListener('scroll', scrollFunction);
+for (let heart of hearts) {
+  heart.addEventListener('click', fillHeart);
+}
 
 //Function
 function dark() {
@@ -16,6 +20,11 @@ function dark() {
 function scrollFunction() {
   if (window.scrollY == 0) header.style.boxShadow = 'none';
   if (window.scrollY > 50) header.style.boxShadow = ' 0 0 15px 0 rgba(0,0,0,0.2)';
+}
+
+function fillHeart() {
+  this.classList.toggle('hidden');
+  this.nextElementSibling.classList.toggle('hidden');
 }
 
 var swiper = new Swiper('.mySwiper', {
