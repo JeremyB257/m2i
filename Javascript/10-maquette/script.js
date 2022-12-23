@@ -1,3 +1,10 @@
+//Selecteur
+const darkMode = document.querySelector('.darkMode');
+const header = document.querySelector('header');
+
+const gifts = document.querySelector('#gift');
+const navs = header.querySelectorAll('a');
+
 //DATA
 const dataGifts = [
   { name: "Pain d'épice", price: '15 €', img: 'img/gift1.png' },
@@ -6,14 +13,18 @@ const dataGifts = [
   { name: 'Bonhomme de neige', price: '35 €', img: 'img/gift4.png' },
   { name: 'Bâton de bonbon', price: '12 €', img: 'img/gift5.png' },
 ];
-
-//Selecteur
-const darkMode = document.querySelector('.darkMode');
-const header = document.querySelector('header');
+dataGifts.map((gift) => {
+  gifts.children[1].innerHTML += `<div class="card">
+            <div class="heartDiv">
+              <i class="fa-regular fa-heart"></i>
+              <i class="fa-solid fa-heart hidden"></i>
+            </div>
+            <img src='${gift.img}' alt='${gift.name}' />
+            <h3>${gift.price}</h3>
+            <p>${gift.name}</p>
+          </div>`;
+});
 const hearts = document.querySelectorAll('.heartDiv');
-const gifts = document.querySelector('#gift');
-const navs = header.querySelectorAll('a');
-
 //EventListener
 darkMode.addEventListener('click', dark);
 window.addEventListener('scroll', scrollFunction);
@@ -30,8 +41,12 @@ function dark() {
 }
 
 function scrollFunction() {
-  if (window.scrollY == 0) header.style.boxShadow = 'none';
+  if (window.scrollY == 0) {
+    toUp.style.display = 'none';
+    header.style.boxShadow = 'none';
+  }
   if (window.scrollY > 50) header.style.boxShadow = ' 0 0 15px 0 rgba(0,0,0,0.2)';
+  if (window.scrollY > 300) toUp.style.display = 'block';
 
   if (window.scrollY <= 500) {
     navs[0].style.color = '#dc3845';

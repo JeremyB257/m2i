@@ -61,14 +61,16 @@ a:visited {
   background-color: #282525;
 }
 
-body > i {
+body > a {
   position: fixed;
   right: 5%;
   bottom: 5%;
-  color: #dc3845;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   border-radius: 5px;
+}
+body > a i {
+  color: #dc3845;
 }
 
 header {
