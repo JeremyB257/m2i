@@ -24,7 +24,7 @@ setInterval(() => {
   ReactDOM.render(element, document.querySelector('#root2'));
 }, 1000);
 
-//exemple 3
+//exemple 3 avec list
 
 let peoples = ['Marina', 'Fiorella', 'Matthieu'];
 let title = <h2>Liste des contacts</h2>;
@@ -38,4 +38,18 @@ ReactDOM.render(
     </ul>
   </div>,
   document.querySelector('#root3')
+);
+
+//exemple 4 avec compposant
+class Welcome extends React.Component {
+  render() {
+    return <h1>Bonjour</h1>;
+  }
+}
+
+ReactDOM.render(
+  <div>
+    <Welcome />
+  </div>,
+  document.querySelector('#root4')
 );
