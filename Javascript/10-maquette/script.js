@@ -40,6 +40,7 @@ function dark() {
   document.body.classList.toggle('dark');
   darkMode.children[0].classList.toggle('hidden');
   darkMode.children[1].classList.toggle('hidden');
+  scrollFunction();
 }
 
 function scrollFunction() {
@@ -49,26 +50,27 @@ function scrollFunction() {
   }
   if (window.scrollY > 50) header.style.boxShadow = ' 0 0 15px 0 rgba(0,0,0,0.2)';
   if (window.scrollY > 300) toUp.style.display = 'block';
-
+  let color = '';
+  document.body.classList.contains('dark') ? (color = 'white') : (color = 'black');
   if (window.scrollY <= 500) {
     navs[0].style.color = '#dc3845';
-    navs[1].style.color = 'black';
-    navs[2].style.color = 'black';
-    navs[3].style.color = 'black';
+    navs[1].style.color = color;
+    navs[2].style.color = color;
+    navs[3].style.color = color;
   } else if (window.scrollY >= 966 && window.scrollY <= 1566) {
-    navs[0].style.color = 'black';
+    navs[0].style.color = color;
     navs[1].style.color = '#dc3845';
-    navs[2].style.color = 'black';
-    navs[3].style.color = 'black';
+    navs[2].style.color = color;
+    navs[3].style.color = color;
   } else if (window.scrollY >= 1566 && window.scrollY <= 2291) {
-    navs[0].style.color = 'black';
-    navs[1].style.color = 'black';
+    navs[0].style.color = color;
+    navs[1].style.color = color;
     navs[2].style.color = '#dc3845';
-    navs[3].style.color = 'black';
+    navs[3].style.color = color;
   } else if (window.scrollY >= 2291) {
-    navs[0].style.color = 'black';
-    navs[1].style.color = 'black';
-    navs[2].style.color = 'black';
+    navs[0].style.color = color;
+    navs[1].style.color = color;
+    navs[2].style.color = color;
     navs[3].style.color = '#dc3845';
   }
 }
