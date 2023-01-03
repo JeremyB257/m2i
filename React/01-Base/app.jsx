@@ -13,7 +13,7 @@ ReactDOM.render(
     <h1>
       Bonjour {firstName}, tu as {age(2019)} ans.
     </h1>
-    <img src={person.image} alt={person.name} />
+    <img src={person.image} alt={person.name} className="image" />
   </div>,
   document.querySelector('#root')
 );
