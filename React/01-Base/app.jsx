@@ -23,3 +23,18 @@ setInterval(() => {
   let element = <h2>Il est {new Date().toLocaleTimeString()}</h2>;
   ReactDOM.render(element, document.querySelector('#root2'));
 }, 1000);
+
+//exemple 3
+
+let peoples = ['Marina', 'Fiorella', 'Matthieu'];
+
+ReactDOM.render(
+  <div>
+    <ul>
+      {peoples.map((people, index) => {
+        return <li key={index}>{people}</li>;
+      })}
+    </ul>
+  </div>,
+  document.querySelector('#root3')
+);
