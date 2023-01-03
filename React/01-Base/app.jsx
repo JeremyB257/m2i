@@ -46,10 +46,14 @@ class Welcome extends React.Component {
     return <h1>Bonjour</h1>;
   }
 }
+const Goodbye = () => {
+  return <h1> Au revoir</h1>;
+};
 
 ReactDOM.render(
   <div>
     <Welcome />
+    <Goodbye />
   </div>,
   document.querySelector('#root4')
 );
