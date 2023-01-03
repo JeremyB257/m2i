@@ -27,13 +27,14 @@ setInterval(() => {
 //exemple 3
 
 let peoples = ['Marina', 'Fiorella', 'Matthieu'];
-
+let title = <h2>Liste des contacts</h2>;
 ReactDOM.render(
   <div>
+    {title}
     <ul>
-      {peoples.map((people, index) => {
-        return <li key={index}>{people}</li>;
-      })}
+      {peoples.map((people, index) => (
+        <li key={index}>{people}</li>
+      ))}
     </ul>
   </div>,
   document.querySelector('#root3')
