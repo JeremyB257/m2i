@@ -17,3 +17,9 @@ ReactDOM.render(
   </div>,
   document.querySelector('#root')
 );
+
+//exemple 2
+setInterval(() => {
+  let element = <h2>Il est {new Date().toLocaleTimeString()}</h2>;
+  ReactDOM.render(element, document.querySelector('#root2'));
+}, 1000);
