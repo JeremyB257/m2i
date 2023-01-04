@@ -10,7 +10,7 @@ class Clock extends React.Component {
       <div>
         <h2>
           Il est {this.state.date.toLocaleTimeString('fr-FR', { timeZone: this.props.timezone })} à{' '}
-          {this.props.timezone.split('/')[1]}
+          {this.props.timezone ? this.props.timezone.split('/')[1] : 'Heure local'}
         </h2>
       </div>
     );
@@ -23,6 +23,7 @@ class App extends React.Component {
       <div>
         <Clock timezone="Europe/Paris" />
         <Clock timezone="Asia/Tokyo" />
+        <Clock />
       </div>
     );
   }
