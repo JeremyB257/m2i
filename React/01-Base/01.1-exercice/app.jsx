@@ -283,20 +283,40 @@ class App4 extends React.Component {
           Après avoir consulté la documentation, afficher chat de manière conditionnelle seulement si son nom est
           différent de "Ronron" et qu'il n'est pas nul et avec la notation &&
         </p>
+        {cat != 'Ronron' && cat}
         <p>
           Afficher les propriétés de chaque personne à l'aide de map Pour chaque personne afficher son âge de manière
           conditionnelle en utilisant ? et :
         </p>
+        {persons.map((person, index) => (
+          <p key={index}>
+            {person.name} {person.age > 65 ? 'senior' : person.age} {person.job.name.toLowerCase()} depuis{' '}
+            {person.job.since}
+          </p>
+        ))}
         <p>
           Afficher les propriétés de chaque personne à l'aide de map Pour chaque personne afficher son âge de manière
           conditionnelle en utilisant ||
         </p>
+        {persons.map((person, index) => (
+          <p key={index}>
+            {person.name} {(person.age > 65 && 'senior') || person.age} {person.job.name.toLowerCase()} depuis{' '}
+            {person.job.since}
+          </p>
+        ))}
         <ul>
           <li>Si l'âge de la personne est supérieur à 65, alors afficher "Senior"</li>
           <li>Sinon, afficher l'âge de la personne</li>
         </ul>
         <p>Afficher tous les légumes dans une boucle map</p>
         <p>Pour chaque légume, afficher son magasin de manière conditionnelle avec && </p>
+        <ul>
+          {shoppingCart.map((product, index) => (
+            <li key={index}>
+              {product.name} {product.warehouse && product.warehouse.name}
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
