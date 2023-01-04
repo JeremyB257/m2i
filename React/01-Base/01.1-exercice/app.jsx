@@ -61,5 +61,7 @@ ReactDOM.render(
   <div>
     <App2 />
   </div>,
-  document.querySelector('#root1')
+  document.querySelector('#root2')
 );
+
+//exercice 3
