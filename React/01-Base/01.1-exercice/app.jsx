@@ -49,7 +49,15 @@ class App2 extends React.Component {
               <li key={index}>{note}</li>
             ))}
           </ul>
-          <p>{person.firstname}</p>
+          {Object.entries(person).map(([key, value]) => {
+            return (
+              <div key={key}>
+                <p>
+                  {key} : {person[key]}
+                </p>
+              </div>
+            );
+          })}
           {actionsList}
         </div>
       </div>
@@ -68,7 +76,7 @@ ReactDOM.render(
 
 class App3 extends React.Component {
   render() {
-    const person = {
+    const person1 = {
       name: 'Charly',
       age: 66,
       job: {
@@ -102,15 +110,57 @@ class App3 extends React.Component {
 
     const series = this.catalogSeries();
 
+    const checkObject = (perso) => {
+      if (typeof perso == 'object') {
+        return `${perso.name} depuis le ${perso.since}`;
+      } else {
+        return perso;
+      }
+    };
+
     return (
       <div>
         <div>
+          {this.someDiv()}
           <p>Consulter la méthode someDiv. En vous basant sur le même modèle, remplissez la méthode validateButton</p>
           <p>Appeler la fonction validateButton pour générer le bouton en dessous de ce paragraphe</p>
           <p>{this.validateButton()}</p>
           <p>Afficher toutes les propriétés de la variable person</p>
+          <div>
+            {Object.entries(person1).map(([key, value]) => {
+              return (
+                <div key={key}>
+                  <p>
+                    {key} : {checkObject(person1[key])}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
           <p>Afficher toutes les propriétés du panier de courses</p>
+          <div>
+            {shoppingCart.map((cart, index) => {
+              return (
+                <div key={index}>
+                  <p>
+                    {cart.name} : {cart.type}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
           <p>Afficher toutes les propriétés du catalogue de séries</p>
+          <div>
+            {series.map((serie, index) => {
+              return (
+                <div key={index}>
+                  <p>
+                    Nom : {serie.name}, Episodes : {serie.episodes}, Note : {serie.note}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     );
@@ -126,7 +176,9 @@ class App3 extends React.Component {
   /**
    * Cette méthode renvoie un bouton Valider au format JSX
    */
-  validateButton() {}
+  validateButton() {
+    return <button>Je suis un button</button>;
+  }
 
   /**
    * Cette méthode renvoie une liste des séries à regarder pendant le confinement
