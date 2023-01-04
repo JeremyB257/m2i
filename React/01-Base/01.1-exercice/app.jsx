@@ -154,7 +154,7 @@ class App3 extends React.Component {
             {series.map((serie, index) => {
               return (
                 <div key={index}>
-                  <p>
+                  <p style={{ color: 'rgba(0,0,255, 0.8' }}>
                     Nom : {serie.name}, Episodes : {serie.episodes}, Note : {serie.note}
                   </p>
                 </div>
