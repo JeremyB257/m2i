@@ -309,6 +309,14 @@ class App4 extends React.Component {
           <li>Sinon, afficher l'âge de la personne</li>
         </ul>
         <p>Afficher tous les légumes dans une boucle map</p>
+        {shoppingCart.map(
+          (product, index) =>
+            product.type == 'Legume' && (
+              <div key={index}>
+                <h2>{product.name}</h2>
+              </div>
+            )
+        )}
         <p>Pour chaque légume, afficher son magasin de manière conditionnelle avec && </p>
         <ul>
           {shoppingCart.map((product, index) => (
