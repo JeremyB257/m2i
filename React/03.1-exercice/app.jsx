@@ -302,12 +302,61 @@ class App4 extends React.Component {
   }
 }
 
+//props 5
+
+class Instruction5 extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>
+          <a href="https://fr.reactjs.org/docs/composition-vs-inheritance.html">
+            Documentation sur la délégation via les props
+          </a>
+        </p>
+        <p>
+          Le component TitleComponent prend des enfants à l'intérieur de sa balise. En vous basant sur TitleComponent,
+          créer un composant Card qui prendra en enfant un titre h2, un paragraphe et un bouton.
+        </p>
+        <p>Depuis votre composant Card, générer les enfants de ce composant via les props comme dans TitleComponent</p>
+        <p>Créer un composant Footer qui sera appelé à la fin de notre composant App.</p>
+        <p>Donner à ce composant des balises enfants dont un paragraphe et une liste.</p>
+        <p>Dans le composant Footer, générer ces enfants via les props.</p>
+      </div>
+    );
+  }
+}
+
+class TitleComponent5 extends React.Component {
+  render() {
+    return (
+      // Tous les éléments contenus dans children sont rendus ici
+      <h1>{this.props.children}</h1>
+    );
+  }
+}
+
+class App5 extends React.Component {
+  render() {
+    return (
+      <div>
+        <TitleComponent5>Je suis un children de titleComponent</TitleComponent5>
+        <TitleComponent5>
+          <span>Nous sommes des children</span>
+          <span>De Title Component</span>
+        </TitleComponent5>
+        <Instruction5 />
+      </div>
+    );
+  }
+}
+
 ReactDOM.render(
   <div>
     <App />
     <App1 />
     <App2 />
     <App4 />
+    <App5 />
   </div>,
   document.querySelector('#root')
 );
