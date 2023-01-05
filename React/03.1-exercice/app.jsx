@@ -421,6 +421,8 @@ class App7 extends React.Component {
 
     // Indispensable pour pouvoir manipuler le state depuis incrementCounter
     this.incrementCounter = this.incrementCounter.bind(this);
+    this.decrementCounter = this.decrementCounter.bind(this);
+    this.replaceByBaba = this.replaceByBaba.bind(this);
   }
 
   render() {
@@ -431,6 +433,7 @@ class App7 extends React.Component {
           <p>Voici un élément Counter, cliquez sur le bouton pour découvrir son comportement</p>
           <h2>Compteur : {this.state.counter}</h2>
           <button onClick={this.incrementCounter}>Ajouter + 1</button>
+          <button onClick={this.decrementCounter}>Retirer - 1</button>
         </div>
         <div>
           <p>Remplir la fonction decrementCounter</p>
@@ -442,6 +445,7 @@ class App7 extends React.Component {
           <p>Lier la fonction replaceByBaba dans le constructor</p>
           <p>Créer un nouveau bouton Remplacer qui va déclencher une fonction replaceByBaba</p>
           <h2>{this.state.text}</h2>
+          <button onClick={this.replaceByBaba}>Changer le texte</button>
         </div>
       </div>
     );
@@ -459,12 +463,18 @@ class App7 extends React.Component {
   /**
    * Décrémente la valeur du compteur du state
    */
-  decrementCounter() {}
+  decrementCounter() {
+    this.setState({
+      counter: this.state.counter - 1,
+    });
+  }
 
   /**
    * Remplace la valeur de text par "Baba"
    */
-  replaceByBaba() {}
+  replaceByBaba() {
+    this.setState({ text: 'Baba' });
+  }
 }
 ReactDOM.render(
   <div>
