@@ -383,6 +383,8 @@ class App6 extends React.Component {
         name: 'Bianca',
         age: 6,
       },
+      song: 'un son',
+      bananaNumber: 10,
     };
   }
 
@@ -390,12 +392,18 @@ class App6 extends React.Component {
     return (
       <div>
         <p>Afficher la propriété name du state</p>
+        <p>{this.state.name}</p>
         <p>Afficher la propriété cat du state avec ses attributs</p>
+        <p>
+          {this.state.cat.name} : {this.state.cat.age} ans
+        </p>
         <div>
           <h2>Le cat est là</h2>
         </div>
         <p>Créer une propriété song dans le state, donnez-lui la valeur de votre choix, et affichez-là ici.</p>
+        <p>{this.state.song}</p>
         <p>Créer une propriété bananaNumber dans le state, donnez-lui la valeur de votre choix, et affichez-la ici.</p>
+        <p>{this.state.bananaNumber}</p>
       </div>
     );
   }
@@ -408,6 +416,7 @@ ReactDOM.render(
     <App2 />
     <App4 />
     <App5 />
+    <App6 />
   </div>,
   document.querySelector('#root')
 );
