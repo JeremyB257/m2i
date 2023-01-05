@@ -114,10 +114,114 @@ class App1 extends React.Component {
   }
 }
 
+class Instruction2 extends React.Component {
+  render() {
+    return (
+      <div>
+        <div>
+          <p>Créez un composant VegetablesCart et passez-lui en props les legumes.</p>
+          <p>
+            Dans le composant VegetablesCart, créer un composant Vegetable qui sera appelé autant de fois qu'il y a de
+            légumes dans les props
+          </p>
+          <p>Dans le composant Vegetable, afficher le nom et le prix de chaque légume </p>
+        </div>
+        <div>
+          <p>Créer un composant Students et passez-lui en props les élèves.</p>
+          <p>
+            Dans ce composant, créer un composant Student qui sera appelé autant de fois qu'il y a d'élèves dans les
+            props
+          </p>
+          <p>Dans le composant Student, afficher l'élève dans une balise de votre choix</p>
+        </div>
+      </div>
+    );
+  }
+}
+
+class TitleComponent2 extends React.Component {
+  render() {
+    return <h1>Ceci est un titre</h1>;
+  }
+}
+
+class VegetablesCart2 extends React.Component {
+  vegetable(vege) {
+    return <li>{vege.name}</li>;
+  }
+  render() {
+    return <ul>{this.props.vegetables.map((vege) => this.vegetable(vege))}</ul>;
+  }
+}
+
+class App2 extends React.Component {
+  render() {
+    const vegetables = listVegetables();
+    const students = listStudents();
+
+    return (
+      <div>
+        <TitleComponent2 />
+        <VegetablesCart2 vegetables={vegetables} />
+        <Instruction2 />
+      </div>
+    );
+  }
+}
+
+/**
+ * Cette fonction génère une liste de légumes en brut
+ */
+function listVegetables() {
+  return [
+    {
+      name: 'Topinambour',
+      price: 15,
+    },
+    {
+      name: 'Pois chiche',
+      price: 2,
+    },
+    {
+      name: 'Salade',
+      price: 999,
+    },
+    {
+      name: 'Courgette',
+      price: 1,
+    },
+    {
+      name: 'Oignon',
+      price: 2,
+    },
+  ];
+}
+
+/**
+ * Cette fonction génère une liste d'élèves en brut
+ */
+function listStudents() {
+  return [
+    {
+      name: 'Charly',
+      age: 15,
+    },
+    {
+      name: 'Bobbybillybouba',
+      age: 12,
+    },
+    {
+      name: 'JeanMichelDestroyer',
+      age: 16,
+    },
+  ];
+}
+
 ReactDOM.render(
   <div>
     <App />
     <App1 />
+    <App2 />
   </div>,
   document.querySelector('#root')
 );
