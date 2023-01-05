@@ -151,24 +151,24 @@ class TitleComponent2 extends React.Component {
 }
 
 class VegetablesCart2 extends React.Component {
-  vegetable(vege) {
+  vegetable(vege, index) {
     return (
-      <li>
+      <li key={index}>
         {vege.name} : {vege.price} €
       </li>
     );
   }
   render() {
-    return <ul>{this.props.vegetables.map((vege) => this.vegetable(vege))}</ul>;
+    return <ul>{this.props.vegetables.map((vege, index) => this.vegetable(vege, index))}</ul>;
   }
 }
 
 class Students2 extends React.Component {
-  student(student) {
-    return <li>{student.name}</li>;
+  student(student, index) {
+    return <li key={index}>{student.name}</li>;
   }
   render() {
-    return <ul>{this.props.students.map((student) => this.student(student))}</ul>;
+    return <ul>{this.props.students.map((student, index) => this.student(student, index))}</ul>;
   }
 }
 
@@ -525,6 +525,20 @@ class App8 extends React.Component {
 
 //state chall
 
+class Animals extends React.Component {
+  render() {
+    return (
+      <ul>
+        {this.props.animals.map((animal, index) => (
+          <li key={index}>
+            {animal.name} : {animal.type}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+}
+
 class App9 extends React.Component {
   constructor(props) {
     super(props);
@@ -546,11 +560,47 @@ class App9 extends React.Component {
       newAnimalType: '',
       newAnimalName: '',
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.saveAnimal = this.saveAnimal.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.dataset.name]: e.target.value,
+    });
+  }
+
+  saveAnimal() {
+    if (this.state.newAnimalName && this.state.newAnimalType) {
+      let newAnimal = { name: this.state.newAnimalName, type: this.state.newAnimalType };
+      this.setState({
+        animals: [...this.state.animals, newAnimal],
+      });
+      this.setState({ newAnimalType: '', newAnimalName: '' });
+    } else {
+      console.log('remplir le formulaire svp');
+    }
   }
 
   render() {
     return (
       <div>
+        <Animals animals={this.state.animals} />
+        <input
+          value={this.state.newAnimalName}
+          type="text"
+          data-name="newAnimalName"
+          placeholder="Nom nouvel animal"
+          onChange={this.handleChange}
+        />
+        <input
+          value={this.state.newAnimalType}
+          type="text"
+          data-name="newAnimalType"
+          placeholder="Type nouvel animal"
+          onChange={this.handleChange}
+        />
+        <button onClick={this.saveAnimal}>Sauvegarder</button>
         <ul>
           <li>Afficher la liste des animaux dans une boucle map. Pour chaque animal, afficher son nom et son type.</li>
           <li>
