@@ -238,7 +238,7 @@ function listStudents() {
 
 // props 4
 
-class Profile extends React.Component {
+class Profile4 extends React.Component {
   render() {
     return (
       <div>
@@ -249,10 +249,11 @@ class Profile extends React.Component {
   }
 }
 
-class Instruction extends React.Component {
+class Instruction4 extends React.Component {
   render() {
     return (
       <div>
+        <h1>props 4</h1>
         <p>Consultez le composant Profile pour découvrir comment inclure un composant dans un autre</p>
         <p>
           Dans le composant Form, inclure le composant PrimaryButton en lui passant la valeur "Valider" comme props de
@@ -268,23 +269,34 @@ class Instruction extends React.Component {
   }
 }
 
-class Form extends React.Component {
+class Form4 extends React.Component {
   render() {
-    return <div>{/* Remplir ici */}</div>;
+    return (
+      <div>
+        <FormHeader4 title="Titre du form" />
+        <PrimaryButton4 text="Valider" />
+      </div>
+    );
+  }
+}
+class FormHeader4 extends React.Component {
+  render() {
+    return <h2>{this.props.title}</h2>;
   }
 }
 
-class PrimaryButton extends React.Component {
+class PrimaryButton4 extends React.Component {
   render() {
     return <button>{this.props.text}</button>;
   }
 }
 
-class App extends React.Component {
+class App4 extends React.Component {
   render() {
     return (
       <div>
-        <Instruction />
+        <Form4 />
+        <Instruction4 />
       </div>
     );
   }
@@ -295,6 +307,7 @@ ReactDOM.render(
     <App />
     <App1 />
     <App2 />
+    <App4 />
   </div>,
   document.querySelector('#root')
 );
