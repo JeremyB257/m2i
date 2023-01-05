@@ -335,6 +335,16 @@ class TitleComponent5 extends React.Component {
   }
 }
 
+class Card5 extends React.Component {
+  render() {
+    return <div>{this.props.children}</div>;
+  }
+}
+class Footer extends React.Component {
+  render() {
+    return <div>{this.props.children}</div>;
+  }
+}
 class App5 extends React.Component {
   render() {
     return (
@@ -344,7 +354,19 @@ class App5 extends React.Component {
           <span>Nous sommes des children</span>
           <span>De Title Component</span>
         </TitleComponent5>
+        <Card5>
+          <h2>titre</h2>
+          <p>paragraphe</p>
+          <button>button</button>
+        </Card5>
         <Instruction5 />
+        <Footer>
+          <p>paragraphe footer</p>
+          <ul>
+            <li>liste 1</li>
+            <li>liste 2</li>
+          </ul>
+        </Footer>
       </div>
     );
   }
