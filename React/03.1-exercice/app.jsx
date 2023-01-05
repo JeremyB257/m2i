@@ -487,6 +487,7 @@ class App8 extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
   }
 
   render() {
@@ -503,6 +504,7 @@ class App8 extends React.Component {
             Créer une méthode "handleTextChange" qui sera déclenchée à chaque fois que le texte changera. Cette méthode
             sera appelée avec le déclencheur onChange de l'input
           </p>
+          <input value={this.state.text} onChange={this.handleTextChange} />
           <p>Afficher la valeur de texte ici : {this.state.text}</p>
         </div>
       </div>
@@ -514,7 +516,64 @@ class App8 extends React.Component {
       textExample: event.target.value,
     });
   }
+  handleTextChange(event) {
+    this.setState({
+      text: event.target.value,
+    });
+  }
 }
+
+//state chall
+
+class App9 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      animals: [
+        {
+          name: 'Trolilo',
+          type: 'troll',
+        },
+        {
+          name: 'Sheep sheep',
+          type: 'poisson',
+        },
+        {
+          name: 'Donald Trump',
+          type: 'orange',
+        },
+      ],
+      newAnimalType: '',
+      newAnimalName: '',
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <ul>
+          <li>Afficher la liste des animaux dans une boucle map. Pour chaque animal, afficher son nom et son type.</li>
+          <li>
+            Créer un input texte qui permet de saisir la valeur du state newAnimalType. Quand sa valeur change, la
+            valeur de newAnimalType est mise à jour.
+          </li>
+          <li>
+            Créer un autre input texte qui permet de saisir la valeur du state newAnimalName, avec le même
+            fonctionnement.
+          </li>
+          <li>Créer une méthode vide saveAnimal, et l'appeler depuis un bouton que vous créerez également.</li>
+          <li>
+            Remplir la méthode saveAnimal tel que les valeurs newAnimalType et newAnimalName sont sauvegardées dans un
+            nouvel objet animal, que la méthode mette le tableau des animaux à jour en ajoutant le nouvel objet animal à
+            la fin et qu'une fois que l'animal a été créé, la méthode vide les champs newAnimalType et newAnimalName.
+          </li>
+          <li>Bon courage !</li>
+        </ul>
+      </div>
+    );
+  }
+}
+
 ReactDOM.render(
   <div>
     <App />
@@ -525,6 +584,7 @@ ReactDOM.render(
     <App6 />
     <App7 />
     <App8 />
+    <App9 />
   </div>,
   document.querySelector('#root')
 );
