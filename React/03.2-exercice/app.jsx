@@ -117,10 +117,59 @@ class App2 extends React.Component {
     console.log(this.state.person.age);
   }
 }
+
+//eventListener 3
+class App3 extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      animal: 'Ronron',
+      notes: [1, 10, 15, 19, 20],
+      isDisplayed: false,
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <div>
+          <p>Créer une méthode displayText qui prend en paramètre une chaîne de caractère</p>
+          <p>
+            Créer un bouton qui envoie la valeur de state de animal en paramètre, et qui appelle la méthode displayText
+          </p>
+        </div>
+        <div>
+          <p>Créer un bouton qui va retirer le dernier élément de la liste des notes</p>
+          <p>
+            Il faut que le bouton appelle une méthode removeLastElement, qui va retirer le dernier élément des notes.
+          </p>
+          <p>
+            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/pop">
+              Documentation sur l'utilisation de array.pop
+            </a>
+          </p>
+          {this.state.notes.map((note, index) => (
+            <p key={index}>{note}</p>
+          ))}
+        </div>
+        <div>
+          <p>Créer un bouton qui va afficher ou non cette image en changeant la valeur de isDisplayed</p>
+          <p>Il faut que le bouton appelle une méthode changeImageDisplay, qui va changer le state deisDisplayed</p>
+          <img
+            src="https://news.airbnb.com/wp-content/uploads/sites/4/2019/06/PJM020719Q202_Luxe_WanakaNZ_LivingRoom_0264-LightOn_R1.jpg?fit=1200%2C500"
+            alt="airbnb"
+          />
+        </div>
+      </div>
+    );
+  }
+}
 ReactDOM.render(
   <div>
     <App1 />
     <App2 />
+    <App3 />
   </div>,
   document.querySelector('#root')
 );
