@@ -19,11 +19,27 @@ class Instruction extends React.Component {
   }
 }
 
+class PrimaryButton extends React.Component {
+  render() {
+    return <button>Boutton</button>;
+  }
+}
+
 class TitleComponent extends React.Component {
   render() {
     return (
       // Ici pas besoin de div englobante car on ne rend qu'un seul élément principal : h1
       <h1>Ceci est un titre</h1>
+    );
+  }
+}
+
+class TextField extends React.Component {
+  render() {
+    return (
+      <div>
+        <input type="text" />
+      </div>
     );
   }
 }
@@ -34,6 +50,8 @@ class App extends React.Component {
       <div>
         <TitleComponent />
         <Instruction />
+        <PrimaryButton />
+        <TextField />
       </div>
     );
   }
