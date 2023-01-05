@@ -129,10 +129,12 @@ class App3 extends React.Component {
       isDisplayed: false,
     };
   }
+  displayText(text) {}
 
   render() {
     return (
       <div>
+        <h1>event 3</h1>
         <div>
           <p>Créer une méthode displayText qui prend en paramètre une chaîne de caractère</p>
           <p>
