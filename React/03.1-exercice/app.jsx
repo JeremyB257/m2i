@@ -147,10 +147,23 @@ class TitleComponent2 extends React.Component {
 
 class VegetablesCart2 extends React.Component {
   vegetable(vege) {
-    return <li>{vege.name}</li>;
+    return (
+      <li>
+        {vege.name} : {vege.price} €
+      </li>
+    );
   }
   render() {
     return <ul>{this.props.vegetables.map((vege) => this.vegetable(vege))}</ul>;
+  }
+}
+
+class Students2 extends React.Component {
+  student(student) {
+    return <li>{student.name}</li>;
+  }
+  render() {
+    return <ul>{this.props.students.map((student) => this.student(student))}</ul>;
   }
 }
 
@@ -163,6 +176,7 @@ class App2 extends React.Component {
       <div>
         <TitleComponent2 />
         <VegetablesCart2 vegetables={vegetables} />
+        <Students2 students={students} />
         <Instruction2 />
       </div>
     );
