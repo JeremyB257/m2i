@@ -575,8 +575,9 @@ class App9 extends React.Component {
       let newAnimal = { name: this.state.newAnimalName, type: this.state.newAnimalType };
       this.setState({
         animals: [...this.state.animals, newAnimal],
+        newAnimalType: '',
+        newAnimalName: '',
       });
-      this.setState({ newAnimalType: '', newAnimalName: '' });
     } else {
       console.log('remplir le formulaire svp');
     }
