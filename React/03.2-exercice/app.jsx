@@ -128,8 +128,23 @@ class App3 extends React.Component {
       notes: [1, 10, 15, 19, 20],
       isDisplayed: false,
     };
+    this.removeLastElement = this.removeLastElement.bind(this);
+    this.changeImageDisplay = this.changeImageDisplay.bind(this);
   }
-  displayText(text) {}
+  displayText(text) {
+    console.log(text);
+  }
+
+  removeLastElement() {
+    var newNotes = this.state.notes;
+    newNotes.pop();
+
+    this.setState({ notes: newNotes });
+  }
+
+  changeImageDisplay() {
+    this.setState({ isDisplayed: !this.state.isDisplayed });
+  }
 
   render() {
     return (
@@ -140,9 +155,11 @@ class App3 extends React.Component {
           <p>
             Créer un bouton qui envoie la valeur de state de animal en paramètre, et qui appelle la méthode displayText
           </p>
+          <button onClick={() => this.displayText(this.state.animal)}>boutton</button>
         </div>
         <div>
           <p>Créer un bouton qui va retirer le dernier élément de la liste des notes</p>
+          <button onClick={this.removeLastElement}>boutton</button>
           <p>
             Il faut que le bouton appelle une méthode removeLastElement, qui va retirer le dernier élément des notes.
           </p>
@@ -157,8 +174,10 @@ class App3 extends React.Component {
         </div>
         <div>
           <p>Créer un bouton qui va afficher ou non cette image en changeant la valeur de isDisplayed</p>
+          <button onClick={this.changeImageDisplay}>boutton</button>
           <p>Il faut que le bouton appelle une méthode changeImageDisplay, qui va changer le state deisDisplayed</p>
           <img
+            style={{ display: this.state.isDisplayed ? 'block' : 'none' }}
             src="https://news.airbnb.com/wp-content/uploads/sites/4/2019/06/PJM020719Q202_Luxe_WanakaNZ_LivingRoom_0264-LightOn_R1.jpg?fit=1200%2C500"
             alt="airbnb"
           />
