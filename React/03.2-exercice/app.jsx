@@ -176,11 +176,13 @@ class App3 extends React.Component {
           <p>Créer un bouton qui va afficher ou non cette image en changeant la valeur de isDisplayed</p>
           <button onClick={this.changeImageDisplay}>boutton</button>
           <p>Il faut que le bouton appelle une méthode changeImageDisplay, qui va changer le state deisDisplayed</p>
-          <img
-            style={{ display: this.state.isDisplayed ? 'block' : 'none' }}
-            src="https://news.airbnb.com/wp-content/uploads/sites/4/2019/06/PJM020719Q202_Luxe_WanakaNZ_LivingRoom_0264-LightOn_R1.jpg?fit=1200%2C500"
-            alt="airbnb"
-          />
+          {this.state.isDisplayed && (
+            <img
+              /*  style={{ display: this.state.isDisplayed ? 'block' : 'none' }} */
+              src="https://news.airbnb.com/wp-content/uploads/sites/4/2019/06/PJM020719Q202_Luxe_WanakaNZ_LivingRoom_0264-LightOn_R1.jpg?fit=1200%2C500"
+              alt="airbnb"
+            />
+          )}
         </div>
       </div>
     );
@@ -217,6 +219,18 @@ class App4 extends React.Component {
         },
       ],
     };
+    this.changeVegetableName = this.changeVegetableName.bind(this);
+  }
+
+  changeVegetableName(index, e) {
+    console.log(this.state.vegetables[index]);
+    this.state.vegetables[index] = {
+      name: e.target.previousSibling.value,
+      draftName: '',
+      price: this.state.vegetables[index].price,
+    };
+    console.log(this.state.vegetables[index]);
+    this.setState({});
   }
 
   render() {
@@ -231,6 +245,15 @@ class App4 extends React.Component {
         </p>
         <ul>
           <li>Afficher la liste des légumes. Pour chaque légume, afficher son nom et son prix</li>
+          <ul>
+            {this.state.vegetables.map((vegetable, index) => (
+              <li key={index}>
+                {vegetable.name} : {vegetable.price}
+                <input type="text" placeholder="draftName" />
+                <button onClick={(e) => this.changeVegetableName(index, e)}>Envoyer</button>
+              </li>
+            ))}
+          </ul>
           <li>Pour chaque légume, afficher un input de type texte qui prendra comme valeur son draftName</li>
           <li>
             Créer une méthode changeVegetableName, qui prend en paramètre un nouveau nom, et un index de légume à
