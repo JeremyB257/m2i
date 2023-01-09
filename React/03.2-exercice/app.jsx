@@ -224,15 +224,16 @@ class App4 extends React.Component {
     this.changeVegetableName = this.changeVegetableName.bind(this);
     this.deleteVegetable = this.deleteVegetable.bind(this);
   }
+  handledDraftName(index, e) {
+    this.state.vegetables[index].draftName = e.target.value;
+    this.setState({});
+  }
 
-  changeVegetableName(index, e) {
-    console.log(this.state.vegetables[index]);
+  changeVegetableName(index) {
     this.state.vegetables[index] = {
-      name: e.target.previousSibling.value,
+      name: this.state.vegetables[index].draftName,
       draftName: '',
-      price: this.state.vegetables[index].price,
     };
-    console.log(this.state.vegetables[index]);
     this.setState({});
   }
   deleteVegetable(index) {
@@ -273,8 +274,13 @@ class App4 extends React.Component {
             {this.state.vegetables.map((vegetable, index) => (
               <li key={index}>
                 {vegetable.name} : {vegetable.price}
-                <input type="text" placeholder="draftName" />
-                <button onClick={(e) => this.changeVegetableName(index, e)}>Envoyer</button>
+                <input
+                  type="text"
+                  placeholder="draftName"
+                  value={vegetable.draftName}
+                  onChange={(e) => this.handledDraftName(index, e)}
+                />
+                <button onClick={() => this.changeVegetableName(index)}>Envoyer</button>
                 <button onClick={() => this.deleteVegetable(index)}>Supprimer</button>
               </li>
             ))}
@@ -344,7 +350,13 @@ class App4 extends React.Component {
 
 //eventListener 5
 
-class Instruction extends React.Component {
+class PrimaryButton extends React.Component {
+  render(props) {
+    return <div></div>;
+  }
+}
+
+class Instruction5 extends React.Component {
   render() {
     return (
       <div>
@@ -373,7 +385,7 @@ class App5 extends React.Component {
     return (
       <div>
         <h1>event 5</h1>
-        <Instruction />
+        <Instruction5 />
         <ul>
           <li>
             Créer un composant PrimaryButton qui va prendre en props un texte à afficher et la fonction alertClick
@@ -409,8 +421,8 @@ class App5 extends React.Component {
             Créer un composant CreateTask de manière à ce que quand on clique sur son bouton, une nouvelle tâche est
             créée dans le state de App
           </li>
-          {this.state.tasks.map((task) => (
-            <li>{task}</li>
+          {this.state.tasks.map((task, index) => (
+            <li key={index}>{task}</li>
           ))}
         </ul>
       </div>
