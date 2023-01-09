@@ -218,8 +218,11 @@ class App4 extends React.Component {
           price: 1,
         },
       ],
+      newVegetablePrice: '',
+      newVegetableName: '',
     };
     this.changeVegetableName = this.changeVegetableName.bind(this);
+    this.deleteVegetable = this.deleteVegetable.bind(this);
   }
 
   changeVegetableName(index, e) {
@@ -231,6 +234,27 @@ class App4 extends React.Component {
     };
     console.log(this.state.vegetables[index]);
     this.setState({});
+  }
+  deleteVegetable(index) {
+    this.state.vegetables.splice(index, 1);
+    this.setState({});
+  }
+  handleChange(e) {
+    this.setState({
+      [e.target.dataset.name]: e.target.value,
+    });
+  }
+  addVegetable() {
+    if (this.state.newVegetableName && this.state.newVegetablePrice) {
+      let newVegetable = { name: this.state.newVegetableName, draftName: '', price: this.state.newVegetablePrice };
+      this.setState({
+        vegetables: [...this.state.vegetables, newVegetable],
+        newVegetablePrice: '',
+        newVegetableName: '',
+      });
+    } else {
+      console.log('remplir le formulaire svp');
+    }
   }
 
   render() {
@@ -251,6 +275,7 @@ class App4 extends React.Component {
                 {vegetable.name} : {vegetable.price}
                 <input type="text" placeholder="draftName" />
                 <button onClick={(e) => this.changeVegetableName(index, e)}>Envoyer</button>
+                <button onClick={() => this.deleteVegetable(index)}>Supprimer</button>
               </li>
             ))}
           </ul>
@@ -296,6 +321,21 @@ class App4 extends React.Component {
             newVegetableName et l'input pour le type à newVegetablePrice
           </li>
           <li>Créer un bouton qui déclenche la fonction addVegetable</li>
+          <input
+            type="text"
+            value={this.state.newVegetableName}
+            data-name="newVegetableName"
+            placeholder="Nom"
+            onChange={(e) => this.handleChange(e)}
+          />
+          <input
+            type="number"
+            data-name="newVegetablePrice"
+            value={this.state.newVegetablePrice}
+            placeholder="Prix"
+            onChange={(e) => this.handleChange(e)}
+          />
+          <button onClick={() => this.addVegetable()}>Envoyer</button>
         </ul>
       </div>
     );
