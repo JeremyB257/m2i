@@ -342,12 +342,105 @@ class App4 extends React.Component {
   }
 }
 
+//eventListener 5
+
+class Instruction extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>
+          <a href="https://fr.reactjs.org/docs/faq-functions.html">
+            Documentation pour passer des fonctions à des props
+          </a>
+        </p>
+      </div>
+    );
+  }
+}
+
+class App5 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      textValue: '',
+      tasks: ['Faire la vaisselle', 'Ne pas manger de chips'],
+    };
+
+    this.updateTextValue = this.updateTextValue.bind(this);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>event 5</h1>
+        <Instruction />
+        <ul>
+          <li>
+            Créer un composant PrimaryButton qui va prendre en props un texte à afficher et la fonction alertClick
+          </li>
+          <li>
+            Depuis le composant PrimaryButton, lier la méthode reçue en props à son attribut onClick. Quand on clique
+            sur le bouton, l'alerte devrait s'afficher
+          </li>
+        </ul>
+        <ul>
+          <li>Dans le composant App, créer une méthode alertPress</li>
+          <li>
+            Créer un composant SecondaryButton qui va prendre en props un texte à afficher et la nouvelle fonction
+            alertPress
+          </li>
+          <li>Depuis le composant SecondaryButton, lier la méthode reçue en props à son attribut onClick.</li>
+        </ul>
+        <ul>
+          <li>Dans le composant App il y a un state "textValue" et une méthode updateTextValue</li>
+          <li>
+            Créer un compoant TextField qui va rendre un input, et lui envoyer comme props la textValue, ainsi que la
+            méthode updateTextValue
+          </li>
+          <li>Dans le composant TextField, attribuer la props textValue à la value de l'input</li>
+          <li>
+            Dans le composant TextField, lier le déclencheur onChange à la méthode reçue en props de manière à lui
+            envoyer la valeur de cet input.
+          </li>
+          <li>Vérifier ici que le textValue se mette correctement à jour : {this.state.textValue}</li>
+        </ul>
+        <ul>
+          <li>
+            Créer un composant CreateTask de manière à ce que quand on clique sur son bouton, une nouvelle tâche est
+            créée dans le state de App
+          </li>
+          {this.state.tasks.map((task) => (
+            <li>{task}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  /**
+   * Déclenche une alerte
+   */
+  alertClick() {
+    alert('Cliqué !');
+  }
+
+  /**
+   * Met à jour le state de textValue
+   */
+  updateTextValue(value) {
+    this.setState({
+      textValue: value,
+    });
+  }
+}
+
 ReactDOM.render(
   <div>
     <App1 />
     <App2 />
     <App3 />
     <App4 />
+    <App5 />
   </div>,
   document.querySelector('#root')
 );
