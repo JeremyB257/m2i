@@ -494,10 +494,15 @@ class App6 extends React.Component {
 
   addBird() {
     //Verif - stop functon exec
-    if (this.state.newBirdName.length < 12 && this.state.newBirdName.length > 4 && this.state.newBirdAge) {
-      return alert('Veuillez entrer un nom entre 4 et 12 caractères');
-    } else if (['bleu', 'noir', 'blanc'].includes(this.state.newBirdColor.toLowerCase())) {
-      return alert('Veuillez entrer une de ces trois couleurs : bleu, noir, blanc');
+    if (this.state.newBirdName.length < 4 || this.state.newBirdName.length > 12) {
+      alert('Veuillez entrer un nom entre 4 et 12 caractères');
+      return;
+    } else if (!['bleu', 'noir', 'blanc'].includes(this.state.newBirdColor.toLowerCase())) {
+      alert('Veuillez entrer une de ces trois couleurs : bleu, noir, blanc');
+      return;
+    } else if (!this.state.newBirdAge) {
+      alert('Veuillez entrer un age');
+      return;
     }
 
     let newBird = {
@@ -521,7 +526,7 @@ class App6 extends React.Component {
   }
 
   modifyColor(index, e) {
-    if (['bleu', 'noir', 'blanc'].includes(e.target.previousSibling.value)) {
+    if (['bleu', 'noir', 'blanc'].includes(e.target.previousSibling.value.toLowerCase())) {
       this.state.birds[index].color = e.target.previousSibling.value;
       this.setState({});
       e.target.previousSibling.value = '';
