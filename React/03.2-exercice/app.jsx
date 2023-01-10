@@ -482,12 +482,13 @@ class App6 extends React.Component {
       newBirdName: '',
       newBirdAge: '',
       newBirdColor: '',
+      newBirdColorDisplayed: '',
     };
   }
 
   handleBirdChange(e) {
     this.setState({
-      [e.target.dataset.name]: e.target.value,
+      [e.target.dataset.name]: e.target.type == 'checkbox' ? e.target.checked : e.target.value,
     });
   }
 
@@ -574,6 +575,12 @@ class App6 extends React.Component {
           data-name="newBirdColor"
           placeholder="couleur"
           value={this.state.newBirdColor}
+          onChange={(e) => this.handleBirdChange(e)}
+        />
+        <input
+          type="checkbox"
+          data-name="newBirdColorDisplayed"
+          checked={this.state.newBirdColorDisplayed}
           onChange={(e) => this.handleBirdChange(e)}
         />
         <button onClick={() => this.addBird()}>Envoyer</button>
