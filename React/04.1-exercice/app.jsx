@@ -143,14 +143,34 @@ class App2 extends React.Component {
   /**
    * Cette méthode est appelée à la création du composant
    */
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(this.state.errorMessage);
+  }
 
   /**
    * Cette méthode est appelée dès qu'un setState est effectué.
    * PrevState contient l'objet state de la classe avant le setState
    * Pour rappel, pour accéder à l'état courant, utiliser this.state.
    */
-  componentDidUpdate(previousProps, previousState) {}
+  componentDidUpdate(previousProps, previousState) {
+    if (this.state.age != previousState.age) {
+      if (this.state.age >= 18 && this.state.errorMessage == '') {
+        this.setState({ errorMessage: ERROR_ADULT });
+      } else if (this.state.age <= 5 && this.state.errorMessage == '') {
+        this.setState({ errorMessage: ERROR_DEAD });
+      } else if (this.state.age > 5 && this.state.age < 18 && this.state.errorMessage != '') {
+        this.setState({ errorMessage: '' });
+      }
+    } else {
+      if (this.state.degrees < 0 && this.state.errorMessage == '') {
+        this.setState({ errorMessage: 'Trop froid !' });
+      } else if (this.state.degrees > 0 && this.state.errorMessage == '') {
+        this.setState({ errorMessage: 'Trop chaud !' });
+      } else if (this.state.degrees == 0 && this.state.errorMessage != '') {
+        this.setState({ errorMessage: '' });
+      }
+    }
+  }
 
   render() {
     return (
