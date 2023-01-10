@@ -2,11 +2,19 @@ class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = { date: new Date() };
-    setInterval(() => this.setState({ date: new Date() }), 1000);
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState({ date: new Date() }), 1000);
+  }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevState, this.state);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
   render() {
     return <h1>{this.state.date.toLocaleTimeString()}</h1>;
   }
@@ -25,7 +33,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.display()}>Cacher</button>
+        <button onClick={() => this.display()}>Afficher/Cacher</button>
         {this.state.display && <Clock />}
       </div>
     );
