@@ -499,13 +499,14 @@ class App6 extends React.Component {
           name: this.state.newBirdName,
           age: this.state.newBirdAge,
           color: this.state.newBirdColor,
-          isColorDisplayed: true,
+          isColorDisplayed: this.state.newBirdColorDisplayed,
         };
         this.setState({
           birds: [...this.state.birds, newBird],
           newBirdName: '',
           newBirdAge: '',
           newBirdColor: '',
+          newBirdColorDisplayed: '',
         });
       } else {
         alert('Veuillez entrer une de ces trois couleurs : bleu, noir, blanc');
