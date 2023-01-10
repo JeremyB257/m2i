@@ -493,27 +493,26 @@ class App6 extends React.Component {
   }
 
   addBird() {
+    //Verif - stop functon exec
     if (this.state.newBirdName.length < 12 && this.state.newBirdName.length > 4 && this.state.newBirdAge) {
-      if (['bleu', 'noir', 'blanc'].includes(this.state.newBirdColor)) {
-        let newBird = {
-          name: this.state.newBirdName,
-          age: this.state.newBirdAge,
-          color: this.state.newBirdColor,
-          isColorDisplayed: this.state.newBirdColorDisplayed,
-        };
-        this.setState({
-          birds: [...this.state.birds, newBird],
-          newBirdName: '',
-          newBirdAge: '',
-          newBirdColor: '',
-          newBirdColorDisplayed: '',
-        });
-      } else {
-        alert('Veuillez entrer une de ces trois couleurs : bleu, noir, blanc');
-      }
-    } else {
-      alert('Veuillez entrer un nom entre 4 et 12 caractères');
+      return alert('Veuillez entrer un nom entre 4 et 12 caractères');
+    } else if (['bleu', 'noir', 'blanc'].includes(this.state.newBirdColor)) {
+      return alert('Veuillez entrer une de ces trois couleurs : bleu, noir, blanc');
     }
+
+    let newBird = {
+      name: this.state.newBirdName,
+      age: this.state.newBirdAge,
+      color: this.state.newBirdColor,
+      isColorDisplayed: this.state.newBirdColorDisplayed,
+    };
+    this.setState({
+      birds: [...this.state.birds, newBird],
+      newBirdName: '',
+      newBirdAge: '',
+      newBirdColor: '',
+      newBirdColorDisplayed: '',
+    });
   }
 
   deleteBird(index) {
