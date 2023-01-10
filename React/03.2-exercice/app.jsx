@@ -446,6 +446,152 @@ class App5 extends React.Component {
   }
 }
 
+//eventListener chall
+
+class App6 extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      birds: [
+        {
+          name: 'Pingouin',
+          age: 18,
+          color: 'Noir',
+          isColorDisplayed: true,
+        },
+        {
+          name: 'Manchot',
+          age: 15,
+          color: 'Blanc',
+          isColorDisplayed: false,
+        },
+        {
+          name: 'Autruche',
+          age: 8555,
+          color: 'Blanc',
+          isColorDisplayed: false,
+        },
+        {
+          name: 'Colibri',
+          age: 85,
+          color: 'Bleu',
+          isColorDisplayed: true,
+        },
+      ],
+      newBirdName: '',
+      newBirdAge: '',
+      newBirdColor: '',
+    };
+  }
+
+  handleBirdChange(e) {
+    this.setState({
+      [e.target.dataset.name]: e.target.value,
+    });
+  }
+
+  addBird() {
+    if (this.state.newBirdName.length < 12 && this.state.newBirdName.length > 4 && this.state.newBirdAge) {
+      if (['bleu', 'noir', 'blanc'].includes(this.state.newBirdColor)) {
+        let newBird = {
+          name: this.state.newBirdName,
+          age: this.state.newBirdAge,
+          color: this.state.newBirdColor,
+          isColorDisplayed: true,
+        };
+        this.setState({
+          birds: [...this.state.birds, newBird],
+          newBirdName: '',
+          newBirdAge: '',
+          newBirdColor: '',
+        });
+      } else {
+        alert('Veuillez entrer une de ces trois couleurs : bleu, noir, blanc');
+      }
+    } else {
+      alert('Veuillez entrer un nom entre 4 et 12 caractères');
+    }
+  }
+
+  deleteBird(index) {
+    this.state.birds.splice(index, 1);
+    this.setState({});
+  }
+
+  modifyColor(index, e) {
+    if (['bleu', 'noir', 'blanc'].includes(e.target.previousSibling.value)) {
+      this.state.birds[index].color = e.target.previousSibling.value;
+      this.setState({});
+      e.target.previousSibling.value = '';
+    } else {
+      alert('Veuillez entrer une de ces trois couleurs : bleu, noir, blanc');
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>Challenge</h1>
+        <ul>
+          <li>Afficher chaque oiseau dans une boucle map</li>
+        </ul>
+        <ul>
+          {this.state.birds.map((bird, index) => (
+            <li key={index}>
+              {bird.name} agé de {bird.age} {bird.isColorDisplayed && <span>de couleur {bird.color} </span>}{' '}
+              <button onClick={() => this.deleteBird(index)}>Supprimer</button>
+              <input type="text" placeholder="Nouvel Couleur" />
+              <button onClick={(e) => this.modifyColor(index, e)}>Modifier Couleur</button>
+            </li>
+          ))}
+        </ul>
+        <h2>Pour chaque oiseau</h2>
+        <ul>
+          <li>Afficher son age, son nom, sa couleur</li>
+          <li>Si sa propriété isColorDisplayed n'est pas égale à true, ne pas afficher sa couleur</li>
+        </ul>
+        <ul>
+          <li>Créer un mécanisme qui permette d'ajouter un oiseau en utilisant un formulaire et des states</li>
+          <li>Créer un mécanisme qui permette de supprimer un oiseau en utilisant un bouton supprimer</li>
+          <li>Créer un mécanisme qui permette de modifier la couleur d'un oiseau en utilisant un input texte</li>
+        </ul>
+        <input
+          type="text"
+          data-name="newBirdName"
+          placeholder="Nom"
+          value={this.state.newBirdName}
+          onChange={(e) => this.handleBirdChange(e)}
+        />
+        <input
+          type="number"
+          data-name="newBirdAge"
+          placeholder="age"
+          value={this.state.newBirdAge}
+          onChange={(e) => this.handleBirdChange(e)}
+        />
+        <input
+          type="text"
+          data-name="newBirdColor"
+          placeholder="couleur"
+          value={this.state.newBirdColor}
+          onChange={(e) => this.handleBirdChange(e)}
+        />
+        <button onClick={() => this.addBird()}>Envoyer</button>
+        <p>Dans le mécanisme d'ajout, ajouter des conditions qui empêchent la sauvegarde de l'oiseau</p>
+        <ul>
+          <li>
+            Si son nom mesure moins de 4 caractères de long, ou plus de 12 caractères de long, alerter "Veuillez entrer
+            un nom entre 4 et 12 caractères"
+          </li>
+          <li>
+            Si sa couleur n'est ni "bleu", ni "noir", ni "blanc", alerter "Veuillez entrer une de ces trois couleurs :
+            bleu, noir, blanc"
+          </li>
+        </ul>
+      </div>
+    );
+  }
+}
 ReactDOM.render(
   <div>
     <App1 />
@@ -453,6 +599,7 @@ ReactDOM.render(
     <App3 />
     <App4 />
     <App5 />
+    <App6 />
   </div>,
   document.querySelector('#root')
 );
