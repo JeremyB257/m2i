@@ -144,7 +144,7 @@ class App2 extends React.Component {
    * Cette méthode est appelée à la création du composant
    */
   componentDidMount() {
-    console.log(this.state.errorMessage);
+    this.setState({ errorMessage: ERROR_DEAD });
   }
 
   /**
@@ -153,22 +153,18 @@ class App2 extends React.Component {
    * Pour rappel, pour accéder à l'état courant, utiliser this.state.
    */
   componentDidUpdate(previousProps, previousState) {
-    if (this.state.age != previousState.age) {
-      if (this.state.age >= 18 && this.state.errorMessage == '') {
-        this.setState({ errorMessage: ERROR_ADULT });
-      } else if (this.state.age <= 5 && this.state.errorMessage == '') {
-        this.setState({ errorMessage: ERROR_DEAD });
-      } else if (this.state.age > 5 && this.state.age < 18 && this.state.errorMessage != '') {
-        this.setState({ errorMessage: '' });
-      }
-    } else {
-      if (this.state.degrees < 0 && this.state.errorMessage == '') {
-        this.setState({ errorMessage: 'Trop froid !' });
-      } else if (this.state.degrees > 0 && this.state.errorMessage == '') {
-        this.setState({ errorMessage: 'Trop chaud !' });
-      } else if (this.state.degrees == 0 && this.state.errorMessage != '') {
-        this.setState({ errorMessage: '' });
-      }
+    if (this.state.age >= 18 && previousState.errorMessage != ERROR_ADULT) {
+      this.setState({ errorMessage: ERROR_ADULT });
+    } else if (this.state.age <= 5 && previousState.errorMessage != ERROR_DEAD) {
+      this.setState({ errorMessage: ERROR_DEAD });
+    } else if (this.state.age > 5 && this.state.age < 18 && previousState.errorMessage != '') {
+      this.setState({ errorMessage: '' });
+    }
+
+    if (this.state.degrees > 0 && previousState.degrees == 0) {
+      console.log('Trop chaud !');
+    } else if (this.state.degrees < 0 && previousState.degrees == 0) {
+      console.log('Trop froid !');
     }
   }
 
@@ -182,6 +178,7 @@ class App2 extends React.Component {
             <p>Voici un bouton qui va augmenter l'âge de 1</p>
             <button onClick={this.incrementAge}>Age +1</button>
           </div>
+          <p>{this.state.errorMessage}</p>
           <Instructions2 exercice={1} />
         </div>
         <div>
