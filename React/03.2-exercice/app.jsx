@@ -496,7 +496,7 @@ class App6 extends React.Component {
     //Verif - stop functon exec
     if (this.state.newBirdName.length < 12 && this.state.newBirdName.length > 4 && this.state.newBirdAge) {
       return alert('Veuillez entrer un nom entre 4 et 12 caractères');
-    } else if (['bleu', 'noir', 'blanc'].includes(this.state.newBirdColor)) {
+    } else if (['bleu', 'noir', 'blanc'].includes(this.state.newBirdColor.toLowerCase())) {
       return alert('Veuillez entrer une de ces trois couleurs : bleu, noir, blanc');
     }
 
