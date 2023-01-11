@@ -24,7 +24,7 @@ function Clicker(props) {
 }
 
 const Hook2 = () => {
-  const [count, setCounter] = useState(0);
+  const [counter, setCounter] = useState(0);
   const [firstname, setFirstname] = useState('');
   const [email, setEmail] = useState('');
 
@@ -35,7 +35,7 @@ const Hook2 = () => {
    * La fonction handleClick doit incrémenter le counter
    */
   function Additionner() {
-    setCounter(count + 1);
+    setCounter(counter + 1);
   }
 
   /**
@@ -72,7 +72,7 @@ const Hook2 = () => {
         </p>
       </div>
       <div>
-        <p>Remplir le composant Additionner</p> <span>{count}</span> <button onClick={Additionner}>augmenter</button>
+        <p>Remplir le composant Additionner</p> <span>{counter}</span> <button onClick={Additionner}>augmenter</button>
         <p>Remplir le composant FirstnameInput</p>
         <span>{firstname}</span> <input onChange={(e) => FirstnameInput(e)} />
         <p>Remplir le composant EmailInput</p>
