@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from './components/Button';
+import logo from './logo.svg';
 
 class App extends Component {
   render() {
@@ -7,6 +8,7 @@ class App extends Component {
       <>
         <h1>app</h1>
         <Button />
+        <img src={logo} alt="lgo" />
       </>
     );
   }
