@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 import Button from './components/Button';
-import logo from './logo.svg';
+import Clock from './components/Clock';
+import CounterA from './components/CounterA';
+import CounterB from './components/CounterB';
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <h1>app</h1>
-        <Button />
-        <img src={logo} alt="lgo" />
-      </>
-    );
-  }
-}
+const App = () => {
+  const [display, setDisplay] = useState(false);
+
+  return (
+    <>
+      <h1>app</h1>
+      <Button />
+      <CounterA default={12} />
+      <CounterB default={12} />
+      <button onClick={() => setDisplay(!display)}>afficher/cacher</button>
+      {display && <Clock />}
+    </>
+  );
+};
 
 export default App;
