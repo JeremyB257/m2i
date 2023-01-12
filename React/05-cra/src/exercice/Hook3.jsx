@@ -41,11 +41,21 @@ function AnimalsList() {
 
     setAnimals([...animals, e.target.children[0].value]);
   };
+
+  const deleteAnimal = (index) => {
+    animals.splice(index, 1);
+
+    setAnimals([...animals]);
+  };
+
   return (
     <>
       <ul>
         {animals.map((animal, index) => (
-          <li key={index}>{animal}</li>
+          <li key={index}>
+            {animal}
+            <button onClick={() => deleteAnimal(index)}>Supprimer</button>
+          </li>
         ))}
       </ul>
       <form action="" onSubmit={(e) => addAnimal(e)}>

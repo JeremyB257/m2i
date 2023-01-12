@@ -6,6 +6,7 @@ import CounterB from './components/CounterB';
 import Hook1 from './exercice/Hook1';
 import Hook2 from './exercice/Hook2';
 import Hook3 from './exercice/Hook3';
+import Hook4 from './exercice/Hook4';
 
 const App = () => {
   const [display, setDisplay] = useState(false);
@@ -19,8 +20,9 @@ const App = () => {
       <button onClick={() => setDisplay(!display)}>afficher/cacher</button>
       {display && <Clock />}
             <Hook1 />
-      <Hook2 />  */}
-      <Hook3 />
+      <Hook2 />  
+      <Hook3 /> */}
+      <Hook4 />
     </>
   );
 };
