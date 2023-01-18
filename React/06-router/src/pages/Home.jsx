@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -24,6 +25,9 @@ const Home = () => {
             <h4>
               {user.name.first} {user.name.last}
             </h4>
+            <Link to={`/user/${user.login.username}`}>
+              <button type="button">voir</button>
+            </Link>
           </article>
         ))}
       </div>

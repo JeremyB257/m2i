@@ -6,6 +6,7 @@ import About from './pages/About';
 import Home from './pages/Home';
 import './style/index.scss';
 import Bonjour from './pages/Bonjour';
+import User from './pages/User';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +17,7 @@ root.render(
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/bonjour/:name" element={<Bonjour />} />
+          <Route path="/user/:id" element={<User />} />
         </Route>
       </Routes>
     </BrowserRouter>
