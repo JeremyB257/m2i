@@ -1,11 +1,29 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+
   .menu {
     display: flex;
     gap: 20px;
+
     li {
       list-style-type: none;
+      margin-bottom: 0;
+
+      a {
+        padding: 10px;
+        color: #123456;
+
+        &:hover {
+          text-decoration: none;
+          border-bottom: 1px solid #123456;
+        }
+
+        &:focus {
+          background-color: transparent;
+          text-decoration: none;
+        }
+      }
     }
   }
 }
