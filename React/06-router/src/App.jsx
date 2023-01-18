@@ -1,7 +1,11 @@
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar';
+
 function App() {
   return (
     <div className="container">
-      <h1>app</h1>
+      <Navbar title="react Router" />
+      <Outlet />
     </div>
   );
 }

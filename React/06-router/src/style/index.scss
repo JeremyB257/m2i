@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  .menu {
+    display: flex;
+    gap: 20px;
+    li {
+      list-style-type: none;
+    }
+  }
+}
