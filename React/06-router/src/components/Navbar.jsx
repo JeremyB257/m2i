@@ -12,6 +12,9 @@ const Navbar = (props) => {
         <li>
           <Link to="/about">A Propos</Link>
         </li>
+        <li>
+          <Link to="/bonjour/fiorella">Bonjour</Link>
+        </li>
       </ul>
     </div>
   );

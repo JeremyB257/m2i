@@ -41,3 +41,25 @@
     }
   }
 }
+
+.flex {
+  display: flex;
+}
+
+.user-list {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+
+  article {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+h4 {
+  margin: 0;
+}
