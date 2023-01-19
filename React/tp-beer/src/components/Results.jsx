@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Results = (props) => {
-  console.log(props);
   return (
     <div className="results">
       {props.data?.map((beer) => (

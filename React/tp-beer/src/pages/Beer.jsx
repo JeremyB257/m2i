@@ -6,7 +6,7 @@ import Loader from '../components/Loader';
 const Beer = () => {
   let params = useParams();
   const { data, loading, error } = useFetch(`https://api.punkapi.com/v2/beers/${params.id}`);
-  console.log(data);
+
   return (
     <>
       {loading ? (

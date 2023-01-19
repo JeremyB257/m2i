@@ -1,12 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Loader from '../components/Loader';
 import Results from '../components/Results';
 import Search from '../components/Search';
 import useFetch from '../hooks/useFetch';
 
 const Home = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  let params = useParams();
+  const [searchTerm, setSearchTerm] = useState(params.search || '');
 
   let urlApi =
     searchTerm.length === 0
