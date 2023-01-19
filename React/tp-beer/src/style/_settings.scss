@@ -10,6 +10,11 @@ $secondary-color: #e13e45;
   padding: 0;
   box-sizing: border-box;
 }
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
 ul {
   padding-inline-start: 40px;
   margin-block-start: 1em;
