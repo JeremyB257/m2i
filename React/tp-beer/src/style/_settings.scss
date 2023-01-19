@@ -24,5 +24,34 @@ p {
 
 body {
   min-height: 100vh;
-  background: linear-gradient(180deg, rgba(255, 196, 37, 1) 0%, rgba(234, 170, 0, 1) 100%);
+  background: linear-gradient(180deg, #ffc425 0%, #eaaa00 100%);
+}
+
+.loader-page {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.loader {
+  padding: 15px;
+  border: 10px solid $secondary-color;
+  border-bottom-color: transparent;
+  border-radius: 50px;
+  animation: rotate 1s infinite linear;
+  height: 0;
+  width: 0;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

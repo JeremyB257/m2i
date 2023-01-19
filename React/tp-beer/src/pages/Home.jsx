@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Search />
-      {loading ? <Loader /> : <Results data={data} />}
+      {loading ? <Loader name="Les bières arrivent !" /> : <Results data={data} />}
     </>
   );
 };

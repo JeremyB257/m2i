@@ -1,9 +1,15 @@
 import React from 'react';
 
-const Results = () => {
+const Results = (props) => {
+  console.log(props.data);
   return (
-    <div>
-      <h1>results</h1>
+    <div className="results">
+      {props.data.map((beer) => (
+        <div className="card">
+          <p>{beer.name}</p>
+          <img src={beer.image_url} alt={beer.name} />
+        </div>
+      ))}
     </div>
   );
 };
