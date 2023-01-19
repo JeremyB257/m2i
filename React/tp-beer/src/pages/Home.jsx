@@ -11,6 +11,11 @@ const Home = () => {
     <>
       <Search />
       {loading ? <Loader name="Les bières arrivent !" /> : <Results data={data} />}
+      {error && (
+        <div className="loader-page">
+          <p>Une erreur est survenue, veuillez réessayer plus tard !</p>
+        </div>
+      )}
     </>
   );
 };
