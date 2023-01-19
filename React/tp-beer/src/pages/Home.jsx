@@ -1,14 +1,23 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import Loader from '../components/Loader';
 import Results from '../components/Results';
 import Search from '../components/Search';
 import useFetch from '../hooks/useFetch';
 
 const Home = () => {
-  const { data, loading, error } = useFetch('http://api.punkapi.com/v2/beers?page=1');
+  const [searchTerm, setSearchTerm] = useState('');
+  console.log(searchTerm.length);
+  let urlApi =
+    searchTerm.length == 0
+      ? 'http://api.punkapi.com/v2/beers?'
+      : 'http://api.punkapi.com/v2/beers?beer_name=' + searchTerm;
+
+  const { data, loading, error } = useFetch(urlApi);
 
   function onSearch(text) {
-    console.log('hello ' + text);
+    setSearchTerm(text);
   }
   return (
     <>

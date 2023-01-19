@@ -9,6 +9,7 @@ const Search = ({ onClick }) => {
     onClick(searchTerm);
     setSearchTerm('');
   };
+
   return (
     <div className="search">
       <form onSubmit={handleClickSearch}>
