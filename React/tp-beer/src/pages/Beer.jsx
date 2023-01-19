@@ -20,31 +20,56 @@ const Beer = () => {
               <p>{data[0]?.description}</p>
             </div>
           </div>
-          <div className="left-part">
-            <p>
-              Alc. <strong>{data[0]?.ph}%</strong>
-            </p>
-            <h3>Food Pairing</h3>
-            <ul>
-              {data[0]?.food_pairing.map((food, index) => (
-                <li key={index}>{food}</li>
-              ))}
-            </ul>
-            <div className="ibu">
+          <div className="bottom-part">
+            <div className="left-part">
               <p>
-                <strong>Ibu {data[0]?.ibu}</strong>
+                Alc. <strong>{data[0]?.ph}%</strong>
               </p>
-              {data[0]?.ibu > 0 ? <i className="fa-solid fa-circle"></i> : <i className="fa-solid fa-circle grey"></i>}
-              {data[0]?.ibu > 20 ? <i className="fa-solid fa-circle"></i> : <i className="fa-solid fa-circle grey"></i>}
-              {data[0]?.ibu > 40 ? <i className="fa-solid fa-circle"></i> : <i className="fa-solid fa-circle grey"></i>}
-              {data[0]?.ibu > 60 ? <i className="fa-solid fa-circle"></i> : <i className="fa-solid fa-circle grey"></i>}
-              {data[0]?.ibu > 80 ? <i className="fa-solid fa-circle"></i> : <i className="fa-solid fa-circle grey"></i>}
+              <h3>Food Pairing</h3>
+              <ul>
+                {data[0]?.food_pairing.map((food, index) => (
+                  <li key={index}>{food}</li>
+                ))}
+              </ul>
+              <div className="ibu">
+                <p>
+                  <strong>Ibu {data[0]?.ibu}</strong>
+                </p>
+                {data[0]?.ibu > 0 ? (
+                  <i className="fa-solid fa-circle"></i>
+                ) : (
+                  <i className="fa-solid fa-circle grey"></i>
+                )}
+                {data[0]?.ibu > 20 ? (
+                  <i className="fa-solid fa-circle"></i>
+                ) : (
+                  <i className="fa-solid fa-circle grey"></i>
+                )}
+                {data[0]?.ibu > 40 ? (
+                  <i className="fa-solid fa-circle"></i>
+                ) : (
+                  <i className="fa-solid fa-circle grey"></i>
+                )}
+                {data[0]?.ibu > 60 ? (
+                  <i className="fa-solid fa-circle"></i>
+                ) : (
+                  <i className="fa-solid fa-circle grey"></i>
+                )}
+                {data[0]?.ibu > 80 ? (
+                  <i className="fa-solid fa-circle"></i>
+                ) : (
+                  <i className="fa-solid fa-circle grey"></i>
+                )}
+              </div>
+            </div>
+            <div className="right-part">
+              <img src={`../../img/glass-${Math.ceil(data[0]?.ebc / 10)}.jpg`} alt="Verre recommandé" />
+              <p>
+                EBC {data[0]?.ebc} (Glass {Math.ceil(data[0]?.ebc / 10)})
+              </p>
             </div>
           </div>
-          <div className="right-part">
-            <img src={`../../img/glass-${Math.ceil(data[0]?.ebc / 10)}.jpg`} alt="Verre recommandé" />
-            <p>EBC {data[0]?.ebc}</p>
-          </div>
+          <input type="button" value="COMMANDER" />
         </div>
       )}
       {error && (
