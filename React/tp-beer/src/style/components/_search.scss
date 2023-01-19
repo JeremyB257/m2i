@@ -11,6 +11,11 @@
     &[type='submit'] {
       background-color: #ed833a;
       color: white;
+      cursor: pointer;
+      &:disabled {
+        background-color: lightgray;
+        cursor: auto;
+      }
     }
   }
 }
