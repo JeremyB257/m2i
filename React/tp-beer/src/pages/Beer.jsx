@@ -42,7 +42,7 @@ const Beer = () => {
             </div>
           </div>
           <div className="right-part">
-            <img src={`../../img/glass-${Math.round(data[0]?.ebc / 10)}.jpg`} alt="Verre recommandé" />
+            <img src={`../../img/glass-${Math.ceil(data[0]?.ebc / 10)}.jpg`} alt="Verre recommandé" />
             <p>EBC {data[0]?.ebc}</p>
           </div>
         </div>
