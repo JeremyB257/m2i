@@ -1,0 +1,28 @@
+//variables
+
+$primary-color: #ffc425;
+$primary-gradient: #eaaa00;
+$secondary-color: #e13e45;
+
+//settings
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Bevan', cursive;
+}
+p {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgba(255, 196, 37, 1) 0%, rgba(234, 170, 0, 1) 100%);
+}
