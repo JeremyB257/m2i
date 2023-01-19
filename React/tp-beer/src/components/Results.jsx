@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Results = (props) => {
-  console.log(props.data);
   return (
     <div className="results">
       {props.data.map((beer) => (
-        <Link to={`/biere/${beer.id}/${beer.name.toLowerCase().replaceAll(' ', '-')}`}>
+        <Link to={`/biere/${beer.id}/${beer.name.toLowerCase().replaceAll(' ', '-')}`} key={beer.id}>
           <div className="card">
             <p>{beer.name}</p>
             <img src={beer.image_url} alt={beer.name} />
