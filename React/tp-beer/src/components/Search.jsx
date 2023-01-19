@@ -19,7 +19,7 @@ const Search = ({ onClick }) => {
           placeholder="Happy, Malt, Angry, Now, ..."
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <input type="submit" value="RECHERCHE" disabled={searchTerm.length == 0} />
+        <input type="submit" value="RECHERCHE" disabled={searchTerm.length === 0} />
       </form>
     </div>
   );

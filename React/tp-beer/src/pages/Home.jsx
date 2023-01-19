@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import Loader from '../components/Loader';
 import Results from '../components/Results';
@@ -8,9 +7,9 @@ import useFetch from '../hooks/useFetch';
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  console.log(searchTerm.length);
+
   let urlApi =
-    searchTerm.length == 0
+    searchTerm.length === 0
       ? 'http://api.punkapi.com/v2/beers?'
       : 'http://api.punkapi.com/v2/beers?beer_name=' + searchTerm;
 
@@ -19,6 +18,7 @@ const Home = () => {
   function onSearch(text) {
     setSearchTerm(text);
   }
+
   return (
     <>
       <Search onClick={onSearch} />
