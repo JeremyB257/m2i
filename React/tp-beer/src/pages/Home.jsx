@@ -7,9 +7,12 @@ import useFetch from '../hooks/useFetch';
 const Home = () => {
   const { data, loading, error } = useFetch('http://api.punkapi.com/v2/beers?page=1');
 
+  function onSearch(text) {
+    console.log('hello ' + text);
+  }
   return (
     <>
-      <Search />
+      <Search onClick={onSearch} />
       {loading ? <Loader name="Les bières arrivent !" /> : <Results data={data} />}
       {error && (
         <div className="loader-page">
