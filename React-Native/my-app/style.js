@@ -3,27 +3,26 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'lightblue',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    color: 'blue',
-  },
   title: {
     fontSize: 64,
+    fontFamily: 'sans-serif-condensed',
+  },
+  blue: {
+    color: 'blue',
   },
   btn: {
     backgroundColor: 'blue',
-    paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
+    paddingVertical: 10,
+    borderRadius: 25,
   },
-  countBtn: {
-    backgroundColor: 'lightcoral',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
+  square: {
+    width: 100,
+    height: 100,
   },
 });
 
