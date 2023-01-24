@@ -19,6 +19,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 5,
   },
+  countBtn: {
+    backgroundColor: 'lightcoral',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+  },
 });
 
 export default styles;
