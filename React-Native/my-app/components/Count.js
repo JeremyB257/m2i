@@ -1,22 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import { useCallback, useEffect, useState } from 'react';
 import { Button, Text, View } from 'react-native';
 
 const Count = () => {
   const [count, setCount] = useState(0);
   const [increment, setIncrement] = useState(1);
 
-  useEffect(() => {
-    console.log('Mout button');
+  useFocusEffect(
+    useCallback(() => {
+      console.log('Mout button');
 
-    let timer = setInterval(() => {
-      setCount((prevCount) => prevCount + increment);
-    }, 500);
-    return () => {
-      clearInterval(timer);
+      let timer = setInterval(() => {
+        setCount((prevCount) => prevCount + increment);
+      }, 500);
+      return () => {
+        clearInterval(timer);
 
-      console.log('Unmout button');
-    };
-  }, [increment]);
+        console.log('Unmout button');
+      };
+    }, [increment])
+  );
 
   return (
     <View>
