@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Button, Text, View } from 'react-native';
 import SuperButton from '../components/Button';
+import Count from '../components/Count';
 import Square from '../components/Square';
 
 const Exercice2 = () => {
   const [count, setCount] = useState(0);
+  const [showButton, setShowButton] = useState(false);
+
   return (
     <View>
       <SuperButton onPress={() => alert('Bonjour')}>Bonjour</SuperButton>
@@ -25,6 +28,8 @@ const Exercice2 = () => {
         <Square bg="lightgreen">Square 3</Square>
         <Square>Square 3</Square>
       </View>
+      <SuperButton onPress={() => setShowButton(!showButton)}>afficher/masquer</SuperButton>
+      {showButton && <Count />}
     </View>
   );
 };
