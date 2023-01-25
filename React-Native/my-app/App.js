@@ -10,7 +10,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator>
         <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Exercice 1" component={Exercice1} />
+        <Tab.Screen name="Exercice 1" component={Exercice1} options={{ tabBarBadge: 2 }} />
       </Tab.Navigator>
     </NavigationContainer>
   );
