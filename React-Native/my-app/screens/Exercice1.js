@@ -21,7 +21,7 @@ const Exercice1 = () => {
   );
 
   return (
-    <SafeAreaView>
+    <View>
       <View style={[styles.square, { backgroundColor: '#7de1fa', justifyContent: 'center', alignItems: 'center' }]}>
         <Text>Hello, world!</Text>
       </View>
@@ -30,9 +30,7 @@ const Exercice1 = () => {
       <SuperButton onPress={() => console.log('SALUT')}>Salut</SuperButton>
 
       <About />
-
-      <StatusBar style="dark" hidden={false} />
-    </SafeAreaView>
+    </View>
   );
 };
 

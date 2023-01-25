@@ -1,4 +1,4 @@
-import { Button, Image, Text, TouchableHighlight, View } from 'react-native';
+import { Button, Image, SafeAreaView, Text, TouchableHighlight, View } from 'react-native';
 import styles from '../style';
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
         style={{ width: 150, height: 150 }}
       />
 
-      <Button title="Bonjour" onPress={() => alert('Salut Fiorella')} />
+      <Button title="Bonjour" onPress={() => alert('Salut Fiorella')}></Button>
 
       <TouchableHighlight style={styles.btn} underlayColor="red" onPress={() => alert('Mon bouton')}>
         <Text style={{ color: '#fff', fontSize: 22 }}>Mon Bouton</Text>

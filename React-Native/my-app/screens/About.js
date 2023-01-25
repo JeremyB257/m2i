@@ -10,7 +10,7 @@ export default function About() {
       <View style={styles.container}>
         <Image source={{ uri: 'https://avatars.githubusercontent.com/u/106591457' }} style={styles.avatar} />
         <View>
-          <Text style={styles.title}>Jeremy B</Text>
+          <Text style={styles.title}>Jeremy</Text>
           <Text style={styles.fs(20)}>
             Développeur <Text style={{ textDecorationLine: 'line-through' }}>web</Text> mobile
           </Text>
