@@ -1,12 +1,24 @@
-import { useState } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import { useCallback, useEffect, useState } from 'react';
 import { SafeAreaView, StatusBar, Text, View } from 'react-native';
 import SuperButton from '../components/Button';
 
 import styles from '../style';
 import About from './About';
 
-export default function Exercice1() {
+const Exercice1 = () => {
   let [count, setCount] = useState(0);
+
+  useFocusEffect(
+    useCallback(() => {
+      console.log('Mount');
+
+      return () => {
+        console.log('UnMount');
+        setCount(0);
+      };
+    }, [])
+  );
 
   return (
     <SafeAreaView>
@@ -22,4 +34,6 @@ export default function Exercice1() {
       <StatusBar style="dark" hidden={false} />
     </SafeAreaView>
   );
-}
+};
+
+export default Exercice1;
