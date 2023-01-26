@@ -25,6 +25,9 @@ setInterval(() => {
 
 let input3 = document.querySelector('#input3');
 let para3 = document.querySelector('#para3');
+let pictureBoxLabel = document.querySelector('#pictureBoxLabel');
+let pictureBox = document.querySelector('#pictureBox');
+
 let inputBtn3 = document.querySelector('#inputBtn3');
 
 const validateInput = (e) => {
@@ -38,3 +41,13 @@ const validateInput = (e) => {
   }
 };
 input3.addEventListener('keydown', validateInput);
+
+pictureBox.addEventListener('change', checkPicture);
+
+function checkPicture(e) {
+  if (e.target.checked) {
+    pictureBoxLabel.innerHTML = '✓ Photo ajoutée';
+  } else {
+    pictureBoxLabel.innerHTML = 'Pas de photo';
+  }
+}
