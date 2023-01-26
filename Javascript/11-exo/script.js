@@ -20,3 +20,5 @@ setInterval(() => {
     timer.classList.remove('timer');
   }
 }, 1000);
+
+//Exercice 3
