@@ -1,3 +1,5 @@
+//Exercice 1
+
 let firstnames = ['alpha', 'bravo', 'charlie', 'echo', 'foxstrot'];
 
 const searchInArray = (array, search) => {
@@ -5,3 +7,5 @@ const searchInArray = (array, search) => {
 };
 
 console.log(searchInArray(firstnames, 'a'));
+
+//Exercice 2
