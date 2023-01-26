@@ -9,3 +9,14 @@ const searchInArray = (array, search) => {
 console.log(searchInArray(firstnames, 'a'));
 
 //Exercice 2
+
+let timer = document.querySelector('#timer');
+
+setInterval(() => {
+  timer.innerHTML = new Date().toLocaleTimeString();
+  if (new Date().getSeconds() % 10 == 0) {
+    timer.classList.add('timer');
+  } else {
+    timer.classList.remove('timer');
+  }
+}, 1000);
