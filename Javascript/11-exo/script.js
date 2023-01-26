@@ -22,3 +22,19 @@ setInterval(() => {
 }, 1000);
 
 //Exercice 3
+
+let input3 = document.querySelector('#input3');
+let para3 = document.querySelector('#para3');
+let inputBtn3 = document.querySelector('#inputBtn3');
+
+const validateInput = (e) => {
+  para3.innerHTML = `Il vous reste ${10 - e.target.value.length - 1}`;
+  if (e.target.value.length >= 9) {
+    para3.style.color = 'red';
+    inputBtn3.setAttribute('disabled', 'true');
+  } else {
+    para3.style.color = 'black';
+    inputBtn3.setAttribute('disabled', 'false');
+  }
+};
+input3.addEventListener('keydown', validateInput);
