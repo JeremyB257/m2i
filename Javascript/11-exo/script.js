@@ -1,4 +1,4 @@
-//Exercice 1
+/* //Exercice 1
 
 let firstnames = ['alpha', 'bravo', 'charlie', 'echo', 'foxstrot'];
 
@@ -49,5 +49,35 @@ function checkPicture(e) {
     pictureBoxLabel.innerHTML = '✓ Photo ajoutée';
   } else {
     pictureBoxLabel.innerHTML = 'Pas de photo';
+  }
+}
+ */
+
+let cookieCountPara = document.querySelector('.cookie-count-p');
+let cookieImg = document.querySelector('.cookie-img');
+let btnOne = document.querySelector('.btn1');
+let btnPrice = document.querySelector('.btnPrice');
+
+let cookieCount = 0;
+let click = 1;
+let priceBtn1 = 25;
+
+cookieCountPara.innerHTML = cookieCount + `(${click})`;
+
+cookieImg.addEventListener('click', cookieClick);
+btnOne.addEventListener('click', buttonOne);
+
+function cookieClick() {
+  cookieCount += click;
+  cookieCountPara.innerHTML = cookieCount + `(${click})`;
+}
+
+function buttonOne() {
+  if (cookieCount >= priceBtn1) {
+    cookieCount -= priceBtn1;
+    click++;
+    priceBtn1 = Math.round(priceBtn1 * 2.5);
+    cookieCountPara.innerHTML = cookieCount + `(${click})`;
+    btnPrice.innerHTML = `prix : ${priceBtn1}`;
   }
 }
