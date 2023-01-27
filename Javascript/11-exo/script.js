@@ -91,7 +91,7 @@ function buttonOne() {
     click++;
     priceBtn1 = Math.round(priceBtn1 * 1.1);
     cookieCountPara.innerHTML = cookieCount.toLocaleString() + `(+${click} / +${cBySecond} s)`;
-    btnOnePrice.innerHTML = `prix : ${priceBtn1}`;
+    btnOnePrice.innerHTML = `prix : ${priceBtn1.toLocaleString()}`;
   }
 }
 
@@ -101,7 +101,7 @@ function buttonTwo() {
     click += 5;
     priceBtn2 = Math.round(priceBtn2 * 1.2);
     cookieCountPara.innerHTML = cookieCount.toLocaleString() + `(+${click} / +${cBySecond} s)`;
-    btnTwoPrice.innerHTML = `prix : ${priceBtn2}`;
+    btnTwoPrice.innerHTML = `prix : ${priceBtn2.toLocaleString()}`;
   }
 }
 
@@ -111,7 +111,7 @@ function buttonThree() {
     cBySecond++;
     priceBtn3 = Math.round(priceBtn3 * 1.2);
     cookieCountPara.innerHTML = cookieCount.toLocaleString() + `(+${click} / +${cBySecond} s)`;
-    btnThreePrice.innerHTML = `prix : ${priceBtn3}`;
+    btnThreePrice.innerHTML = `prix : ${priceBtn3.toLocaleString()}`;
   }
 }
 
@@ -121,7 +121,7 @@ function buttonFour() {
     cBySecond += 5;
     priceBtn4 = Math.round(priceBtn4 * 1.3);
     cookieCountPara.innerHTML = cookieCount.toLocaleString() + `(+${click} / +${cBySecond} s)`;
-    btnFourPrice.innerHTML = `prix : ${priceBtn4}`;
+    btnFourPrice.innerHTML = `prix : ${priceBtn4.toLocaleString()}`;
   }
 }
 
