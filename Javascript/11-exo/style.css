@@ -16,6 +16,12 @@
   width: 100px;
 }
 
-.inline {
-  display: inline;
+.alignCenter {
+  text-align: center;
+}
+
+.cookie-purchase {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
