@@ -89,7 +89,7 @@ function buttonOne() {
   if (cookieCount >= priceBtn1) {
     cookieCount -= priceBtn1;
     click++;
-    priceBtn1 = Math.round(priceBtn1 * 1.2);
+    priceBtn1 = Math.round(priceBtn1 * 1.1);
     cookieCountPara.innerHTML = cookieCount.toLocaleString() + `(+${click} / +${cBySecond} s)`;
     btnOnePrice.innerHTML = `prix : ${priceBtn1}`;
   }
@@ -99,7 +99,7 @@ function buttonTwo() {
   if (cookieCount >= priceBtn2) {
     cookieCount -= priceBtn2;
     click += 5;
-    priceBtn2 = Math.round(priceBtn2 * 1.3);
+    priceBtn2 = Math.round(priceBtn2 * 1.2);
     cookieCountPara.innerHTML = cookieCount.toLocaleString() + `(+${click} / +${cBySecond} s)`;
     btnTwoPrice.innerHTML = `prix : ${priceBtn2}`;
   }
@@ -109,7 +109,7 @@ function buttonThree() {
   if (cookieCount >= priceBtn3) {
     cookieCount -= priceBtn3;
     cBySecond++;
-    priceBtn3 = Math.round(priceBtn3 * 1.5);
+    priceBtn3 = Math.round(priceBtn3 * 1.2);
     cookieCountPara.innerHTML = cookieCount.toLocaleString() + `(+${click} / +${cBySecond} s)`;
     btnThreePrice.innerHTML = `prix : ${priceBtn3}`;
   }
@@ -119,7 +119,7 @@ function buttonFour() {
   if (cookieCount >= priceBtn4) {
     cookieCount -= priceBtn4;
     cBySecond += 5;
-    priceBtn4 = Math.round(priceBtn4 * 1.7);
+    priceBtn4 = Math.round(priceBtn4 * 1.3);
     cookieCountPara.innerHTML = cookieCount.toLocaleString() + `(+${click} / +${cBySecond} s)`;
     btnFourPrice.innerHTML = `prix : ${priceBtn4}`;
   }
