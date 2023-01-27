@@ -56,16 +56,20 @@ function checkPicture(e) {
 let cookieCountPara = document.querySelector('.cookie-count-p');
 let cookieImg = document.querySelector('.cookie-img');
 let btnOne = document.querySelector('.btn1');
-let btnPrice = document.querySelector('.btnPrice');
+let btnTwo = document.querySelector('.btn2');
+let btnOnePrice = document.querySelector('.btnOnePrice');
+let btnTwoPrice = document.querySelector('.btnTwoPrice');
 
 let cookieCount = 0;
 let click = 1;
 let priceBtn1 = 25;
+let priceBtn2 = 250;
 
 cookieCountPara.innerHTML = cookieCount + `(${click})`;
 
 cookieImg.addEventListener('click', cookieClick);
 btnOne.addEventListener('click', buttonOne);
+btnTwo.addEventListener('click', buttonTwo);
 
 function cookieClick() {
   cookieCount += click;
@@ -78,6 +82,16 @@ function buttonOne() {
     click++;
     priceBtn1 = Math.round(priceBtn1 * 2.5);
     cookieCountPara.innerHTML = cookieCount + `(${click})`;
-    btnPrice.innerHTML = `prix : ${priceBtn1}`;
+    btnOnePrice.innerHTML = `prix : ${priceBtn1}`;
+  }
+}
+
+function buttonTwo() {
+  if (cookieCount >= priceBtn2) {
+    cookieCount -= priceBtn2;
+    click += 5;
+    priceBtn2 = Math.round(priceBtn2 * 2.5);
+    cookieCountPara.innerHTML = cookieCount + `(${click})`;
+    btnTwoPrice.innerHTML = `prix : ${priceBtn2}`;
   }
 }
