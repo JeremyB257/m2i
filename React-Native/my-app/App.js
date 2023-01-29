@@ -30,6 +30,7 @@ export default function App() {
               iconName = 'arrow-forward-circle';
             }
             iconName += focused ? '' : '-outline';
+
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}>
