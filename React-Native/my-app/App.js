@@ -51,7 +51,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="TabScreen" component={TabScreen} />
+        <Stack.Screen name="TabScreen" component={TabScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Item" component={Item} />
       </Stack.Navigator>
 
