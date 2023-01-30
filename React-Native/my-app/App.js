@@ -8,6 +8,8 @@ import { StatusBar } from 'react-native';
 import List from './screens/List';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Item from './components/Item';
+import Pokemons from './screens/Pokemons';
+import PokemonCard from './screens/PokemonCard';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -16,10 +18,12 @@ const TabScreen = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
+        tabBarStyle: { paddingBottom: 5 },
         //tabBarLabel: 'toto',
         //tabBarLabel: () => null,
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
+
         headerTitleStyle: {
           fontWeight: 'bold',
         },
@@ -33,6 +37,8 @@ const TabScreen = () => {
             iconName = 'arrow-forward-circle';
           } else if (route.name === 'Liste') {
             iconName = 'list';
+          } else if (route.name === 'Pokemons') {
+            iconName = 'bug';
           }
           iconName += focused ? '' : '-outline';
 
@@ -41,8 +47,9 @@ const TabScreen = () => {
       })}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Exercice 1" component={Exercice1} />
-      <Tab.Screen name="Exercice 2" component={Exercice2} options={{ tabBarBadge: 2 }} />
+      <Tab.Screen name="Exercice 2" component={Exercice2} />
       <Tab.Screen name="Liste" component={List} />
+      <Tab.Screen name="Pokemons" component={Pokemons} options={{ tabBarBadge: 2 }} />
     </Tab.Navigator>
   );
 };
@@ -53,6 +60,7 @@ export default function App() {
       <Stack.Navigator>
         <Stack.Screen name="TabScreen" component={TabScreen} options={{ headerShown: false }} />
         <Stack.Screen name="Item" component={Item} />
+        <Stack.Screen name="Pokemon" component={PokemonCard} />
       </Stack.Navigator>
 
       <StatusBar style="dark" hidden={false} />
