@@ -1,12 +1,13 @@
 import { useFocusEffect } from '@react-navigation/native';
 import axios from 'axios';
 import { useCallback, useState } from 'react';
-import { FlatList, Image, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 const Pokemons = ({ navigation }) => {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(false);
-  let [gen, setGen] = useState(1);
+  const [gen, setGen] = useState(1);
+  const [search, setSeach] = useState('');
 
   useFocusEffect(
     useCallback(() => {
@@ -28,7 +29,7 @@ const Pokemons = ({ navigation }) => {
     );
   };
   const Header = () => {
-    return loading && <Text style={{ fontSize: 24 }}>Chargement génération {gen} ...</Text>;
+    return <View>{loading && <Text style={{ fontSize: 24 }}>Chargement génération {gen} ...</Text>}</View>;
   };
 
   const FetchPokemons = () => {
@@ -45,13 +46,21 @@ const Pokemons = ({ navigation }) => {
   };
 
   return (
-    <FlatList
-      data={pokemons}
-      renderItem={ItemView}
-      ListHeaderComponent={Header}
-      refreshing={loading}
-      onRefresh={() => FetchPokemons()}
-    />
+    <View style={{ marginBottom: 110 }}>
+      <TextInput
+        style={{ height: 50, fontSize: 22, backgroundColor: '#fff', margin: 30, padding: 10 }}
+        placeholder="Chercher un pokemon..."
+        defaultValue={search}
+        onChangeText={(value) => setSeach(value)}
+      />
+      <FlatList
+        data={pokemons.filter((pkm) => pkm.name.includes(search))}
+        renderItem={ItemView}
+        ListHeaderComponent={Header}
+        refreshing={loading}
+        onRefresh={() => FetchPokemons()}
+      />
+    </View>
   );
 };
 
