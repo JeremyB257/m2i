@@ -1,12 +1,14 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-const List = () => {
+const List = ({ navigation }) => {
   const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <ScrollView>
       {items.map((item, index) => (
         <View style={styles.item} key={index}>
-          <Text>{item}</Text>
+          <Text>
+            <Button title={item + ''} onPress={() => navigation.navigate('Item')}></Button>
+          </Text>
         </View>
       ))}
     </ScrollView>
@@ -19,5 +21,7 @@ const styles = StyleSheet.create({
   item: {
     height: 100,
     borderBottomWidth: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
