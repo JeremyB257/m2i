@@ -7,7 +7,7 @@ const List = ({ navigation }) => {
       {items.map((item, index) => (
         <View style={styles.item} key={index}>
           <Text>
-            <Button title={item + ''} onPress={() => navigation.navigate('Item')}></Button>
+            <Button title={item + ''} onPress={() => navigation.navigate('Item', { number: item })}></Button>
           </Text>
         </View>
       ))}

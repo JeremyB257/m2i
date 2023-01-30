@@ -1,9 +1,9 @@
 import { View, Text } from 'react-native';
 
-const Item = () => {
+const Item = ({ route }) => {
   return (
     <View>
-      <Text>item</Text>
+      <Text style={{ fontSize: 32 }}>item {route.params.number}</Text>
     </View>
   );
 };
