@@ -1,4 +1,5 @@
 import { useFocusEffect } from '@react-navigation/native';
+import { Fragment } from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 
 const PokemonCard = ({ route, navigation }) => {
@@ -25,10 +26,10 @@ const PokemonCard = ({ route, navigation }) => {
       {/* type */}
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         {pokemon.apiTypes.map((type, index) => (
-          <>
-            <Text key={index}>{type.name}</Text>
+          <Fragment key={index}>
+            <Text>{type.name}</Text>
             <Image source={{ uri: type.image }} style={{ width: 20, height: 20 }} />
-          </>
+          </Fragment>
         ))}
       </View>
 
