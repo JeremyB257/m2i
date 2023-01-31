@@ -1,10 +1,11 @@
 import React from 'react';
+import EatToHome from '../components/EatToHome';
 
 const Home = () => {
   return (
-    <div>
-      <h1>home</h1>
-    </div>
+    <main>
+      <EatToHome />
+    </main>
   );
 };
 
