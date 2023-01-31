@@ -1,0 +1,50 @@
+.since {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 100px 0;
+
+  .img {
+    position: relative;
+    width: 45%;
+
+    .principal {
+      width: 100%;
+      border-radius: 25px;
+    }
+    .dot {
+      position: absolute;
+      bottom: -14%;
+      right: 40%;
+      width: 100px;
+      z-index: -1;
+      filter: invert(63%) sepia(49%) saturate(3054%) hue-rotate(214deg) brightness(102%) contrast(101%);
+    }
+  }
+  .desc {
+    width: 45%;
+    .primary-color {
+      color: $primary-color;
+    }
+    h2 {
+      font-size: 44px;
+      &:nth-child(3) {
+        display: inline-block;
+        background-color: $primary-color;
+        color: $white-color;
+        transform: skew((-10deg));
+        padding: 0 5px;
+      }
+    }
+    p {
+      margin: 30px 0;
+    }
+
+    .active {
+      background-color: $primary-color;
+      color: $white-color;
+      padding: 10px 30px;
+      border-radius: 5px;
+    }
+  }
+}
