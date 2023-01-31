@@ -3,7 +3,7 @@ import logo from '../img/logo.svg';
 
 const Header = () => {
   return (
-    <header>
+    <header id="header">
       <div className="logo">
         <img src={logo} alt="Logo" />
         <h1>Thaito</h1>
@@ -11,24 +11,24 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <a href="#">A propos</a>
+            <a href="#header">A propos</a>
           </li>
           <li>
-            <a href="#">Blog</a>
+            <a href="#header">Blog</a>
           </li>
           <li>
-            <a href="#">Prix</a>
+            <a href="#header">Prix</a>
           </li>
           <li>
-            <a href="#">Nous contacter</a>
+            <a href="#header">Nous contacter</a>
           </li>
         </ul>
         <ul>
           <li>
-            <a href="#">Connexion</a>
+            <a href="#header">Connexion</a>
           </li>
           <li className="active">
-            <a href="#">Inscription</a>
+            <a href="#header">Inscription</a>
           </li>
         </ul>
       </nav>

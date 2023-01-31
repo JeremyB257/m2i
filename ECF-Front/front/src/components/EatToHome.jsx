@@ -4,7 +4,7 @@ import svgDot from '../img/dot-pattern.svg';
 
 const EatToHome = () => {
   return (
-    <section className="eatToHome">
+    <section id="eatToHome" className="eatToHome">
       <div className="desc">
         <h2>Délicieux & abordable</h2>
         <h2>Repas chez vous.</h2>
@@ -13,10 +13,10 @@ const EatToHome = () => {
           tempora odit error.
         </p>
         <div className="button">
-          <a href="#" className="active">
+          <a href="#eatToHome" className="active">
             Commander maintenant
           </a>
-          <a href="#">
+          <a href="#eatToHome">
             <i className="fa-regular fa-circle-play"></i> Rencontrer les chefs
           </a>
         </div>
