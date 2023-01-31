@@ -54,4 +54,64 @@ header {
       }
     }
   }
+  .burger-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+
+    span {
+      display: block;
+      height: 4px;
+      width: 25px;
+      border-radius: 5px;
+      margin-bottom: 4px;
+      background-color: $primary-color;
+      transition: 0.3s;
+    }
+  }
+}
+
+@include tab {
+  header {
+    nav {
+      position: absolute;
+      flex-direction: column;
+      background: white;
+      left: 10px;
+      right: 10px;
+      top: 10px;
+      border: 1px solid rgb(192, 192, 192);
+      border-radius: 10px;
+      z-index: 2;
+      padding: 20px;
+      ul {
+        flex-direction: column;
+
+        margin-left: 0;
+        li {
+          padding: 10px;
+          margin-left: 0;
+        }
+      }
+    }
+    .burger-menu {
+      display: block;
+      z-index: 3;
+    }
+  }
+}
+
+.rotateOne {
+  transform: translateY(8px) rotateZ(590deg);
+}
+.opacityTwo {
+  opacity: 0;
+}
+.rotateThree {
+  transform: translateY(-8px) rotateZ(-590deg);
+}
+
+.hidden {
+  display: none;
 }
