@@ -29,12 +29,12 @@ const EatToHome = () => {
           tempora odit error.
         </p>
         <div className="button">
-          <a href="#" className="active" onClick={handleOrder}>
+          <button className="active" onClick={handleOrder}>
             Commander maintenant
-          </a>
-          <a href="#" onClick={handleMeet}>
+          </button>
+          <button onClick={handleMeet}>
             <i className="fa-regular fa-circle-play"></i> Rencontrer les chefs
-          </a>
+          </button>
         </div>
       </div>
       <div className={order ? 'hidden' : 'img'}>
