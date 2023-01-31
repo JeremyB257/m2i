@@ -1,0 +1,109 @@
+footer {
+  background-color: $white-color;
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px 0;
+    ul {
+      margin-right: 20px;
+      &:before {
+        display: block;
+        content: attr(data-header);
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      li {
+        margin: 15px 0;
+      }
+    }
+    .newsletter {
+      width: 30%;
+      min-width: 300px;
+      p {
+        margin: 20px 0;
+      }
+      input[type='email'] {
+        padding: 10px 5px;
+        border: 1px solid lightgrey;
+        height: 45px;
+        font-family: $font;
+        font-size: 14px;
+        background-color: $white-color;
+        &:focus {
+          outline-color: $primary-color;
+        }
+      }
+      input[type='button'] {
+        background-color: $primary-color;
+        padding: 10px 10px;
+        border-radius: 0 5px 5px 0;
+        color: $white-color;
+        border: 1px solid $primary-color;
+        height: 45px;
+        font-family: $font;
+        font-size: 14px;
+      }
+    }
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid lightgrey;
+    .logo {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 40px;
+      }
+
+      h1 {
+        font-size: 32px;
+        margin-left: 15px;
+      }
+    }
+    .social-logo {
+      img {
+        width: 32px;
+        filter: invert(100%) sepia(3%) saturate(0%) hue-rotate(240deg) brightness(105%) contrast(103%);
+        background-color: rgb(255 255 0);
+        margin: 5px;
+        padding: 8px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@include tab {
+  footer {
+    .footer-top {
+      justify-content: center;
+      .newsletter {
+        margin-top: 50px;
+        width: 50%;
+        text-align: center;
+
+        input[type='email'],
+        input[type='button'] {
+          font-size: 12px;
+        }
+      }
+      li,
+      p {
+        font-size: 12px;
+      }
+    }
+    .footer-bottom {
+      flex-direction: column;
+
+      p {
+        margin: 20px 0;
+      }
+    }
+  }
+}
