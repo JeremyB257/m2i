@@ -1,0 +1,31 @@
+//--------------------------Variables
+$primary-color: #6415ff;
+$secondary-color: #243e63;
+$white-color: #e8eaee;
+
+$font: 'Inter', sans-serif;
+
+//----------------------------mixin
+
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// ---------------------reset / general
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  color: rgb(15, 15, 15);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: $font;
+}
+
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+}
