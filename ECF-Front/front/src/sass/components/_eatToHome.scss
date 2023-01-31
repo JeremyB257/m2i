@@ -60,3 +60,34 @@
     }
   }
 }
+
+@include tab {
+  .eatToHome {
+    flex-direction: column;
+
+    .desc {
+      width: 80%;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .img {
+      width: 90%;
+    }
+  }
+}
+
+@include mobile {
+  .eatToHome {
+    .desc {
+      h2 {
+        font-size: 32px;
+      }
+      p {
+        font-size: 12px;
+      }
+      .button {
+        font-size: 12px;
+      }
+    }
+  }
+}
