@@ -1,6 +1,6 @@
 import React from 'react';
-import image from '../img/image-1.jpeg';
-import svgDot from '../img/dot-pattern.svg';
+import image from '../../img/image-1.jpeg';
+import svgDot from '../../img/dot-pattern.svg';
 import { useState } from 'react';
 
 const EatToHome = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import image1 from '../img/shop.svg';
-import image2 from '../img/chef.svg';
-import image3 from '../img/celebration.svg';
+import image1 from '../../img/shop.svg';
+import image2 from '../../img/chef.svg';
+import image3 from '../../img/celebration.svg';
 
 const Service = () => {
   return (

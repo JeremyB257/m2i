@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import image from '../img/image-2.jpeg';
-import svgDot from '../img/dot-pattern.svg';
+import image from '../../img/image-2.jpeg';
+import svgDot from '../../img/dot-pattern.svg';
 
 const Since = () => {
   const [year, setYear] = useState(5);
