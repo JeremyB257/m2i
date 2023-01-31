@@ -15,7 +15,7 @@
     .dot {
       position: absolute;
       bottom: -14%;
-      right: 40%;
+      right: 45%;
       width: 100px;
       z-index: -1;
       filter: invert(63%) sepia(49%) saturate(3054%) hue-rotate(214deg) brightness(102%) contrast(101%);
@@ -45,6 +45,45 @@
       color: $white-color;
       padding: 10px 30px;
       border-radius: 5px;
+    }
+  }
+}
+
+@include tab {
+  .since {
+    flex-direction: column;
+
+    .desc {
+      width: 80%;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .img {
+      width: 90%;
+      .dot {
+        bottom: -10%;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .since {
+    .desc {
+      h2 {
+        font-size: 32px;
+      }
+      p {
+        font-size: 12px;
+      }
+      .button {
+        font-size: 12px;
+      }
+    }
+    .img {
+      .dot {
+        right: 39%;
+      }
     }
   }
 }
