@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
 import logo from '../img/logo.svg';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [burgerOpen, setBurgerOpen] = useState(false);
@@ -38,21 +39,23 @@ const Header = () => {
     <header id="header">
       <div className="logo">
         <img src={logo} alt="Logo" />
-        <h1>Thaito</h1>
+        <Link to="/">
+          <h1>Thaito</h1>
+        </Link>
       </div>
       <nav id="nav" className={burgerOpen ? 'show' : 'hidden'} ref={ref}>
         <ul>
           <li>
-            <a href="#header">A propos</a>
+            <Link to="/menu">A propos</Link>
           </li>
           <li>
-            <a href="#header">Blog</a>
+            <Link to="/menu">Blog</Link>
           </li>
           <li>
-            <a href="#header">Prix</a>
+            <Link to="/menu">Prix</Link>
           </li>
           <li>
-            <a href="#header">Nous contacter</a>
+            <Link to="/menu">Nous contacter</Link>
           </li>
         </ul>
         <ul>
