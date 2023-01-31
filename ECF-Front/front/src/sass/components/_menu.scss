@@ -1,0 +1,11 @@
+.menu {
+  h1 {
+    span {
+      display: inline-block;
+      color: $white-color;
+      background-color: $primary-color;
+      transform: skew(-10deg);
+      padding: 0 5px;
+    }
+  }
+}
