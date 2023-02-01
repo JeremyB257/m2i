@@ -40,7 +40,7 @@ const EatToHome = () => {
       <div className={order ? 'hidden' : 'img'}>
         <img className={meet ? 'hidden' : 'principal'} src={image} alt="plats" />
         <iframe
-          className={meet ? '' : 'hidden'}
+          className={meet ? 'principal' : 'hidden'}
           width="460"
           height="306"
           src="https://www.youtube.com/embed/_GuOjXYl5ew"

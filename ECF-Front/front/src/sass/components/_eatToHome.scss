@@ -36,6 +36,9 @@
             font-size: 32px;
             margin-right: 5px;
           }
+          &:hover {
+            color: $primary-color;
+          }
         }
         &.active {
           background-color: $primary-color;
