@@ -1,9 +1,21 @@
 import React from 'react';
 
-const Card = () => {
+const Card = ({ meal, onclick }) => {
   return (
-    <div>
-      <h1>Card</h1>
+    <div className="card" onClick={() => onclick(meal)}>
+      <div className="image">
+        <img src={meal.imageSrc} alt="plat" />
+        <button>Commander</button>
+      </div>
+      <div className="desc">
+        <h4>{meal.title}</h4>
+        <p>{meal.content}</p>
+        <h5>{meal.price}</h5>
+        <span>
+          <i className="fa-solid fa-star"></i>
+          {meal.rating} ({meal.reviews})
+        </span>
+      </div>
     </div>
   );
 };

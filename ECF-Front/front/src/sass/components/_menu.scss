@@ -1,11 +1,133 @@
 .menu {
-  h1 {
-    span {
-      display: inline-block;
-      color: $white-color;
-      background-color: $primary-color;
-      transform: skew(-10deg);
-      padding: 0 5px;
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      span {
+        display: inline-block;
+        color: $white-color;
+        background-color: $primary-color;
+        transform: skew(-10deg);
+        padding: 0 5px;
+      }
+    }
+
+    .filter {
+      background-color: $white-color;
+      padding: 5px;
+      border-radius: 3px;
+      ul {
+        display: flex;
+        li {
+          color: grey;
+          padding: 5px 10px;
+          border-radius: 3px;
+          cursor: pointer;
+          &.active {
+            background-color: $primary-color;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 15px;
+    width: 22%;
+    height: 360px;
+    background-color: $white-color;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+
+    .image {
+      height: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      button {
+        position: absolute;
+        display: block;
+        z-index: -1;
+        color: white;
+        font-weight: bold;
+        background-color: $primary-color;
+        padding: 8px 15px;
+        border-radius: 3px;
+        font-size: 14px;
+      }
+    }
+
+    .desc {
+      padding: 10px;
+
+      p {
+        margin: 8px 0;
+        font-weight: bold;
+        font-size: 14px;
+        color: grey;
+      }
+
+      h5 {
+        font-size: 16px;
+      }
+
+      span {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        bottom: 35%;
+        background-color: white;
+        color: $secondary-color;
+        font-weight: bold;
+        padding: 5px 15px;
+        border-radius: 16px;
+        font-size: 14px;
+        i {
+          color: #f6ad55;
+          margin-right: 5px;
+        }
+      }
+    }
+    &:hover {
+      .image {
+        button {
+          z-index: 1;
+        }
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 30%;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      .desc {
+        h4 {
+          color: $primary-color;
+        }
+      }
     }
   }
 }
