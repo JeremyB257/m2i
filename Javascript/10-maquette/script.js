@@ -57,12 +57,12 @@ function scrollFunction() {
     navs[1].style.color = color;
     navs[2].style.color = color;
     navs[3].style.color = color;
-  } else if (window.scrollY >= 966 && window.scrollY <= 1566) {
+  } else if (window.scrollY >= 966 && window.scrollY < 1566) {
     navs[0].style.color = color;
     navs[1].style.color = '#dc3845';
     navs[2].style.color = color;
     navs[3].style.color = color;
-  } else if (window.scrollY >= 1566 && window.scrollY <= 2291) {
+  } else if (window.scrollY >= 1566 && window.scrollY < 2291) {
     navs[0].style.color = color;
     navs[1].style.color = color;
     navs[2].style.color = '#dc3845';
