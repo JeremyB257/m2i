@@ -65,9 +65,11 @@ body > a {
   position: fixed;
   right: 5%;
   bottom: 5%;
+  background-color: #fff;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   border-radius: 5px;
+  z-index: 2;
 }
 body > a i {
   color: #dc3845;
@@ -201,6 +203,7 @@ header .header-container nav > i {
 .giving .cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .giving .cards .card {
   display: flex;
