@@ -404,6 +404,10 @@ header .header-container nav > i {
   padding: 15px 25px;
   border-radius: 50px;
 }
+.message .left-side .messageConfirm {
+  color: white;
+  margin-bottom: 15px;
+}
 
 footer {
   display: flex;

@@ -5,7 +5,8 @@ const gifts = document.querySelector('#gift');
 const navs = header.querySelectorAll('a');
 const messageInput = document.querySelector('.messageInput');
 const messageBtn = document.querySelector('.messageBtn');
-let errMessage = document.createElement('p');
+const messageConfirm = document.querySelector('.messageConfirm');
+
 //DATA
 const dataGifts = [
   { name: "Pain d'épice", price: '15 €', img: 'img/gift1.png' },
@@ -16,24 +17,23 @@ const dataGifts = [
 ];
 dataGifts.map((gift) => {
   gifts.children[1].innerHTML += `<div class="card">
-            <div class="heartDiv">
-              <i class="fa-regular fa-heart"></i>
-              <i class="fa-solid fa-heart hidden"></i>
-            </div>
-            <img src='${gift.img}' alt='${gift.name}' />
-            <h3>${gift.price}</h3>
-            <p>${gift.name}</p>
-          </div>`;
+      <i class="fa-regular fa-heart"></i>
+      <img src="${gift.img}" alt="${gift.name}" />
+      <h3>${gift.price}</h3>
+      <p>${gift.name}</p>
+    </div>`;
 });
-const hearts = document.querySelectorAll('.heartDiv');
+
+const hearts = document.querySelectorAll('.fa-heart');
 
 //EventListener
 darkMode.addEventListener('click', dark);
+messageBtn.addEventListener('click', sendMessage);
 window.addEventListener('scroll', scrollFunction);
 for (let heart of hearts) {
   heart.addEventListener('click', fillHeart);
 }
-messageBtn.addEventListener('click', sendMessage);
+
 //Function
 
 function dark() {
@@ -76,18 +76,15 @@ function scrollFunction() {
 }
 
 function fillHeart() {
-  this.children[0].classList.toggle('hidden');
-  this.children[1].classList.toggle('hidden');
+  this.classList.toggle('fa-regular');
+  this.classList.toggle('fa-solid');
 }
 
 function sendMessage() {
   if (messageInput.value) {
-    messageInput.value;
-    console.log('ici');
+    messageConfirm.textContent = `Votre message "${messageInput.value}" est envoyé`;
   } else {
-    errMessage.style.color = 'white';
-    errMessage.innerHTML = 'Le message est vide ...';
-    messageInput.after(errMessage);
+    messageConfirm.textContent = `Le message est vide ...`;
   }
 }
 
