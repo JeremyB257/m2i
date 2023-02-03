@@ -49,6 +49,8 @@ function dark() {
 function responsiveMenu() {
   menu.classList.toggle('hidden');
   menu.classList.toggle('show');
+  menuBar.classList.toggle('fa-bars');
+  menuBar.classList.toggle('fa-xmark');
 }
 
 function scrollFunction() {
