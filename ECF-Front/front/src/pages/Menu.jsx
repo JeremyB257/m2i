@@ -1,6 +1,6 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import {useEffect} from 'react';
+import {useState} from 'react';
 import axios from 'axios';
 import Card from '../components/Menu/Card';
 
@@ -12,15 +12,15 @@ const Menu = () => {
   useEffect(() => {
     axios
       .get('http://localhost:3000/meals')
-      .then((res) => {
-        let filtered = filter ? res.data.filter((meal) => meal.type === filter) : res.data;
+      .then(res => {
+        let filtered = filter ? res.data.filter(meal => meal.type === filter) : res.data;
         setMeals(filtered);
         setOrder('');
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   }, [filter]);
 
-  const handleClickCard = (meal) => {
+  const handleClickCard = meal => {
     setMeals([meal]);
     setOrder('Vous avez commandé le repas ' + meal.title);
   };

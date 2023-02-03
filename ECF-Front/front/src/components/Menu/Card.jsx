@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ meal, onclick }) => {
+const Card = ({meal, onclick}) => {
   return (
     <div className="card" onClick={() => onclick(meal)}>
       <div className="image">

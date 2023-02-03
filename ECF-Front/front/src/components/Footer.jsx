@@ -3,7 +3,7 @@ import logo from '../img/logo.svg';
 import ytbIcon from '../img/youtube-icon.svg';
 import twitterIcon from '../img/twitter-icon.svg';
 import fcbIcon from '../img/facebook-icon.svg';
-import { useState } from 'react';
+import {useState} from 'react';
 
 const Footer = () => {
   const [email, setEmail] = useState();
@@ -55,9 +55,14 @@ const Footer = () => {
             className={sendEmail ? 'hidden' : ''}
             type="email"
             placeholder="Votre adresse email"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
           />
-          <input className={sendEmail ? 'hidden' : ''} type="button" value="S'inscrire" onClick={handleSubscrib} />
+          <input
+            className={sendEmail ? 'hidden' : ''}
+            type="button"
+            value="S'inscrire"
+            onClick={handleSubscrib}
+          />
         </div>
       </div>
 

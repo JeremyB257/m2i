@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../../img/image-1.jpeg';
 import svgDot from '../../img/dot-pattern.svg';
-import { useState } from 'react';
+import {useState} from 'react';
 
 const EatToHome = () => {
   const [order, setOrder] = useState(false);
@@ -25,8 +25,8 @@ const EatToHome = () => {
         <h2>Délicieux & abordable</h2>
         <h2>Repas chez vous.</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint iste nulla, dolore facilis perspiciatis soluta
-          tempora odit error.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint iste nulla, dolore facilis
+          perspiciatis soluta tempora odit error.
         </p>
         <div className="button">
           <button className="active" onClick={handleOrder}>

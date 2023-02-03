@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import image from '../../img/image-2.jpeg';
 import svgDot from '../../img/dot-pattern.svg';
 
@@ -16,8 +16,8 @@ const Since = () => {
         <h2>Nous vous servons</h2>
         <h2>depuis {year} ans.</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint iste nulla, dolore facilis perspiciatis soluta
-          tempora odit error.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint iste nulla, dolore facilis
+          perspiciatis soluta tempora odit error.
         </p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, deserunt!</p>
 

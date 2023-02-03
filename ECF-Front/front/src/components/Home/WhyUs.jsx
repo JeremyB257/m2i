@@ -1,7 +1,7 @@
 import React from 'react';
 import image from '../../img/image-3.jpeg';
 import svgDot from '../../img/dot-pattern.svg';
-import { useState } from 'react';
+import {useState} from 'react';
 
 const WhyUs = () => {
   const [orders, setOrders] = useState(94000);
@@ -14,7 +14,7 @@ const WhyUs = () => {
     setChefs(randomNumber(9999));
   };
 
-  const randomNumber = (max) => {
+  const randomNumber = max => {
     return Math.ceil(Math.random() * max);
   };
 
@@ -25,9 +25,10 @@ const WhyUs = () => {
         <h2>Pourquoi</h2>
         <h2>nous choisir ?</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint iste nulla, dolore facilis perspiciatis soluta
-          tempora odit error. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, omnis. Lorem ipsum dolor
-          sit, amet consectetur adipisicing elit. Natus, praesentium.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint iste nulla, dolore facilis
+          perspiciatis soluta tempora odit error. Lorem ipsum dolor sit, amet consectetur
+          adipisicing elit. Id, omnis. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Natus, praesentium.
         </p>
         <div className="stats">
           <div className="stat">

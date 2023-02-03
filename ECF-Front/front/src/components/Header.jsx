@@ -1,9 +1,9 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useRef } from 'react';
-import { useState } from 'react';
+import {useEffect} from 'react';
+import {useRef} from 'react';
+import {useState} from 'react';
 import logo from '../img/logo.svg';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
   const [burgerOpen, setBurgerOpen] = useState(false);
@@ -26,7 +26,7 @@ const Header = () => {
     }
   }
 
-  const toggleBurger = (e) => {
+  const toggleBurger = e => {
     setBurgerOpen(!burgerOpen);
     let span = e.currentTarget.children;
 
@@ -67,7 +67,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="burger-menu" onClick={(e) => toggleBurger(e)}>
+      <div className="burger-menu" onClick={e => toggleBurger(e)}>
         <span></span>
         <span></span>
         <span></span>
