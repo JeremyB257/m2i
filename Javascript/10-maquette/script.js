@@ -1,8 +1,10 @@
 //Selecteur
-const darkMode = document.querySelector('.darkMode');
+const darkMode = document.querySelector('.dark-mode');
 const header = document.querySelector('header');
 const gifts = document.querySelector('#gift');
 const navs = header.querySelectorAll('a');
+const menu = header.querySelector('.menu');
+const menuBar = header.querySelector('.menu-bar');
 const messageInput = document.querySelector('.messageInput');
 const messageBtn = document.querySelector('.messageBtn');
 const messageConfirm = document.querySelector('.messageConfirm');
@@ -28,6 +30,7 @@ const hearts = document.querySelectorAll('.fa-heart');
 
 //EventListener
 darkMode.addEventListener('click', dark);
+menuBar.addEventListener('click', responsiveMenu);
 messageBtn.addEventListener('click', sendMessage);
 window.addEventListener('scroll', scrollFunction);
 for (let heart of hearts) {
@@ -38,9 +41,14 @@ for (let heart of hearts) {
 
 function dark() {
   document.body.classList.toggle('dark');
-  darkMode.children[0].classList.toggle('hidden');
-  darkMode.children[1].classList.toggle('hidden');
+  darkMode.classList.toggle('fa-sun');
+  darkMode.classList.toggle('fa-moon');
   scrollFunction();
+}
+
+function responsiveMenu() {
+  menu.classList.toggle('hidden');
+  menu.classList.toggle('show');
 }
 
 function scrollFunction() {
@@ -102,4 +110,16 @@ var swiper = new Swiper('.mySwiper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+});
+
+if (window.innerWidth < 768) {
+  menu.classList.add('hidden');
+}
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth < 768 && !menu.classList.contains('show')) {
+    menu.classList.add('hidden');
+  } else {
+    menu.classList.remove('hidden');
+  }
 });
