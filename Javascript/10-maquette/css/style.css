@@ -36,7 +36,7 @@ a:visited {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .dark {
@@ -101,6 +101,10 @@ header .header-container .logo {
 header .header-container .logo img {
   width: 25px;
 }
+header .header-container nav {
+  display: flex;
+  align-items: center;
+}
 header .header-container nav ul {
   display: flex;
   align-items: center;
@@ -112,10 +116,10 @@ header .header-container nav ul li {
 header .header-container nav ul li .active {
   color: #dc3845;
 }
-header .header-container nav ul i {
+header .header-container nav i {
   cursor: pointer;
 }
-header .header-container nav > i {
+header .header-container nav .menu-bar {
   display: none;
 }
 
@@ -123,13 +127,23 @@ header .header-container nav > i {
   header .header-container nav {
     display: flex;
   }
-  header .header-container nav > i {
+  header .header-container nav .menu-bar {
     display: block;
-    margin: 0 15px;
-    cursor: pointer;
+    position: relative;
+    margin-right: 20px;
   }
-  header .header-container ul li {
-    display: none;
+  header .header-container .show {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 0px 15px 0px #dbdbdb;
+    background-color: white;
+  }
+  header .header-container .show li {
+    margin: 10px;
   }
 }
 .banner {
