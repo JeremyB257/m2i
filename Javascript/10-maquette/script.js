@@ -11,13 +11,13 @@ const messageConfirm = document.querySelector('.messageConfirm');
 
 //DATA
 const dataGifts = [
-  { name: "Pain d'épice", price: '15 €', img: 'img/gift1.png' },
-  { name: 'Chapeau du père Noël', price: '22 €', img: 'img/gift2.png' },
-  { name: 'Sapin de Noël', price: '48 €', img: 'img/gift3.png' },
-  { name: 'Bonhomme de neige', price: '35 €', img: 'img/gift4.png' },
-  { name: 'Bâton de bonbon', price: '12 €', img: 'img/gift5.png' },
+  {name: "Pain d'épice", price: '15 €', img: 'img/gift1.png'},
+  {name: 'Chapeau du père Noël', price: '22 €', img: 'img/gift2.png'},
+  {name: 'Sapin de Noël', price: '48 €', img: 'img/gift3.png'},
+  {name: 'Bonhomme de neige', price: '35 €', img: 'img/gift4.png'},
+  {name: 'Bâton de bonbon', price: '12 €', img: 'img/gift5.png'},
 ];
-dataGifts.map((gift) => {
+dataGifts.map(gift => {
   gifts.children[1].innerHTML += `<div class="card">
       <i class="fa-regular fa-heart"></i>
       <img src="${gift.img}" alt="${gift.name}" />
