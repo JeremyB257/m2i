@@ -2,10 +2,10 @@ import React from 'react';
 
 const Card = ({meal, onclick}) => {
   return (
-    <div className="card" onClick={() => onclick(meal)}>
+    <div className="card">
       <div className="image">
         <img src={meal.imageSrc} alt="plat" />
-        <button>Commander</button>
+        <button onClick={onclick}>Commander</button>
       </div>
       <div className="desc">
         <h4>{meal.title}</h4>

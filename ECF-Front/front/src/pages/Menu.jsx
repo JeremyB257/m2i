@@ -7,7 +7,7 @@ import Card from '../components/Menu/Card';
 const Menu = () => {
   const [meals, setMeals] = useState();
   const [filter, setFilter] = useState('');
-  const [order, setOrder] = useState('');
+  const [order, setOrder] = useState({message: '', img: ''});
 
   useEffect(() => {
     axios
@@ -21,8 +21,10 @@ const Menu = () => {
   }, [filter]);
 
   const handleClickCard = meal => {
-    setMeals([meal]);
-    setOrder('Vous avez commandé le repas ' + meal.title);
+    setOrder({message: `Vous avez commandé le repas ${meal.title}`, img: meal.imageSrc});
+    setTimeout(() => {
+      setOrder({message: '', img: ''});
+    }, 2000);
   };
 
   return (
@@ -45,12 +47,18 @@ const Menu = () => {
           </ul>
         </div>
       </div>
-      <p className="success">{order}</p>
-      <div className="cards">
-        {meals?.map((meal, index) => (
-          <Card key={index} meal={meal} onclick={handleClickCard} />
-        ))}
-      </div>
+      {order.message ? (
+        <div className="order">
+          <p className="success">{order.message}</p>
+          <img src={order.img} alt="plat" />
+        </div>
+      ) : (
+        <div className="cards">
+          {meals?.map((meal, index) => (
+            <Card key={index} meal={meal} onclick={() => handleClickCard(meal)} />
+          ))}
+        </div>
+      )}
     </main>
   );
 };
