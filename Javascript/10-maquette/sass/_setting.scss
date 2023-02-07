@@ -2,6 +2,12 @@ $color-primary: #dc3845;
 $color-title: #282525;
 $color-para: #5d5656;
 
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
